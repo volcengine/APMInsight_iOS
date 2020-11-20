@@ -6,6 +6,17 @@
 //
 
 #import "AppDelegate.h"
+#import "APMHomeViewController.h"
+/**
+ 可复制部分开始---
+ Copyable section starts ---
+ */
+#import <BDAutoTrack.h>
+#import <RangersAPM.h>
+/**
+ ---可复制部分结束
+ --- Copyable section ends
+ */
 
 @interface AppDelegate ()
 
@@ -16,25 +27,46 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /**
+     可以把这部分初始化代码copy到您的工程中，建议初始化时机尽量靠前，否则可能出现启动崩溃无法捕获，或者启动分析数据产生误差
+     ⚠️注意：①在复制此部分代码前请先参考Podfile文件，引入对应的组件
+            ②导入头文件
+            ③请修改config对应的属性值
+                appID：平台为APP分配的ID
+                appName：APP的显示名称
+                channel：APP的发布渠道
+     
+     You can copy the initialization code as follows to the same part in your project.
+     And I suggest the code be excuted as early as possible. Otherwise, the crash that occurs during App Launching may not be detected and there may be error in the data of launch analysis.
+     ⚠️Tips: ① Before you copy the code, please read the Podfile and install necessary cocoapods components first.
+             ② Import the header files.
+             ③ Set the propertys of the variable named "config" with your own values.
+                appID: the ID of your App on APMInsight
+                appName: the display name of your App
+                channel: the channel you App will publish to
+     */
+    /**
+     可复制部分开始---
+     Copyable section starts ---
+     */
+    BDAutoTrackConfig *config = [BDAutoTrackConfig new];
+    config.appID = @"164314";
+    config.appName = @"APMInsight";
+    config.channel = @"local_test";
+    [BDAutoTrack startTrackWithConfig:config];
+    [RangersAPM startWithConfig:config];
+    /**
+     ---可复制部分结束
+     --- Copyable section ends
+     */
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    APMHomeViewController * controller = [[APMHomeViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
-
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
-
 
 @end

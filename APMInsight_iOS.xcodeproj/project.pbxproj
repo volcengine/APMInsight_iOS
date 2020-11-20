@@ -3,32 +3,62 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3683541A20203495C9577B67 /* Pods_APMInsight_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD7A127C3DAEE5250FE11EC /* Pods_APMInsight_iOS.framework */; };
 		4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93123C255D1BCE00402D0B /* AppDelegate.m */; };
-		4D931240255D1BCE00402D0B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93123F255D1BCE00402D0B /* SceneDelegate.m */; };
-		4D931243255D1BCE00402D0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931242255D1BCE00402D0B /* ViewController.m */; };
+		4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931242255D1BCE00402D0B /* APMHomeViewController.m */; };
 		4D931246255D1BCE00402D0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D931244255D1BCE00402D0B /* Main.storyboard */; };
 		4D931248255D1BD100402D0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D931247255D1BD100402D0B /* Assets.xcassets */; };
 		4D93124B255D1BD100402D0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D931249255D1BD100402D0B /* LaunchScreen.storyboard */; };
 		4D93124E255D1BD100402D0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93124D255D1BD100402D0B /* main.m */; };
+		4D93125A255D1D5F00402D0B /* APMInsightCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931259255D1D5F00402D0B /* APMInsightCellItem.m */; };
+		4D931265255D236F00402D0B /* APMInsightCrashViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D931264255D236F00402D0B /* APMInsightCrashViewController.mm */; };
+		4D931270255D413600402D0B /* APMInsightExceptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93126F255D413600402D0B /* APMInsightExceptionViewController.m */; };
+		4D931274255D414500402D0B /* APMInsightLagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931273255D414500402D0B /* APMInsightLagViewController.m */; };
+		4D931278255D415A00402D0B /* APMInsightPerformanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931277255D415A00402D0B /* APMInsightPerformanceViewController.m */; };
+		4D93127C255D416A00402D0B /* APMInsightHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93127B255D416A00402D0B /* APMInsightHybridViewController.m */; };
+		4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */; };
+		4D931284255D418F00402D0B /* APMInsightNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */; };
+		4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */; };
+		4DEAD4B02567A052005FA553 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DEAD4AF2567A052005FA553 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4D931238255D1BCE00402D0B /* APMInsight_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APMInsight_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D93123B255D1BCE00402D0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D93123C255D1BCE00402D0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4D93123E255D1BCE00402D0B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		4D93123F255D1BCE00402D0B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		4D931241255D1BCE00402D0B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4D931242255D1BCE00402D0B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4D931241255D1BCE00402D0B /* APMHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMHomeViewController.h; sourceTree = "<group>"; };
+		4D931242255D1BCE00402D0B /* APMHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMHomeViewController.m; sourceTree = "<group>"; };
 		4D931245255D1BCE00402D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D931247255D1BD100402D0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D93124A255D1BD100402D0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D93124C255D1BD100402D0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D93124D255D1BD100402D0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D931258255D1D5F00402D0B /* APMInsightCellItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCellItem.h; sourceTree = "<group>"; };
+		4D931259255D1D5F00402D0B /* APMInsightCellItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCellItem.m; sourceTree = "<group>"; };
+		4D931263255D236F00402D0B /* APMInsightCrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCrashViewController.h; sourceTree = "<group>"; };
+		4D931264255D236F00402D0B /* APMInsightCrashViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = APMInsightCrashViewController.mm; sourceTree = "<group>"; };
+		4D93126E255D413600402D0B /* APMInsightExceptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightExceptionViewController.h; sourceTree = "<group>"; };
+		4D93126F255D413600402D0B /* APMInsightExceptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightExceptionViewController.m; sourceTree = "<group>"; };
+		4D931272255D414500402D0B /* APMInsightLagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightLagViewController.h; sourceTree = "<group>"; };
+		4D931273255D414500402D0B /* APMInsightLagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightLagViewController.m; sourceTree = "<group>"; };
+		4D931276255D415A00402D0B /* APMInsightPerformanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightPerformanceViewController.h; sourceTree = "<group>"; };
+		4D931277255D415A00402D0B /* APMInsightPerformanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightPerformanceViewController.m; sourceTree = "<group>"; };
+		4D93127A255D416A00402D0B /* APMInsightHybridViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightHybridViewController.h; sourceTree = "<group>"; };
+		4D93127B255D416A00402D0B /* APMInsightHybridViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightHybridViewController.m; sourceTree = "<group>"; };
+		4D93127E255D417900402D0B /* APMInsightMemoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightMemoryViewController.h; sourceTree = "<group>"; };
+		4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightMemoryViewController.m; sourceTree = "<group>"; };
+		4D931282255D418F00402D0B /* APMInsightNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightNetworkViewController.h; sourceTree = "<group>"; };
+		4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightNetworkViewController.m; sourceTree = "<group>"; };
+		4DEAD4862564FA68005FA553 /* APMInsightWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightWebViewController.h; sourceTree = "<group>"; };
+		4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightWebViewController.m; sourceTree = "<group>"; };
+		4DEAD4AF2567A052005FA553 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5DD7A127C3DAEE5250FE11EC /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79D543BE1452DFA2743F905E /* Pods-APMInsight_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APMInsight_iOS.release.xcconfig"; path = "Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		F30D2F55F811E2A6F6A527FB /* Pods-APMInsight_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APMInsight_iOS.debug.xcconfig"; path = "Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3683541A20203495C9577B67 /* Pods_APMInsight_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +76,11 @@
 		4D93122F255D1BCE00402D0B = {
 			isa = PBXGroup;
 			children = (
+				4DEAD4AF2567A052005FA553 /* README.md */,
 				4D93123A255D1BCE00402D0B /* APMInsight_iOS */,
 				4D931239255D1BCE00402D0B /* Products */,
+				6634FD0CF630E77CFAF17CDC /* Pods */,
+				8D19577A75FB6119A020E382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,19 +95,108 @@
 		4D93123A255D1BCE00402D0B /* APMInsight_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D931262255D221500402D0B /* NetworkAnalyze */,
+				4D931261255D21F100402D0B /* MemoryAnalyze */,
+				4D931260255D21DC00402D0B /* HybridAnalyze */,
+				4D93125F255D21C600402D0B /* PerformanceAnalyze */,
+				4D93125E255D219D00402D0B /* LagAnalyze */,
+				4D93125D255D219100402D0B /* ExceptionAnalyze */,
+				4D93125C255D218000402D0B /* CrashAnalyze */,
 				4D93123B255D1BCE00402D0B /* AppDelegate.h */,
 				4D93123C255D1BCE00402D0B /* AppDelegate.m */,
-				4D93123E255D1BCE00402D0B /* SceneDelegate.h */,
-				4D93123F255D1BCE00402D0B /* SceneDelegate.m */,
-				4D931241255D1BCE00402D0B /* ViewController.h */,
-				4D931242255D1BCE00402D0B /* ViewController.m */,
+				4D931241255D1BCE00402D0B /* APMHomeViewController.h */,
+				4D931242255D1BCE00402D0B /* APMHomeViewController.m */,
 				4D931244255D1BCE00402D0B /* Main.storyboard */,
 				4D931247255D1BD100402D0B /* Assets.xcassets */,
 				4D931249255D1BD100402D0B /* LaunchScreen.storyboard */,
 				4D93124C255D1BD100402D0B /* Info.plist */,
 				4D93124D255D1BD100402D0B /* main.m */,
+				4D931258255D1D5F00402D0B /* APMInsightCellItem.h */,
+				4D931259255D1D5F00402D0B /* APMInsightCellItem.m */,
 			);
 			path = APMInsight_iOS;
+			sourceTree = "<group>";
+		};
+		4D93125C255D218000402D0B /* CrashAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D931263255D236F00402D0B /* APMInsightCrashViewController.h */,
+				4D931264255D236F00402D0B /* APMInsightCrashViewController.mm */,
+			);
+			path = CrashAnalyze;
+			sourceTree = "<group>";
+		};
+		4D93125D255D219100402D0B /* ExceptionAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D93126E255D413600402D0B /* APMInsightExceptionViewController.h */,
+				4D93126F255D413600402D0B /* APMInsightExceptionViewController.m */,
+			);
+			path = ExceptionAnalyze;
+			sourceTree = "<group>";
+		};
+		4D93125E255D219D00402D0B /* LagAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D931272255D414500402D0B /* APMInsightLagViewController.h */,
+				4D931273255D414500402D0B /* APMInsightLagViewController.m */,
+			);
+			path = LagAnalyze;
+			sourceTree = "<group>";
+		};
+		4D93125F255D21C600402D0B /* PerformanceAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D931276255D415A00402D0B /* APMInsightPerformanceViewController.h */,
+				4D931277255D415A00402D0B /* APMInsightPerformanceViewController.m */,
+			);
+			path = PerformanceAnalyze;
+			sourceTree = "<group>";
+		};
+		4D931260255D21DC00402D0B /* HybridAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D93127A255D416A00402D0B /* APMInsightHybridViewController.h */,
+				4D93127B255D416A00402D0B /* APMInsightHybridViewController.m */,
+				4DEAD4862564FA68005FA553 /* APMInsightWebViewController.h */,
+				4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */,
+			);
+			path = HybridAnalyze;
+			sourceTree = "<group>";
+		};
+		4D931261255D21F100402D0B /* MemoryAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D93127E255D417900402D0B /* APMInsightMemoryViewController.h */,
+				4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */,
+			);
+			path = MemoryAnalyze;
+			sourceTree = "<group>";
+		};
+		4D931262255D221500402D0B /* NetworkAnalyze */ = {
+			isa = PBXGroup;
+			children = (
+				4D931282255D418F00402D0B /* APMInsightNetworkViewController.h */,
+				4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */,
+			);
+			path = NetworkAnalyze;
+			sourceTree = "<group>";
+		};
+		6634FD0CF630E77CFAF17CDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F30D2F55F811E2A6F6A527FB /* Pods-APMInsight_iOS.debug.xcconfig */,
+				79D543BE1452DFA2743F905E /* Pods-APMInsight_iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8D19577A75FB6119A020E382 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DD7A127C3DAEE5250FE11EC /* Pods_APMInsight_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D931251255D1BD100402D0B /* Build configuration list for PBXNativeTarget "APMInsight_iOS" */;
 			buildPhases = (
+				8E61B3DF60EF83A83A66030D /* [CP] Check Pods Manifest.lock */,
 				4D931234255D1BCE00402D0B /* Sources */,
 				4D931235255D1BCE00402D0B /* Frameworks */,
 				4D931236255D1BCE00402D0B /* Resources */,
+				FF2CD0B2CD5CCF1DF81B3D82 /* [CP] Copy Pods Resources */,
+				5DD3330D5A5981A72FC441E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,21 +260,89 @@
 			files = (
 				4D93124B255D1BD100402D0B /* LaunchScreen.storyboard in Resources */,
 				4D931248255D1BD100402D0B /* Assets.xcassets in Resources */,
+				4DEAD4B02567A052005FA553 /* README.md in Resources */,
 				4D931246255D1BCE00402D0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5DD3330D5A5981A72FC441E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E61B3DF60EF83A83A66030D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-APMInsight_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF2CD0B2CD5CCF1DF81B3D82 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4D931234255D1BCE00402D0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D931243255D1BCE00402D0B /* ViewController.m in Sources */,
+				4D93127C255D416A00402D0B /* APMInsightHybridViewController.m in Sources */,
+				4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */,
 				4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */,
+				4D931284255D418F00402D0B /* APMInsightNetworkViewController.m in Sources */,
+				4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */,
+				4D931270255D413600402D0B /* APMInsightExceptionViewController.m in Sources */,
+				4D931265255D236F00402D0B /* APMInsightCrashViewController.mm in Sources */,
+				4D93125A255D1D5F00402D0B /* APMInsightCellItem.m in Sources */,
 				4D93124E255D1BD100402D0B /* main.m in Sources */,
-				4D931240255D1BCE00402D0B /* SceneDelegate.m in Sources */,
+				4D931278255D415A00402D0B /* APMInsightPerformanceViewController.m in Sources */,
+				4D931274255D414500402D0B /* APMInsightLagViewController.m in Sources */,
+				4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,15 +482,19 @@
 		};
 		4D931252255D1BD100402D0B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30D2F55F811E2A6F6A527FB /* Pods-APMInsight_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.APMInsight-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,15 +503,19 @@
 		};
 		4D931253255D1BD100402D0B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79D543BE1452DFA2743F905E /* Pods-APMInsight_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.APMInsight-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

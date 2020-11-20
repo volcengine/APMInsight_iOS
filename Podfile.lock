@@ -1,0 +1,94 @@
+PODS:
+  - RangersAPM/Core (1.1.0):
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/Crash (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/HMD (1.1.0):
+    - RangersAPM/Core
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/Hybrid (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/LAG (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/MemoryGraph (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+    - SSZipArchive
+  - RangersAPM/Monitors (1.1.0):
+    - RangersAPM/UITrackers
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/Network (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/OOM (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/Crash
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAPM/WatchDog
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/Public (1.1.0):
+    - RangersAPM/Core
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/UITrackers (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/UserException (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAPM/WatchDog (1.1.0):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+  - RangersAppLog/Core (5.6.0)
+  - RangersAppLog/Host/CN (5.6.0):
+    - RangersAppLog/Core
+  - SSZipArchive (2.2.3)
+
+DEPENDENCIES:
+  - RangersAPM/Crash (= 1.1.0)
+  - RangersAPM/Hybrid (= 1.1.0)
+  - RangersAPM/LAG (= 1.1.0)
+  - RangersAPM/MemoryGraph (= 1.1.0)
+  - RangersAPM/Monitors (= 1.1.0)
+  - RangersAPM/Network (= 1.1.0)
+  - RangersAPM/OOM (= 1.1.0)
+  - RangersAPM/UITrackers (= 1.1.0)
+  - RangersAPM/UserException (= 1.1.0)
+  - RangersAPM/WatchDog (= 1.1.0)
+  - RangersAppLog/Core
+  - RangersAppLog/Host/CN
+
+SPEC REPOS:
+  https://github.com/bytedance/cocoapods_sdk_source_repo.git:
+    - RangersAPM
+    - RangersAppLog
+  https://github.com/CocoaPods/Specs.git:
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  RangersAPM: e5595e09c5391a3541949e776de0f34ea9c4dfc6
+  RangersAppLog: 52e907a3c5909d68fc11a73fa894a0719b884ade
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+
+PODFILE CHECKSUM: 806e08194cc2b28c73c2568b30c678e32403ee1d
+
+COCOAPODS: 1.9.3
