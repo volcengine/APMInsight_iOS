@@ -17,7 +17,7 @@ static NSString *const kCustomValuePlaceholder = @"CustomValue, Default:customVa
 static NSString *const kFilterKeyPlaceholder = @"FilterKey, Default:filterKeyDemoTest";
 static NSString *const kFilterValuePlaceholder = @"FilterValue, Default:filterValueDemoTest";
 static NSString *const kDefaultAppIDPlaceholder = @"AppID, Default:";
-static NSString *const kDefaultAppID = @"200534";
+static NSString *const kDefaultAppID = @"194767";
 
 static NSString *const kUserNetworkErrorPlaceholder = @"https://www.ababaabb.com";
 

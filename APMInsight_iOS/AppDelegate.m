@@ -50,7 +50,7 @@
      Copyable section starts ---
      */
     BDAutoTrackConfig *config = [BDAutoTrackConfig new];
-    config.appID = @"164314";
+    config.appID = @"194767";
     config.appName = @"APMInsight";
     config.channel = @"local_test";
     [BDAutoTrack startTrackWithConfig:config];
