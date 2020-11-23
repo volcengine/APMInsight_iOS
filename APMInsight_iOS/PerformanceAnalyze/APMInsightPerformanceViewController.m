@@ -36,7 +36,7 @@
     // Do any additional setup after loading the view.
 }
 
-#pragma mark UITableViewDelegate, UITableViewDelegate
+#pragma mark UITableViewDataSource, UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.items.count;

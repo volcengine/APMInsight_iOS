@@ -20,6 +20,35 @@ static NSString *const kUserLagPlaceholder = @"卡顿时长，单位s";
 
 @implementation APMInsightLagViewController
 
+#pragma mark - Test cases
+
+- (void)lagTrigger {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义卡顿" message:@"输入卡顿时长，点击确定将在5s后触发卡顿，如果不输入则默认卡顿3s。注意：相同的卡顿场景只会上报一次" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSInteger lagTime = 0;
+        for (UITextField *textFiled in alert.textFields) {
+            if ([textFiled.placeholder isEqualToString:kUserLagPlaceholder]) {
+                lagTime = [textFiled.text integerValue] ?: 3;
+                break;
+            }
+        }
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            sleep((unsigned int)lagTime);
+        });
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = kUserLagPlaceholder;
+    }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:alert animated:YES completion:nil];
+    });
+}
+
+#pragma mark - UIViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -67,26 +96,9 @@ static NSString *const kUserLagPlaceholder = @"卡顿时长，单位s";
         
         void(^userLagBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义卡顿" message:@"输入卡顿时长，点击确定将在5s后触发卡顿，如果不输入则默认卡顿3s。注意：相同的卡顿场景只会上报一次" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSInteger lagTime = 0;
-                for (UITextField *textFiled in alert.textFields) {
-                    if ([textFiled.placeholder isEqualToString:kUserLagPlaceholder]) {
-                        lagTime = [textFiled.text integerValue] ?: 3;
-                        break;
-                    }
-                }
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    sleep((unsigned int)lagTime);
-                });
-            }];
-            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-            [alert addAction:ok];
-            [alert addAction:cancel];
-            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                textField.placeholder = kUserLagPlaceholder;
-            }];
-            [strongSelf presentViewController:alert animated:YES completion:nil];
+            if (strongSelf) {
+                [strongSelf lagTrigger];
+            }
         };
         APMInsightCellItem *userLagItem = [APMInsightCellItem itemWithTitle:@"触发自定义时长卡顿" block:userLagBlock];
         

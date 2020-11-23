@@ -8,7 +8,7 @@
 #import "APMInsightNetworkViewController.h"
 #import "APMInsightCellItem.h"
 
-static NSString *const kUserRequestPlaceholder = @"请输入完整的URL，默认：https://www.baidu.com";
+static NSString *const kUserRequestPlaceholder = @"请输入完整的URL，默认：https://www.volcengine.cn";
 
 @interface APMInsightNetworkViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -71,7 +71,7 @@ static NSString *const kUserRequestPlaceholder = @"请输入完整的URL，默�
         void(^requestBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://www.volcengine.cn"]];
                 [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                     if (!error) {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -81,14 +81,14 @@ static NSString *const kUserRequestPlaceholder = @"请输入完整的URL，默�
                 }] resume];
             }
         };
-        APMInsightCellItem *requestkItem = [APMInsightCellItem itemWithTitle:@"网络请求：https://www.baidu.com" block:requestBlock];
+        APMInsightCellItem *requestkItem = [APMInsightCellItem itemWithTitle:@"网络请求：https://www.volcengine.cn" block:requestBlock];
         
         void(^userRequestBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义网络请求" message:@"示例 https://www.baidu.com" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义网络请求" message:@"示例 https://www.volcengine.cn" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    NSString *url = @"https://www.baidu.com";
+                    NSString *url = @"https://www.volcengine.cn";
                     for (UITextField *textField in alert.textFields) {
                         if ([textField.text isEqualToString:kUserRequestPlaceholder]) {
                             url = textField.text ?: url;

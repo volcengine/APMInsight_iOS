@@ -69,7 +69,7 @@ static NSString *const kUserWebViewPlaceholder = @"请输入完整的URL";
         void(^normalWebViewBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                APMInsightWebViewController *webViewController = [APMInsightWebViewController webViewControllerWithURLString:@"https://www.baidu.com" title:@"百度"];
+                APMInsightWebViewController *webViewController = [APMInsightWebViewController webViewControllerWithURLString:@"https://www.volcengine.cn" title:@"火山引擎"];
                 [strongSelf.navigationController pushViewController:webViewController animated:YES];
             }
         };
@@ -78,7 +78,7 @@ static NSString *const kUserWebViewPlaceholder = @"请输入完整的URL";
         void(^testWebViewBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                APMInsightWebViewController *webViewController = [APMInsightWebViewController webViewControllerWithURLString:@"" title:@"异常测试"];
+                APMInsightWebViewController *webViewController = [APMInsightWebViewController webViewControllerWithURLString:@"https://datarangers.com.cn/apminsight/demo/demo/rangers-site-sdk-npm" title:@"异常测试"];
                 [strongSelf.navigationController pushViewController:webViewController animated:YES];
             }
         };
@@ -87,9 +87,9 @@ static NSString *const kUserWebViewPlaceholder = @"请输入完整的URL";
         void(^userWebViewBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义WebView" message:@"示例 https://www.baidu.com" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义WebView" message:@"示例 https://www.volcengine.cn" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    NSString *url = @"https://www.baidu.com";
+                    NSString *url = @"https://www.volcengine.cn";
                     for (UITextField *textField in alert.textFields) {
                         if ([textField.text isEqualToString:kUserWebViewPlaceholder]) {
                             url = textField.text ?: url;

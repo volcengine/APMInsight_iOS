@@ -18,6 +18,110 @@
 
 @implementation APMInsightCrashViewController
 
+#pragma mark - Test cases
+
+- (void)NSExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alert = [self alertWithTitle:@"NSException" message:@"即将触发NSException类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSException *exception = [NSException exceptionWithName:@"TEST_EXCEPTION" reason:@"APMInsight is testing NSException" userInfo:nil];
+                [exception raise];
+            });
+        }];
+        [self presentViewController:alert animated:YES completion:nil];
+    });
+}
+
+- (void)CPPExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alert = [self alertWithTitle:@"CPPException" message:@"即将触发CPP类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                throw 0;   //If compile error occurs, change this file's suffix from "m" to "mm"
+            });
+        }];
+        [self presentViewController:alert animated:YES completion:nil];
+    });
+
+}
+
+- (void)signalExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alert = [self alertWithTitle:@"SignalException" message:@"即将触发Signal类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                raise(SIGABRT);
+            });
+        }];
+        [self presentViewController:alert animated:YES completion:nil];
+    });
+}
+
+- (void)machExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIAlertController *alert = [self alertWithTitle:@"MachException" message:@"即将触发Mach类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                int *pointer = (int *)0x01;
+                *pointer = 6;
+            });
+        }];
+        [self presentViewController:alert animated:YES completion:nil];
+    });
+}
+
+- (void)watchdogExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (TARGET_IPHONE_SIMULATOR) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不支持的设备" message:@"WatchDog无法在模拟器触发，请使用真机进行测试" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else if (TARGET_OS_IPHONE) {
+            UIAlertController *alert = [self alertWithTitle:@"WatchDog" message:@"即将触发WatchDog，APP将卡住一段时间后闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    dispatch_queue_t testWatchDogQueue = dispatch_queue_create("com.apminsight.testwatchdog", 0);
+                    dispatch_async(testWatchDogQueue, ^{
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            dispatch_sync(testWatchDogQueue, ^{
+                                
+                            });
+                        });
+                    });
+                });
+            }];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    });
+}
+
+- (void)OOMExceptionTrigger {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (TARGET_IPHONE_SIMULATOR) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不支持的设备" message:@"OOM无法在模拟器触发，请使用真机进行测试" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+            [alert addAction:action];
+            [self presentViewController:alert animated:YES completion:nil];
+        } else if (TARGET_OS_IPHONE) {
+            UIAlertController *alert = [self alertWithTitle:@"Out of Memory" message:@"即将触发OOM，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    while (1) {
+                        CGSize size = CGSizeMake(1024 * 8, 1024 * 8 * 9.0f/16.0);
+                        const size_t bitsPerComponent = 8;
+                        const size_t bytesPerRow = size.width * 4;
+                        CGContextRef ctx = CGBitmapContextCreate(calloc(sizeof(unsigned char), bytesPerRow * size.height), size.width, size.height,
+                                                                 bitsPerComponent, bytesPerRow,
+                                                                 CGColorSpaceCreateDeviceRGB(),
+                                                                 kCGImageAlphaPremultipliedLast);
+                        CGContextSetRGBFillColor(ctx, 1.0, 1.0, 1.0, 1.0);
+                        CGContextFillRect(ctx, CGRectMake(0, 0, size.width, size.height));
+                    }
+                });
+            }];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    });
+}
+
+#pragma mark - UIViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -32,7 +136,8 @@
     // Do any additional setup after loading the view.
 }
 
-#pragma mark UITableViewDelegate, UITableViewDelegate
+#pragma mark UITableViewDataSource, UITableViewDelegate
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.items.count;
@@ -63,125 +168,50 @@
         
         __weak typeof(self) weakSelf = self;
         void(^NSExceptionBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    UIAlertController *alert = [self alertWithTitle:@"NSException" message:@"即将触发NSException类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            NSException *exception = [NSException exceptionWithName:@"TEST_EXCEPTION" reason:@"APMInsight is testing NSException" userInfo:nil];
-                            [exception raise];
-                        });
-                    }];
-                    [strongSelf presentViewController:alert animated:YES completion:nil];
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf NSExceptionTrigger];
+            }
         };
         APMInsightCellItem *NSExceptionItem = [APMInsightCellItem itemWithTitle:@"触发NSException类型崩溃" block:NSExceptionBlock];
         
         void(^cppExceptionBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    UIAlertController *alert = [self alertWithTitle:@"CPPException" message:@"即将触发CPP类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            throw 0;
-                        });
-                    }];
-                    [strongSelf presentViewController:alert animated:YES completion:nil];
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf CPPExceptionTrigger];
+            }
         };
         APMInsightCellItem *cppExceptionItem = [APMInsightCellItem itemWithTitle:@"触发CPP类型崩溃" block:cppExceptionBlock];
         
         void(^machExceptionBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    UIAlertController *alert = [self alertWithTitle:@"MachException" message:@"即将触发Mach类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            int *pointer = (int *)0x01;
-                            *pointer = 6;
-                        });
-                    }];
-                    [strongSelf presentViewController:alert animated:YES completion:nil];
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf machExceptionTrigger];
+            }
         };
         APMInsightCellItem *machExceptionItem = [APMInsightCellItem itemWithTitle:@"触发Mach(EXC_BAD_ACCESS)类型崩溃" block:machExceptionBlock];
         
         void(^fatalSignalBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    UIAlertController *alert = [self alertWithTitle:@"SignalException" message:@"即将触发Signal类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            raise(SIGABRT);
-                        });
-                    }];
-                    [strongSelf presentViewController:alert animated:YES completion:nil];
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf signalExceptionTrigger];
+            }
         };
         APMInsightCellItem *fatalSignalItem = [APMInsightCellItem itemWithTitle:@"触发SIGNAL类型崩溃" block:fatalSignalBlock];
         
         void(^watchDogBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    if (TARGET_IPHONE_SIMULATOR) {
-                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不支持的设备" message:@"WatchDog无法在模拟器触发，请使用真机进行测试" preferredStyle:UIAlertControllerStyleAlert];
-                        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-                        [alert addAction:action];
-                        [strongSelf presentViewController:alert animated:YES completion:nil];
-                    } else if (TARGET_OS_IPHONE) {
-                        UIAlertController *alert = [self alertWithTitle:@"WatchDog" message:@"即将触发WatchDog，APP将卡住一段时间后闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                dispatch_queue_t testWatchDogQueue = dispatch_queue_create("com.apminsight.testwatchdog", 0);
-                                dispatch_async(testWatchDogQueue, ^{
-                                    dispatch_sync(dispatch_get_main_queue(), ^{
-                                        dispatch_sync(testWatchDogQueue, ^{
-                                            
-                                        });
-                                    });
-                                });
-                            });
-                        }];
-                        [strongSelf presentViewController:alert animated:YES completion:nil];
-                    }
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf watchdogExceptionTrigger];
+            }
         };
         APMInsightCellItem *watchDogItem = [APMInsightCellItem itemWithTitle:@"触发卡死" block:watchDogBlock];
         
         void(^OOMBlock)(void) = ^{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                __strong typeof(self) strongSelf = weakSelf;
-                if (strongSelf) {
-                    if (TARGET_IPHONE_SIMULATOR) {
-                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"不支持的设备" message:@"OOM无法在模拟器触发，请使用真机进行测试" preferredStyle:UIAlertControllerStyleAlert];
-                        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
-                        [alert addAction:action];
-                        [strongSelf presentViewController:alert animated:YES completion:nil];
-                    } else if (TARGET_OS_IPHONE) {
-                        UIAlertController *alert = [self alertWithTitle:@"Out of Memory" message:@"即将触发OOM，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                while (1) {
-                                    CGSize size = CGSizeMake(1024 * 8, 1024 * 8 * 9.0f/16.0);
-                                    const size_t bitsPerComponent = 8;
-                                    const size_t bytesPerRow = size.width * 4;
-                                    CGContextRef ctx = CGBitmapContextCreate(calloc(sizeof(unsigned char), bytesPerRow * size.height), size.width, size.height,
-                                                                             bitsPerComponent, bytesPerRow,
-                                                                             CGColorSpaceCreateDeviceRGB(),
-                                                                             kCGImageAlphaPremultipliedLast);
-                                    CGContextSetRGBFillColor(ctx, 1.0, 1.0, 1.0, 1.0);
-                                    CGContextFillRect(ctx, CGRectMake(0, 0, size.width, size.height));
-                                }
-                            });
-                        }];
-                        [strongSelf presentViewController:alert animated:YES completion:nil];
-                    }
-                }
-            });
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [self OOMExceptionTrigger];
+            }
         };
         APMInsightCellItem *OOMItem = [APMInsightCellItem itemWithTitle:@"触发OOM" block:OOMBlock];
         
@@ -195,6 +225,8 @@
     
     return _items;
 }
+
+#pragma mark - Tools
 
 - (UIAlertController *)alertWithTitle:(NSString *)title message:(NSString *)message okHandler:(void (^)(void))okHandler{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
