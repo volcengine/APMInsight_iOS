@@ -20,3 +20,6 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 ## Environment
 * iOS 8.0+
 * Xcode 9.0+
+
+## License
+APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
