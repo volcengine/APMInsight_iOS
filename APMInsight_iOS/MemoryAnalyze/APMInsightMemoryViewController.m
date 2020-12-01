@@ -9,7 +9,9 @@
 #import "APMInsightCellItem.h"
 #import <mach/mach.h>
 
-bool count_memory(void)
+static float dangerousMemoryThreshold = 1024.0;
+
+bool overMemoryThreshold(void)
 {
     struct task_basic_info info;
     mach_msg_type_number_t size = sizeof(info);
@@ -17,7 +19,7 @@ bool count_memory(void)
     
     if (kernr == KERN_SUCCESS) {
         printf("CURRENT APP MEMORY IS :%f\n\n", info.resident_size/(1024.0 * 1024.0));
-        if (info.resident_size / (1024.0 * 1024.0) > 1024) {
+        if (info.resident_size / (1024.0 * 1024.0) > dangerousMemoryThreshold) {
             return true;
         } else {
             return false;
@@ -89,7 +91,7 @@ bool count_memory(void)
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存泄漏" message:@"点击确定开始触发内存泄漏，当APP占用内存超过1GB时会触发内存分析，在某些情况下，可能APP内存没有达到1GB就被系统KILL，如果未收到内存分析成功提示（大概5s之后），请重新启动APP触发泄漏。" preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         while (1) {
-                            if (!count_memory()) {
+                            if (!overMemoryThreshold()) {
                                 CGSize size = CGSizeMake(1024 * 8, 1024 * 8 * 9.0f/16.0);
                                 const size_t bitsPerComponent = 8;
                                 const size_t bytesPerRow = size.width * 4;
