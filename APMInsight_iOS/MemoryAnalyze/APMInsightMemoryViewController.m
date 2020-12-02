@@ -13,13 +13,15 @@ static float dangerousMemoryThreshold = 1024.0;
 
 bool overMemoryThreshold(void)
 {
-    struct task_basic_info info;
-    mach_msg_type_number_t size = sizeof(info);
-    kern_return_t kernr = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)&info, &size);
-    
-    if (kernr == KERN_SUCCESS) {
-        printf("CURRENT APP MEMORY IS :%f\n\n", info.resident_size/(1024.0 * 1024.0));
-        if (info.resident_size / (1024.0 * 1024.0) > dangerousMemoryThreshold) {
+    kern_return_t kr;
+
+    task_vm_info_data_t task_vm;
+    mach_msg_type_number_t task_vm_count = TASK_VM_INFO_COUNT;
+    kr = task_info(mach_task_self(), TASK_VM_INFO, (task_info_t) &task_vm, &task_vm_count);
+
+    if (kr == KERN_SUCCESS) {
+        printf("Current App Memory is :%f\n\n", task_vm.phys_footprint / (1024.0 * 1024.0));
+        if (task_vm.phys_footprint / (1024.0 * 1024.0) > dangerousMemoryThreshold) {
             return true;
         } else {
             return false;
