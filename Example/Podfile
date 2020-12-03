@@ -10,8 +10,9 @@ target 'APMInsight_iOS' do
   # 可复制部分开始---
   #  Copyable section starts ---
   source 'https://github.com/bytedance/cocoapods_sdk_source_repo.git'
+  source 'https://github.com/volcengine/volcengine-specs.git'
   source 'https://github.com/CocoaPods/Specs.git'
-  pod 'RangersAPM', :path => '../', :subspecs => [
+  pod 'RangersAPM', '1.4.0', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',

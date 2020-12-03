@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
     s.homepage         = 'https://github.com/volcengine/APMInsight_iOS'
 
-    s.license          = { :type => 'MIT', :file => 'LICENSE' }
+    s.license          = { :type => 'MIT', :file => 'RangersAPM/LICENSE' }
 
     s.authors          = 'ByteDance'
 

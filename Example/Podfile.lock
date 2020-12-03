@@ -77,32 +77,32 @@ PODS:
   - SSZipArchive (2.2.3)
 
 DEPENDENCIES:
-  - RangersAPM/Crash (from `../`)
-  - RangersAPM/Hybrid (from `../`)
-  - RangersAPM/LAG (from `../`)
-  - RangersAPM/MemoryGraph (from `../`)
-  - RangersAPM/Monitors (from `../`)
-  - RangersAPM/Network (from `../`)
-  - RangersAPM/OOM (from `../`)
-  - RangersAPM/UITrackers (from `../`)
-  - RangersAPM/UserException (from `../`)
-  - RangersAPM/WatchDog (from `../`)
+  - RangersAPM/Crash (= 1.4.0)
+  - RangersAPM/Hybrid (= 1.4.0)
+  - RangersAPM/LAG (= 1.4.0)
+  - RangersAPM/MemoryGraph (= 1.4.0)
+  - RangersAPM/Monitors (= 1.4.0)
+  - RangersAPM/Network (= 1.4.0)
+  - RangersAPM/OOM (= 1.4.0)
+  - RangersAPM/UITrackers (= 1.4.0)
+  - RangersAPM/UserException (= 1.4.0)
+  - RangersAPM/WatchDog (= 1.4.0)
+  - RangersAppLog/Core
+  - RangersAppLog/Host/CN
 
 SPEC REPOS:
   https://github.com/bytedance/cocoapods_sdk_source_repo.git:
     - RangersAppLog
   https://github.com/CocoaPods/Specs.git:
     - SSZipArchive
-
-EXTERNAL SOURCES:
-  RangersAPM:
-    :path: "../"
+  https://github.com/volcengine/volcengine-specs.git:
+    - RangersAPM
 
 SPEC CHECKSUMS:
-  RangersAPM: 7351d93ceee437b96a56a41f7b29df880949deb2
+  RangersAPM: 5c6f1c6fa141e67392b033931051004ecaf405d6
   RangersAppLog: a14009b621a66bd312d677247b3c6e612e8e8aba
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
 
-PODFILE CHECKSUM: 9c51f920ac40b7dcdc2d90c1b3c519988a87e3b0
+PODFILE CHECKSUM: 8dceffd04e2266fa49d87dbe67bc6f7d19d471bf
 
 COCOAPODS: 1.9.3
