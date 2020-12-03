@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '8.0'
 
-    s.source = { :git => 'https://github.com/volcengine/APMInsight_iOS.git', :tag => s.version.to_s }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.4.0/RangersAPM.zip" }
 
     s.frameworks = 'UIKit','AdSupport'
 
