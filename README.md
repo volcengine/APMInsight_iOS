@@ -4,7 +4,7 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 ## Example 
 ### Download & Installation
 1. git clone git@github.com:volcengine/APMInsight_iOS.git --branch master
-2. cd APMInsight_iOS
+2. cd APMInsight_iOS/Example
 3. pod install
 4. open APMInsight_iOS.xcworkspace
 

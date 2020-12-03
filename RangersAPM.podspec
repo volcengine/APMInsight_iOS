@@ -6,11 +6,11 @@ Pod::Spec.new do |s|
 
     s.summary          = 'Bytedance RangersAPM'
 
-    s.description      = 'APMInsight iOS SDK.'
+    s.description      = 'APMInsight iOS SDK, a tool to monitor APP performance.'
 
     s.homepage         = 'https://github.com/volcengine/APMInsight_iOS'
 
-    s.license          = { :type => 'MIT', :file => 'RangersAPM/LICENSE' }
+    s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
     s.authors          = 'ByteDance'
 
