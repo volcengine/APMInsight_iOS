@@ -9,7 +9,7 @@
 #import "APMInsightCellItem.h"
 #import <mach/mach.h>
 
-static float dangerousMemoryThreshold = 1024.0;
+static float dangerousMemoryThreshold = 512.0;
 
 bool overMemoryThreshold(void)
 {
@@ -20,7 +20,7 @@ bool overMemoryThreshold(void)
     kr = task_info(mach_task_self(), TASK_VM_INFO, (task_info_t) &task_vm, &task_vm_count);
 
     if (kr == KERN_SUCCESS) {
-        printf("Current App Memory is :%f\n\n", task_vm.phys_footprint / (1024.0 * 1024.0));
+        printf("APMInsight Debug Log : Current App Memory is :%f\n\n", task_vm.phys_footprint / (1024.0 * 1024.0));
         if (task_vm.phys_footprint / (1024.0 * 1024.0) > dangerousMemoryThreshold) {
             return true;
         } else {
@@ -90,7 +90,7 @@ bool overMemoryThreshold(void)
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存泄漏" message:@"点击确定开始触发内存泄漏，当APP占用内存超过1GB时会触发内存分析，在某些情况下，可能APP内存没有达到1GB就被系统KILL，如果未收到内存分析成功提示（大概5s之后），请重新启动APP触发泄漏。" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存泄漏" message:@"点击确定开始触发内存泄漏，当APP占用内存超过512MB时会触发内存分析，在某些情况下，可能APP内存没有达到512MB就被系统KILL，如果未收到内存分析成功提示（大概5s之后），请重新启动APP触发泄漏。" preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         while (1) {
                             if (!overMemoryThreshold()) {
@@ -102,7 +102,7 @@ bool overMemoryThreshold(void)
                                 CGContextFillRect(ctx, CGRectMake(0, 0, size.width, size.height));
                             } else {
                                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                                    UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"内存分析完成" message:@"请重新启动APP，然后APP会自动上报内存日志，由于存在采样，可能需要多次启动才可成功上报，具体可以查看接入文档。" preferredStyle:UIAlertControllerStyleAlert];
+                                    UIAlertController *successAlert = [UIAlertController alertControllerWithTitle:@"内存分析完成" message:@"请重新启动APP，然后APP会自动上报内存日志，由于存在采样，可能需要多次启动才可成功上报，具体可以查看帮助文档。" preferredStyle:UIAlertControllerStyleAlert];
                                     UIAlertAction *okk = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
                                     [successAlert addAction:okk];
                                     [strongSelf presentViewController:successAlert animated:YES completion:nil];

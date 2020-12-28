@@ -13,6 +13,7 @@
  */
 #import <BDAutoTrack.h>
 #import <RangersAPM.h>
+#import <RangersAPM+DebugLog.h>
 /**
  ---可复制部分结束
  --- Copyable section ends
@@ -54,6 +55,12 @@
     config.appName = @"APMInsight";
     config.channel = @"local_test";
     [BDAutoTrack startTrackWithConfig:config];
+    
+#if DEBUG
+    [RangersAPM allowDebugLogUsingLogger:^(NSString * _Nonnull log) {
+        NSLog(@"APMInsight Debug Log : %@", log);
+    }];
+#endif
     [RangersAPM startWithConfig:config];
     /**
      ---可复制部分结束
