@@ -210,8 +210,9 @@
 				4D931234255D1BCE00402D0B /* Sources */,
 				4D931235255D1BCE00402D0B /* Frameworks */,
 				4D931236255D1BCE00402D0B /* Resources */,
-				B8D5FC7BD6ADE819A057EF99 /* [CP] Embed Pods Frameworks */,
-				8E35B3E3752EAF199DF96DB1 /* [CP] Copy Pods Resources */,
+				5C1AEE151949D69597FF7DA0 /* [CP] Embed Pods Frameworks */,
+				6574952439E9516AC3E24A81 /* [CP] Copy Pods Resources */,
+				4D1A379C25A31F6600665FBF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,7 +269,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8E35B3E3752EAF199DF96DB1 /* [CP] Copy Pods Resources */ = {
+		4D1A379C25A31F6600665FBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n################################################################################\n# 自定义配置\n###############################################################################\n# Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\nUPLOAD_DEBUG_SYMBOLS=1\n\n# 模拟器编译是否上传，1＝上传，0＝不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=1\n\n# APMInsightID：应用在APMInsight平台的ID\nAPMInsight_APP_ID=\"194767\"\n\n################################################################################\n# 注意: 如果你不知道此脚本的执行流程和用法，请不要随便修改！\n################################################################################\n\nDSYM_UPLOAD_URL=\"https://datarangers.com.cn/perfguard/api/guest/app/mapping/upload\"\n\nif [[ $APMInsight_APP_ID == \"XXX\" ]]; then\n    if [[ $1 ]]; then\n        echo \"APPID: $1\"\n        APMInsight_APP_ID=$1\n    else\n        echo \"No arguments, pass your APMInsightID as the first argument or modify 'APMInsight_APP_ID' in the script.\"\n        exit 0\n    fi\nfi\n\nfunction main() {\n    # 退出执行并打印提示信息\n    warningWithMessage() {\n        echo \"--------------------------------\"\n        echo -e \"${1}\"\n        echo \"--------------------------------\"\n        echo \"No upload and over.\"\n        echo \"----------------------------------------------------------------\"\n        UPLOADFLAG=0\n        exit ${2}\n    }\n    \n    UPLOADFLAG=1\n    \n    echo \"Uploading dSYM to APMInsight.\"\n    \n    echo \"--------------------------------\"\n    echo \"Step 1: Prepare application information.\"\n    echo \"--------------------------------\"\n    \n    echo \"Product Name: ${PRODUCT_NAME}\"\n    echo \"APMInsight App ID: ${APMInsight_APP_ID}\"\n    \n    echo \"--------------------------------\"\n    echo \"Step 2: Check the arguments ...\"\n    echo \"--------------------------------\"\n    \n    ##检查模拟器是否允许上传符号\n    if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n        if [[ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]]; then\n            warningWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n        fi\n    fi\n    \n    # 检查DEBUG模式是否允许上传符号\n    if [[ ${CONFIGURATION=} == Debug* ]]; then\n        if [[ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]]; then\n            warningWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n        fi\n    fi\n    \n    # 检查必须参数是否设置\n    if [ ! \"${APMInsight_APP_ID}\" ]; then\n        warningWithMessage \"Error: APMInsight App ID not defined.\" 1\n    fi\n    \n    function uploadDSYM() {\n        DSYM_SRC=\"$1\"\n        if [ ! -d \"$DSYM_SRC\" ]; then\n            warningWithMessage \"dSYM source not found: ${DSYM_SRC}\" 1\n        fi\n        \n        APPID=\"${APMInsight_APP_ID}\"\n        \n        ZIP_DIR_PATH=$(dirname ${DSYM_SRC})\n        FILENAME=$(basename ${DSYM_SRC})\n        DSYM_SYMBOL_OUT_ZIP_NAME=\"APMInsight_dSYM_${APPID}.zip\"\n        DSYM_ZIP_FPATH=\"${ZIP_DIR_PATH}/${DSYM_SYMBOL_OUT_ZIP_NAME}\"\n        cd \"${ZIP_DIR_PATH}\"\n        PAD=$(zip -r ${DSYM_SYMBOL_OUT_ZIP_NAME} ${FILENAME})\n        \n        if [ ! -e \"${DSYM_ZIP_FPATH}\" ]; then\n            warningWithMessage \"no dSYM zip archive generated: ${DSYM_ZIP_FPATH}\" 1\n        fi\n        \n        FILESIZE=$(/usr/bin/stat -f%z ${DSYM_ZIP_FPATH})\n        echo \"dsym size: ${FILESIZE} bytes\"\n        \n        echo \"--------------------------------\"\n        echo \"Step 3: Upload the zipped dSYM file.\"\n        echo \"--------------------------------\"\n        MD5ZIP=$(md5 -q ${DSYM_ZIP_FPATH})\n        if [ ! ${#MD5ZIP} -eq 32 ]; then\n            warningWithMessage \"Error: Failed to caculate md5 of zipped file.\" 1\n        fi\n        echo \"zip md5 : ${MD5ZIP}\"\n        echo \"signature : ${MD5ZIP}\"\n                \n        echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n        # Upload dSYM to APMInsight\n        echo \"curl ${DSYM_UPLOAD_URL} -F \\\"file=@${DSYM_ZIP_FPATH}\\\"  -F \\\"aid=${APMInsight_APP_ID}\\\" -H \\\"Content-Type: multipart/form-data\\\" -w %{http_code} -v \"\n            \n        echo \"--------------------------------\"\n            \n        # 上传请求\n        STATUS=$(curl ${DSYM_UPLOAD_URL} -F \"file=@${DSYM_ZIP_FPATH}\" -F \"type=Dwarf\" -F \"os=iOS\" -F \"aid=${APMInsight_APP_ID}\" -H \"Content-Type: multipart/form-data\" -w %{http_code} -v)\n            \n        echo \"APMInsight server response: ${STATUS}\"\n\n        if [ ${STATUS} = \"{\\\"err_detail\\\":\\\"\\\",\\\"data\\\":null,\\\"error_msg\\\":\\\"\\\",\\\"error_no\\\":0}200\" ]; then\n            echo \"Upload dSYM successfully! Delete ${DSYM_SYMBOL_OUT_ZIP_NAME}.\"\n            if [ -f ${DSYM_SYMBOL_OUT_ZIP_NAME} ]; then\n                rm ${DSYM_SYMBOL_OUT_ZIP_NAME}\n            fi\n        else\n            echo \"Failed to upload dSYM. Try to upload the file at path ${DSYM_SYMBOL_OUT_ZIP_NAME} manually.\"\n        fi\n    }\n        \n    # .dSYM文件信息\n    echo \"DSYM FOLDER ${DWARF_DSYM_FOLDER_PATH}\"\n    \n    DSYM_FOLDER=\"${DWARF_DSYM_FOLDER_PATH}\"\n    \n    for i in {1..10};\n    do\n        sleep 1s\n        # 遍历目录查找当前工程名的文件\n        for dsymFile in $(find \"$DSYM_FOLDER\" -name \"${PRODUCT_NAME}.*.dSYM\"); \n        do\n            # 判断压缩文件的源文件是否存在\n            DSYM_SINGLE_FILE_NAME=\"${dsymFile}/Contents/Resources/DWARF/${PRODUCT_NAME}\"\n            if [ ${UPLOADFLAG} -eq 1 -a -s \"${DSYM_SINGLE_FILE_NAME}\" ]; then\n                echo \"Found dSYM file: $dsymFile\"\n                uploadDSYM $dsymFile\n                break 2\n            fi\n        done\n    done\n}\n    \nmain\n";
+		};
+		5C1AEE151949D69597FF7DA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6574952439E9516AC3E24A81 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,23 +340,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B8D5FC7BD6ADE819A057EF99 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -487,6 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7B24H3AVG9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;

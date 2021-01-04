@@ -1,12 +1,9 @@
-
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.4.0'
+    s.version          = '1.5.0'
 
-    s.summary          = 'Bytedance RangersAPM'
-
-    s.description      = 'APMInsight iOS SDK, a tool to monitor APP performance.'
+    s.summary          = 'RangersAPM by ByteDance'
 
     s.homepage         = 'https://github.com/volcengine/APMInsight_iOS'
 
@@ -16,14 +13,14 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '8.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.4.0/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.5.0/RangersAPM.zip" }
 
     s.frameworks = 'UIKit','AdSupport'
 
     s.dependency 'RangersAppLog/Core', '>=5.0.0'
 
     s.dependency 'RangersAppLog/Host/CN', '>=5.0.0'
-
+    
     s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES',}
 
     s.user_target_xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',}
@@ -38,19 +35,20 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'Core' do |core|
-    	core.vendored_libraries = "RangersAPM/Core/**/*.a"
-    	core.libraries = 'c++','z','sqlite3'
+        core.vendored_libraries = "RangersAPM/Core/**/*.a"
+        core.libraries = 'c++','z','sqlite3'
+        core.preserve_paths = 'RangersAPM/*.sh'
     end
 
     s.subspec 'Crash' do |crash|
         crash.source_files = 'RangersAPM/Crash/**/*.{h,m}'
         crash.public_header_files = 'RangersAPM/Crash/**/*.h'
-    	crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
-    	crash.dependency 'RangersAPM/Core'
+        crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
+        crash.dependency 'RangersAPM/Core'
         crash.dependency 'RangersAPM/Public'
         crash.dependency 'RangersAPM/HMD'
-        crash.resources = ['RangersAPM/Assets/Crash/**/*']
-    	crash.libraries = 'c++abi'
+        crash.resources = ['RangersAPM/Assets/Crash/**/APMInsightCrash.bundle']
+        crash.libraries = 'c++abi'
     end
 
     s.subspec 'WatchDog' do |watchdog|
