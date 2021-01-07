@@ -25,6 +25,9 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
+### 1.5.2
+* bugfix : request settings not effective
+
 ### 1.5.1
 * network type support 5G
 * solve conflicts with zipArchive

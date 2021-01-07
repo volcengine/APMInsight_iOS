@@ -12,7 +12,7 @@ target 'APMInsight_iOS' do
   source 'https://github.com/bytedance/cocoapods_sdk_source_repo.git'
   source 'https://github.com/volcengine/volcengine-specs.git'
   source 'https://github.com/CocoaPods/Specs.git'
-  pod 'RangersAPM', '1.5.1', :subspecs => [
+  pod 'RangersAPM', '1.5.2', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
