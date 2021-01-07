@@ -1,95 +1,107 @@
 PODS:
-  - RangersAPM/Core (1.5.0):
+  - RangersAPM/Core (1.5.1):
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/Crash (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Crash (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/HMD (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/HMD (1.5.1):
     - RangersAPM/Core
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/Hybrid (1.5.0):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/LAG (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Hybrid (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/MemoryGraph (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/LAG (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
-    - SSZipArchive
-  - RangersAPM/Monitors (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/MemoryGraph (1.5.1):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAPM/Zip
+    - RangersAppLog/Core (>= 5.0.0)
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Monitors (1.5.1):
     - RangersAPM/UITrackers
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/Network (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Network (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/OOM (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/OOM (1.5.1):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/WatchDog
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/Public (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Public (1.5.1):
     - RangersAPM/Core
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/UITrackers (1.5.0):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/UserException (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/UITrackers (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
-  - RangersAPM/WatchDog (1.5.0):
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/UserException (1.5.1):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.0.0)
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/WatchDog (1.5.1):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.0.0)
+    - RangersAppLog/Host/CN (>= 5.0.0)
+  - RangersAPM/Zip (1.5.1):
+    - RangersAppLog/Core (>= 5.0.0)
+    - RangersAppLog/Host/CN (>= 5.0.0)
   - RangersAppLog/Core (5.6.1)
   - RangersAppLog/Host/CN (5.6.1):
     - RangersAppLog/Core
-  - SSZipArchive (2.2.3)
 
 DEPENDENCIES:
-  - RangersAPM/Crash (= 1.5.0)
-  - RangersAPM/Hybrid (= 1.5.0)
-  - RangersAPM/LAG (= 1.5.0)
-  - RangersAPM/MemoryGraph (= 1.5.0)
-  - RangersAPM/Monitors (= 1.5.0)
-  - RangersAPM/Network (= 1.5.0)
-  - RangersAPM/OOM (= 1.5.0)
-  - RangersAPM/UITrackers (= 1.5.0)
-  - RangersAPM/UserException (= 1.5.0)
-  - RangersAPM/WatchDog (= 1.5.0)
+  - RangersAPM/Crash (= 1.5.1)
+  - RangersAPM/Hybrid (= 1.5.1)
+  - RangersAPM/LAG (= 1.5.1)
+  - RangersAPM/MemoryGraph (= 1.5.1)
+  - RangersAPM/Monitors (= 1.5.1)
+  - RangersAPM/Network (= 1.5.1)
+  - RangersAPM/OOM (= 1.5.1)
+  - RangersAPM/UITrackers (= 1.5.1)
+  - RangersAPM/UserException (= 1.5.1)
+  - RangersAPM/WatchDog (= 1.5.1)
   - RangersAppLog/Core
   - RangersAppLog/Host/CN
 
 SPEC REPOS:
   https://github.com/bytedance/cocoapods_sdk_source_repo.git:
     - RangersAppLog
-  https://github.com/CocoaPods/Specs.git:
-    - SSZipArchive
   https://github.com/volcengine/volcengine-specs.git:
     - RangersAPM
 
 SPEC CHECKSUMS:
-  RangersAPM: 255ece1e38eb5f8b66f0c7c553448f8b8ab941bc
+  RangersAPM: 10e75e9fcd771a1557b7bcec5d8fb2c85e165085
   RangersAppLog: a14009b621a66bd312d677247b3c6e612e8e8aba
-  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
 
-PODFILE CHECKSUM: 9ef31dd8c6db940b309148a0736b0f108430dbca
+PODFILE CHECKSUM: 132611f63b2cf05aa402b94b62f8882cb00ed8dd
 
 COCOAPODS: 1.9.3
