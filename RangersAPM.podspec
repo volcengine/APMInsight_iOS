@@ -1,9 +1,11 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.5.0'
+    s.version          = '1.5.1'
 
     s.summary          = 'RangersAPM by ByteDance'
+
+    s.description      = 'APMInsight iOS SDK, a tool to monitor APP performance.'
 
     s.homepage         = 'https://github.com/volcengine/APMInsight_iOS'
 
@@ -13,14 +15,14 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '8.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.5.0/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/#{s.version}/RangersAPM.zip" }
 
     s.frameworks = 'UIKit','AdSupport'
 
     s.dependency 'RangersAppLog/Core', '>=5.0.0'
 
     s.dependency 'RangersAppLog/Host/CN', '>=5.0.0'
-    
+
     s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES',}
 
     s.user_target_xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',}
@@ -37,6 +39,7 @@ Pod::Spec.new do |s|
     s.subspec 'Core' do |core|
         core.vendored_libraries = "RangersAPM/Core/**/*.a"
         core.libraries = 'c++','z','sqlite3'
+        core.frameworks = 'SystemConfiguration','CoreTelephony','CoreFoundation'
         core.preserve_paths = 'RangersAPM/*.sh'
     end
 
@@ -118,7 +121,12 @@ Pod::Spec.new do |s|
         memorygraph.dependency 'RangersAPM/Core'
         memorygraph.dependency 'RangersAPM/HMD'
         memorygraph.dependency 'RangersAPM/Public'
-        memorygraph.dependency 'SSZipArchive'     
+        memorygraph.dependency 'RangersAPM/Zip'     
+    end
+
+    s.subspec 'Zip' do |zip|
+        zip.vendored_libraries = 'RangersAPM/Zip/**/*.a'
+        zip.libraries = 'z'
     end
 
     s.subspec 'Network' do |net|
