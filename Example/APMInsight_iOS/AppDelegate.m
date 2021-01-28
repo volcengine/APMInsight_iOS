@@ -47,7 +47,9 @@
                 channel: the channel you App will publish to
      */
     /**
+     必要部分 ！！！
      可复制部分开始---
+     Necessary !!!
      Copyable section starts ---
      */
     BDAutoTrackConfig *config = [BDAutoTrackConfig new];
@@ -56,16 +58,26 @@
     config.channel = @"local_test";
     [BDAutoTrack startTrackWithConfig:config];
     
-#if DEBUG
-    [RangersAPM allowDebugLogUsingLogger:^(NSString * _Nonnull log) {
-        NSLog(@"APMInsight Debug Log : %@", log);
-    }];
-#endif
     [RangersAPM startWithConfig:config];
     /**
      ---可复制部分结束
      --- Copyable section ends
      */
+    
+    /**
+     可选部分
+     Optional
+     */
+    
+    /**
+     输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h
+     Print console log, import RangersAPM+DebugLog.h first
+     */
+#if DEBUG
+    [RangersAPM allowDebugLogUsingLogger:^(NSString * _Nonnull log) {
+        NSLog(@"APMInsight Debug Log : %@", log);
+    }];
+#endif
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     APMHomeViewController * controller = [[APMHomeViewController alloc] init];

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.5.2'
+    s.version          = '1.5.5'
 
     s.summary          = 'RangersAPM by ByteDance'
 
@@ -107,9 +107,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'Hybrid' do |hybrid|
         hybrid.vendored_libraries = 'RangersAPM/Hybrid/**/*.a'
-        hybrid.resource_bundles = {
-            'APMInsightHybrid' => ['RangersAPM/Assets/Hybrid/**/*']
-        }
+        hybrid.resources = ['RangersAPM/Assets/Hybrid/**/APMInsightHybrid.bundle']
         hybrid.dependency 'RangersAPM/Core'
         hybrid.dependency 'RangersAPM/HMD'
         hybrid.dependency 'RangersAPM/Public'
@@ -130,7 +128,9 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'Network' do |net|
+        net.source_files = 'RangersAPM/Network/**/*.{h,m}'
         net.vendored_libraries = 'RangersAPM/Network/**/*.a'
+        net.public_header_files = 'RangersAPM/Network/**/*.h'
         net.dependency 'RangersAPM/Core'
         net.dependency 'RangersAPM/HMD'
         net.dependency 'RangersAPM/Public'

@@ -91,7 +91,7 @@ static NSString *const kUserWebViewPlaceholder = @"请输入完整的URL";
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSString *url = @"https://www.volcengine.cn";
                     for (UITextField *textField in alert.textFields) {
-                        if ([textField.text isEqualToString:kUserWebViewPlaceholder]) {
+                        if ([textField.placeholder isEqualToString:kUserWebViewPlaceholder]) {
                             url = textField.text ?: url;
                             break;
                         }

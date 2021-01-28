@@ -25,18 +25,31 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
+### 1.5.5
+* feature : viewControllers tracing
+* feature : more NSNotifications
+* optimiz : bundle resources search path 
+* feature : add custom information into MemoryGraph log
+
+### 1.5.4
+* bugfix : solve conflicts with SSZipArchive
+* feature : some NSNotifications
+
+### 1.5.3
+* bugfix : network monitor certificates verification failed in particular scenes
+
 ### 1.5.2
 * bugfix : request settings not effective
 
 ### 1.5.1
-* network type support 5G
-* solve conflicts with zipArchive
+* feature : network type support 5G
+* bugfix : solve conflicts with zipArchive
 
 ### 1.5.0
-* update MemoryGraph config
-* DSYM uploader script 
+* feature : update MemoryGraph config
+* feature : DSYM uploader script 
 
 ### 1.4.0
-* add debug log
+* feature : add debug log
 
 
