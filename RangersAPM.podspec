@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.5.5'
+    s.version          = '1.5.7'
 
     s.summary          = 'RangersAPM by ByteDance'
 
@@ -13,15 +13,15 @@ Pod::Spec.new do |s|
 
     s.authors          = 'ByteDance'
 
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '9.0'
 
     s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/#{s.version}/RangersAPM.zip" }
 
-    s.frameworks = 'UIKit','AdSupport'
+    s.frameworks = 'UIKit'
 
-    s.dependency 'RangersAppLog/Core', '>=5.0.0'
+    s.dependency 'RangersAppLog/Core', '>=5.6.4'
 
-    s.dependency 'RangersAppLog/Host/CN', '>=5.0.0'
+    s.dependency 'RangersAppLog/Host/CN', '>=5.6.4'
 
     s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES',}
 
