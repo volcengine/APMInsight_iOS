@@ -25,6 +25,9 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
+### 1.5.8
+* bugfix : solve conflict with BGFMDB
+
 ### 1.5.7
 * feature : enable Bitcode
 * bugfix : fix addScriptMessageHandler crash in Hybrid module

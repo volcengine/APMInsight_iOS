@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.5.7'
+    s.version          = '1.5.8'
 
     s.summary          = 'RangersAPM by ByteDance'
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '9.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/#{s.version}/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.5.8/RangersAPM.zip" }
 
     s.frameworks = 'UIKit'
 
