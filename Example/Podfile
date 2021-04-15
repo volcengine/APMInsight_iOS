@@ -9,9 +9,9 @@ target 'APMInsight_iOS' do
   # You can copy the code as follows to your Podfile, and excute "pod install" in command line to install our SDKs.
   # 可复制部分开始---
   #  Copyable section starts ---
-  source 'https://github.com/bytedance/cocoapods_sdk_source_repo.git'
   source 'https://github.com/volcengine/volcengine-specs.git'
-  pod 'RangersAPM', '1.5.10', :subspecs => [
+  
+  pod 'RangersAPM', '2.0.0', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
@@ -21,11 +21,8 @@ target 'APMInsight_iOS' do
       'UITrackers',
       'Hybrid',
       'MemoryGraph',
-      'Network'
-  ]
-  pod 'RangersAppLog', '>=5.6.4', :subspecs => [
-      'Core',
-      'Host/CN'
+      'Network',
+      'EventMonitor'
   ]
   # ---可复制部分结束
   # --- Copyable section ends

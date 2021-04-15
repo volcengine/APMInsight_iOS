@@ -14,6 +14,7 @@
 #import "APMInsightHybridViewController.h"
 #import "APMInsightMemoryViewController.h"
 #import "APMInsightNetworkViewController.h"
+#import "APMInsightEventViewController.h"
 
 @interface APMHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -86,6 +87,17 @@
         };
         APMInsightCellItem *lagItem = [APMInsightCellItem itemWithTitle:@"卡顿分析" block:lagBlock];
         
+        void(^eventBlock)(void) = ^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                __strong typeof(self) strongSelf = weakSelf;
+                if (strongSelf) {
+                    APMInsightEventViewController *viewController = [[APMInsightEventViewController alloc] init];
+                    [strongSelf.navigationController pushViewController:viewController animated:YES];
+                }
+            });
+        };
+        APMInsightCellItem *eventItem = [APMInsightCellItem itemWithTitle:@"事件分析" block:eventBlock];
+
         void(^performanceBlock)(void) = ^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 __strong typeof(self) strongSelf = weakSelf;
@@ -133,6 +145,7 @@
         [_items addObject:crashItem];
         [_items addObject:exceptionItem];
         [_items addObject:lagItem];
+        [_items addObject:eventItem];
         [_items addObject:performanceItem];
         [_items addObject:hybridItem];
         [_items addObject:memoryItem];

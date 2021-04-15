@@ -26,10 +26,22 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    UITextView *footerView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200)];
-    footerView.text = @"用户体验产生的日志，在APP启动之后会触发一次上报，之后每两分钟或者APP退到后台时上报一次，如果需要立即上报查看数据，可以尝试把APP切换到后台来触发上报";
-    footerView.textColor = [UIColor grayColor];
+    UIView *footerView = [[UIView alloc] init];
+    
+    UILabel *footerViewLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, self.view.frame.size.width - 40, 0)];
+    footerViewLabel.text = @"用户体验产生的日志，在APP启动之后会触发一次上报，之后每两分钟或者APP退到后台时上报一次，如果需要立即上报查看数据，可以尝试把APP切换到后台来触发上报";
+    footerViewLabel.textColor = [UIColor grayColor];
+    footerViewLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    footerViewLabel.numberOfLines = 0;
+    footerViewLabel.font = [UIFont systemFontOfSize:13];
+    [footerViewLabel sizeToFit];
+    
+    CGFloat height = footerViewLabel.frame.size.height;
+    [footerView setFrame:CGRectMake(0, 0, 0, height)];
+    [footerView addSubview:footerViewLabel];
+    
     self.tableView.tableFooterView = footerView;
+
     [self.view addSubview:self.tableView];
     
     self.title = @"用户体验";

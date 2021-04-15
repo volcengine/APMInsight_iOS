@@ -11,7 +11,6 @@
  可复制部分开始---
  Copyable section starts ---
  */
-#import <BDAutoTrack.h>
 #import <RangersAPM.h>
 #import <RangersAPM+DebugLog.h>
 /**
@@ -34,7 +33,6 @@
             ②导入头文件
             ③请修改config对应的属性值
                 appID：平台为APP分配的ID
-                appName：APP的显示名称
                 channel：APP的发布渠道
      
      You can copy the initialization code as follows to the same part in your project.
@@ -43,7 +41,6 @@
              ② Import the header files.
              ③ Set the propertys of the variable named "config" with your own values.
                 appID: the ID of your App on APMInsight
-                appName: the display name of your App
                 channel: the channel you App will publish to
      */
     /**
@@ -52,22 +49,10 @@
      Necessary !!!
      Copyable section starts ---
      */
-    BDAutoTrackConfig *config = [BDAutoTrackConfig new];
-    config.appID = @"194767";
-    config.appName = @"APMInsight";
-    config.channel = @"local_test";
-    [BDAutoTrack startTrackWithConfig:config];
     
-    [RangersAPM startWithConfig:config];
-    /**
-     ---可复制部分结束
-     --- Copyable section ends
-     */
-    
-    /**
-     可选部分
-     Optional
-     */
+    RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"194767"];
+    config.channel = @"App Store";
+    config.deviceIDSource = RAPMDeviceIDSourceFromUser;
     
     /**
      输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h
@@ -78,6 +63,17 @@
         NSLog(@"APMInsight Debug Log : %@", log);
     }];
 #endif
+    
+    [RangersAPM startWithConfig:config];
+    
+    [RangersAPM setDeviceID:@"MYDEVICEID194767"];
+    
+    [RangersAPM setUserID:@"MYUSERID194767"];
+    
+    /**
+     ---可复制部分结束
+     --- Copyable section ends
+     */
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     APMHomeViewController * controller = [[APMHomeViewController alloc] init];

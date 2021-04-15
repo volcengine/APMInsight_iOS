@@ -37,11 +37,11 @@ typedef void (^manualUserExceptionAlertHandler)(NSString *exceptionType, NSStrin
 
 #pragma mark - Test cases
 
-- (void)recordUserException:(NSString *)exceptionType customs:(NSDictionary *)customs filters:(NSDictionary *)filters appID:(NSString *)appID callback:(RangersAPMUserExceptionCallback)callback {
+- (void)recordUserException:(NSString *)exceptionType customs:(NSDictionary *)customs filters:(NSDictionary *)filters appID:(NSString *)appID callback:(void (^)(NSError * _Nullable))callback {
 #if __has_include(<RangersAPM+UserException.h>)
     [RangersAPM trackAllThreadsLogExceptionType:exceptionType skippedDepth:0 customParams:customs filters:filters callback:^(NSError * _Nullable error) {
         callback(error);
-    } appID:appID];
+    }];
 #endif
 }
 
