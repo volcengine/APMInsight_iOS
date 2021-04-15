@@ -1,47 +1,47 @@
 PODS:
-  - RangersAPM/Core (1.5.7):
+  - RangersAPM/Core (1.5.10):
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Crash (1.5.7):
+  - RangersAPM/Crash (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/HMD (1.5.7):
+  - RangersAPM/HMD (1.5.10):
     - RangersAPM/Core
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Hybrid (1.5.7):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAppLog/Core (>= 5.6.4)
-    - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/LAG (1.5.7):
+  - RangersAPM/Hybrid (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/MemoryGraph (1.5.7):
+  - RangersAPM/LAG (1.5.10):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.6.4)
+    - RangersAppLog/Host/CN (>= 5.6.4)
+  - RangersAPM/MemoryGraph (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/Zip
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Monitors (1.5.7):
+  - RangersAPM/Monitors (1.5.10):
     - RangersAPM/UITrackers
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Network (1.5.7):
+  - RangersAPM/Network (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/OOM (1.5.7):
+  - RangersAPM/OOM (1.5.10):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
@@ -49,29 +49,29 @@ PODS:
     - RangersAPM/WatchDog
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Public (1.5.7):
+  - RangersAPM/Public (1.5.10):
     - RangersAPM/Core
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/UITrackers (1.5.7):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAppLog/Core (>= 5.6.4)
-    - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/UserException (1.5.7):
+  - RangersAPM/UITrackers (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/WatchDog (1.5.7):
+  - RangersAPM/UserException (1.5.10):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
-  - RangersAPM/Zip (1.5.7):
+  - RangersAPM/WatchDog (1.5.10):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAppLog/Core (>= 5.6.4)
+    - RangersAppLog/Host/CN (>= 5.6.4)
+  - RangersAPM/Zip (1.5.10):
     - RangersAppLog/Core (>= 5.6.4)
     - RangersAppLog/Host/CN (>= 5.6.4)
   - RangersAppLog/Core (5.6.4)
@@ -79,16 +79,16 @@ PODS:
     - RangersAppLog/Core
 
 DEPENDENCIES:
-  - RangersAPM/Crash (= 1.5.7)
-  - RangersAPM/Hybrid (= 1.5.7)
-  - RangersAPM/LAG (= 1.5.7)
-  - RangersAPM/MemoryGraph (= 1.5.7)
-  - RangersAPM/Monitors (= 1.5.7)
-  - RangersAPM/Network (= 1.5.7)
-  - RangersAPM/OOM (= 1.5.7)
-  - RangersAPM/UITrackers (= 1.5.7)
-  - RangersAPM/UserException (= 1.5.7)
-  - RangersAPM/WatchDog (= 1.5.7)
+  - RangersAPM/Crash (= 1.5.10)
+  - RangersAPM/Hybrid (= 1.5.10)
+  - RangersAPM/LAG (= 1.5.10)
+  - RangersAPM/MemoryGraph (= 1.5.10)
+  - RangersAPM/Monitors (= 1.5.10)
+  - RangersAPM/Network (= 1.5.10)
+  - RangersAPM/OOM (= 1.5.10)
+  - RangersAPM/UITrackers (= 1.5.10)
+  - RangersAPM/UserException (= 1.5.10)
+  - RangersAPM/WatchDog (= 1.5.10)
   - RangersAppLog/Core (>= 5.6.4)
   - RangersAppLog/Host/CN (>= 5.6.4)
 
@@ -99,9 +99,9 @@ SPEC REPOS:
     - RangersAPM
 
 SPEC CHECKSUMS:
-  RangersAPM: 756bfd9f12a40d5d95920d066143ce2f765a28a9
+  RangersAPM: 37631741b35d2faf86ffbce9d996508bcd41a5c1
   RangersAppLog: 8fd1d56ffd1a6fc2ae9642324931e497e6dd318d
 
-PODFILE CHECKSUM: dc85ef0b7366c93db7460ae3708785305734004e
+PODFILE CHECKSUM: e14da777be137bd5205ad1b43a54a63c00fa302a
 
 COCOAPODS: 1.10.1
