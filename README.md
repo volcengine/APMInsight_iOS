@@ -25,7 +25,7 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
-### 2.0.2
+### 2.0.2 (Obsolete)
 * bugfix : deviceID service error
 
 ### 2.0.0
