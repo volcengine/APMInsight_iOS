@@ -1,5 +1,6 @@
 # APMInsight_iOS
-APMInsight SDK. Enter official website to read the introduction of SDK capabilities and access. [APMInsight](https://datarangers.com.cn/help/doc?lid=6438&did=78964)
+[中文版本](https://github.com/volcengine/APMInsight_iOS/blob/master/说明.md)
+APMInsight SDK. Enter official website to read the introduction of SDK capabilities and access. [APMInsight](https://www.volcengine.com/products/apmplus)
 
 ## Example 
 ### Download & Installation
@@ -10,12 +11,8 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 
 ### Usage
 1. The demo APP has integrated all capabilities of APMInsight.
-2. You can make errors and performance data in the demo APP.
-3. The data is shown on APMInsight. You should first request for access to the demo data. [Demo data](https://datarangers.com.cn/apminsight/crash/list?aid=194767&org_id=4210&time=%7B%22granularity%22%3A%22hour%22%2C%22duration%22%3A%22recently%22%2C%22range%22%3A1%7D&filters=%7B%22type%22%3A%22and%22%2C%22sub_conditions%22%3A%5B%7B%22dimension%22%3A%22os%22%2C%22op%22%3A%22in%22%2C%22values%22%3A%5B%22iOS%22%5D%7D%5D%7D)
-##### Request for access to demo data
-* Register an account for APMInsight. [Go to Register](https://datarangers.com.cn/product/apminsight)
-* Contact us to grant permission for you. *chujun.icy@bytedance.com*  *xuminghao.eric@bytedance.com*  
-* You will receive an email when you get access.
+2. You can make errors and performance data in the demo APP. 
+3. Reset the appID in AppDelegate.m and the performance data will be uploaded to your own console.
 
 ## Environment
 * iOS 9.0+
@@ -25,6 +22,70 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
+### 2.3.0 (Recommended)
+* feature : report launch log
+* bugfix : fix crash in iOS 15 and arm64e device
+
+### 2.2.7
+* optimization : optimize the judgment for network error log
+
+### 2.2.6
+* bugfix : fix symbol conflict
+
+### 2.2.5
+* feature : component crash monitor support dynamic library
+
+### 2.2.4
+* bugfix : fix the loss of network error log
+
+### 2.2.3
+* bugfix : fix config not fetch
+
+### 2.2.2
+* bugfix : fix symbol conflict
+
+### 2.2.1
+* feature : add flutter monitor
+
+### 2.1.10
+* bugfix : fix network code error
+
+### 2.1.8
+* optimization : update OneKit to 1.1.13
+
+### 2.1.7
+* bugfix : fix the loss of header files
+
+### 2.1.6
+* optimization : optimize regular matching
+
+### 2.1.5
+* optimization : optimize regular matching
+
+### 2.1.4
+* bugfix : fix symbol conflict
+
+### 2.1.3
+* optimization : remove some hook
+
+### 2.1.2
+* optimization : modified UITracker to start synchronously
+
+### 2.1.1
+* optimization : update OneKit to 1.1.9
+
+### 2.1.0
+* optimization : component monitor support custom deviceID
+
+### 2.0.6
+* bugfix : Custom-error add the validity of incoming parameters
+
+### 2.0.5
+* bugfix : fix incorrect judgment of component crash
+
+### 2.0.3
+* bugfix : fix compile error
+
 ### 2.0.2 (Obsolete)
 * bugfix : deviceID service error
 
@@ -45,7 +106,7 @@ APMInsight_iOS is available under the MIT license. See the LICENSE file for more
 ### 1.5.5
 * feature : viewControllers tracing
 * feature : more NSNotifications
-* optimiz : bundle resources search path 
+* optimization : bundle resources search path 
 * feature : add custom information into MemoryGraph log
 
 ### 1.5.4

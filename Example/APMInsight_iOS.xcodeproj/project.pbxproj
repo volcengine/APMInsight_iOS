@@ -25,6 +25,7 @@
 		4D93127C255D416A00402D0B /* APMInsightHybridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93127B255D416A00402D0B /* APMInsightHybridViewController.m */; };
 		4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */; };
 		4D931284255D418F00402D0B /* APMInsightNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */; };
+		4DBB9FFB26AEB28500C90856 /* 说明.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DBB9FFA26AEB28500C90856 /* 说明.md */; };
 		4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightMemoryViewController.m; sourceTree = "<group>"; };
 		4D931282255D418F00402D0B /* APMInsightNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightNetworkViewController.h; sourceTree = "<group>"; };
 		4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightNetworkViewController.m; sourceTree = "<group>"; };
+		4DBB9FFA26AEB28500C90856 /* 说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = "说明.md"; path = "../说明.md"; sourceTree = "<group>"; };
 		4DEAD4862564FA68005FA553 /* APMInsightWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightWebViewController.h; sourceTree = "<group>"; };
 		4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightWebViewController.m; sourceTree = "<group>"; };
 		5DD7A127C3DAEE5250FE11EC /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 		4D93122F255D1BCE00402D0B = {
 			isa = PBXGroup;
 			children = (
+				4DBB9FFA26AEB28500C90856 /* 说明.md */,
 				4D50F8AC2578BF3E00BC4247 /* README.md */,
 				4D93123A255D1BCE00402D0B /* APMInsight_iOS */,
 				4D931239255D1BCE00402D0B /* Products */,
@@ -278,6 +281,7 @@
 			files = (
 				4D93124B255D1BD100402D0B /* LaunchScreen.storyboard in Resources */,
 				4D931248255D1BD100402D0B /* Assets.xcassets in Resources */,
+				4DBB9FFB26AEB28500C90856 /* 说明.md in Resources */,
 				4D50F8AD2578BF3E00BC4247 /* README.md in Resources */,
 				4D931246255D1BCE00402D0B /* Main.storyboard in Resources */,
 			);

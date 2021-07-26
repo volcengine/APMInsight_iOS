@@ -52,7 +52,7 @@
     
     RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"194767"];
     config.channel = @"App Store";
-    config.deviceIDSource = RAPMDeviceIDSourceFromUser;
+    config.deviceIDSource = RAPMDeviceIDSourceFromAPMService;
     
     /**
      输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h
@@ -65,9 +65,7 @@
 #endif
     
     [RangersAPM startWithConfig:config];
-    
-    [RangersAPM setDeviceID:@"MYDEVICEID194767"];
-    
+        
     [RangersAPM setUserID:@"MYUSERID194767"];
     
     /**
