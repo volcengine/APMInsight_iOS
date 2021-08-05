@@ -16,7 +16,6 @@
 #import "APMInsightNetworkViewController.h"
 #import "APMInsightEventViewController.h"
 #import "APMInsightALogViewController.h"
-#import "APMInitialAlert.h"
 
 @implementation APMHomeViewController
 

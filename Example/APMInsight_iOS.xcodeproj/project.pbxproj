@@ -10,6 +10,8 @@
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
 		4D50F8AD2578BF3E00BC4247 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D50F8AC2578BF3E00BC4247 /* README.md */; };
+		4D7C1E8A26BBDA6B0010D16B /* APMInsightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C1E8926BBDA6B0010D16B /* APMInsightViewController.m */; };
+		4D7C1E9526BBEAD00010D16B /* APMInsightALogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C1E9326BBEAD00010D16B /* APMInsightALogViewController.m */; };
 		4D88C59825EF7A6E004248B1 /* Pods_APMInsight_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD7A127C3DAEE5250FE11EC /* Pods_APMInsight_iOS.framework */; };
 		4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93123C255D1BCE00402D0B /* AppDelegate.m */; };
 		4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931242255D1BCE00402D0B /* APMHomeViewController.m */; };
@@ -35,6 +37,10 @@
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
 		4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventRecordManager.m; sourceTree = "<group>"; };
 		4D50F8AC2578BF3E00BC4247 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		4D7C1E8826BBDA6B0010D16B /* APMInsightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightViewController.h; sourceTree = "<group>"; };
+		4D7C1E8926BBDA6B0010D16B /* APMInsightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightViewController.m; sourceTree = "<group>"; };
+		4D7C1E9326BBEAD00010D16B /* APMInsightALogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightALogViewController.m; sourceTree = "<group>"; };
+		4D7C1E9426BBEAD00010D16B /* APMInsightALogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightALogViewController.h; sourceTree = "<group>"; };
 		4D931238255D1BCE00402D0B /* APMInsight_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APMInsight_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D93123B255D1BCE00402D0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D93123C255D1BCE00402D0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +98,15 @@
 			path = EventAnalysis;
 			sourceTree = "<group>";
 		};
+		4D7C1E9226BBEAD00010D16B /* ALogUpload */ = {
+			isa = PBXGroup;
+			children = (
+				4D7C1E9426BBEAD00010D16B /* APMInsightALogViewController.h */,
+				4D7C1E9326BBEAD00010D16B /* APMInsightALogViewController.m */,
+			);
+			path = ALogUpload;
+			sourceTree = "<group>";
+		};
 		4D93122F255D1BCE00402D0B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,7 @@
 		4D93123A255D1BCE00402D0B /* APMInsight_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D7C1E9226BBEAD00010D16B /* ALogUpload */,
 				4D1F437B25EB450B004F42D2 /* EventAnalysis */,
 				4D931262255D221500402D0B /* NetworkAnalysis */,
 				4D931261255D21F100402D0B /* MemoryOptimization */,
@@ -134,6 +150,8 @@
 				4D93124D255D1BD100402D0B /* main.m */,
 				4D931258255D1D5F00402D0B /* APMInsightCellItem.h */,
 				4D931259255D1D5F00402D0B /* APMInsightCellItem.m */,
+				4D7C1E8826BBDA6B0010D16B /* APMInsightViewController.h */,
+				4D7C1E8926BBDA6B0010D16B /* APMInsightViewController.m */,
 			);
 			path = APMInsight_iOS;
 			sourceTree = "<group>";
@@ -307,6 +325,23 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n################################################################################\n# 自定义配置\n###############################################################################\n# Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\nUPLOAD_DEBUG_SYMBOLS=1\n\n# 模拟器编译是否上传，1＝上传，0＝不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=1\n\n# APMInsightID：应用在APMInsight平台的ID\nAPMInsight_APP_ID=\"194767\"\n\n################################################################################\n# 注意: 如果你不知道此脚本的执行流程和用法，请不要随便修改！\n################################################################################\n\nDSYM_UPLOAD_URL=\"https://datarangers.com.cn/perfguard/api/guest/app/mapping/upload\"\n\nif [[ $APMInsight_APP_ID == \"XXX\" ]]; then\n    if [[ $1 ]]; then\n        echo \"APPID: $1\"\n        APMInsight_APP_ID=$1\n    else\n        echo \"No arguments, pass your APMInsightID as the first argument or modify 'APMInsight_APP_ID' in the script.\"\n        exit 0\n    fi\nfi\n\nfunction main() {\n    # 退出执行并打印提示信息\n    warningWithMessage() {\n        echo \"--------------------------------\"\n        echo -e \"${1}\"\n        echo \"--------------------------------\"\n        echo \"No upload and over.\"\n        echo \"----------------------------------------------------------------\"\n        UPLOADFLAG=0\n        exit ${2}\n    }\n    \n    UPLOADFLAG=1\n    \n    echo \"Uploading dSYM to APMInsight.\"\n    \n    echo \"--------------------------------\"\n    echo \"Step 1: Prepare application information.\"\n    echo \"--------------------------------\"\n    \n    echo \"Product Name: ${PRODUCT_NAME}\"\n    echo \"APMInsight App ID: ${APMInsight_APP_ID}\"\n    \n    echo \"--------------------------------\"\n    echo \"Step 2: Check the arguments ...\"\n    echo \"--------------------------------\"\n    \n    ##检查模拟器是否允许上传符号\n    if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n        if [[ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]]; then\n            warningWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n        fi\n    fi\n    \n    # 检查DEBUG模式是否允许上传符号\n    if [[ ${CONFIGURATION=} == Debug* ]]; then\n        if [[ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]]; then\n            warningWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n        fi\n    fi\n    \n    # 检查必须参数是否设置\n    if [ ! \"${APMInsight_APP_ID}\" ]; then\n        warningWithMessage \"Error: APMInsight App ID not defined.\" 1\n    fi\n    \n    function uploadDSYM() {\n        DSYM_SRC=\"$1\"\n        if [ ! -d \"$DSYM_SRC\" ]; then\n            warningWithMessage \"dSYM source not found: ${DSYM_SRC}\" 1\n        fi\n        \n        APPID=\"${APMInsight_APP_ID}\"\n        \n        ZIP_DIR_PATH=$(dirname ${DSYM_SRC})\n        FILENAME=$(basename ${DSYM_SRC})\n        DSYM_SYMBOL_OUT_ZIP_NAME=\"APMInsight_dSYM_${APPID}.zip\"\n        DSYM_ZIP_FPATH=\"${ZIP_DIR_PATH}/${DSYM_SYMBOL_OUT_ZIP_NAME}\"\n        cd \"${ZIP_DIR_PATH}\"\n        PAD=$(zip -r ${DSYM_SYMBOL_OUT_ZIP_NAME} ${FILENAME})\n        \n        if [ ! -e \"${DSYM_ZIP_FPATH}\" ]; then\n            warningWithMessage \"no dSYM zip archive generated: ${DSYM_ZIP_FPATH}\" 1\n        fi\n        \n        FILESIZE=$(/usr/bin/stat -f%z ${DSYM_ZIP_FPATH})\n        echo \"dsym size: ${FILESIZE} bytes\"\n        \n        echo \"--------------------------------\"\n        echo \"Step 3: Upload the zipped dSYM file.\"\n        echo \"--------------------------------\"\n        MD5ZIP=$(md5 -q ${DSYM_ZIP_FPATH})\n        if [ ! ${#MD5ZIP} -eq 32 ]; then\n            warningWithMessage \"Error: Failed to caculate md5 of zipped file.\" 1\n        fi\n        echo \"zip md5 : ${MD5ZIP}\"\n        echo \"signature : ${MD5ZIP}\"\n                \n        echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n        # Upload dSYM to APMInsight\n        echo \"curl ${DSYM_UPLOAD_URL} -F \\\"file=@${DSYM_ZIP_FPATH}\\\"  -F \\\"aid=${APMInsight_APP_ID}\\\" -H \\\"Content-Type: multipart/form-data\\\" -w %{http_code} -v \"\n            \n        echo \"--------------------------------\"\n            \n        # 上传请求\n        STATUS=$(curl ${DSYM_UPLOAD_URL} -F \"file=@${DSYM_ZIP_FPATH}\" -F \"type=Dwarf\" -F \"os=iOS\" -F \"aid=${APMInsight_APP_ID}\" -H \"Content-Type: multipart/form-data\" -w %{http_code} -v)\n            \n        echo \"APMInsight server response: ${STATUS}\"\n\n        if [ ${STATUS} = \"{\\\"err_detail\\\":\\\"\\\",\\\"data\\\":null,\\\"error_msg\\\":\\\"\\\",\\\"error_no\\\":0}200\" ]; then\n            echo \"Upload dSYM successfully! Delete ${DSYM_SYMBOL_OUT_ZIP_NAME}.\"\n            if [ -f ${DSYM_SYMBOL_OUT_ZIP_NAME} ]; then\n                rm ${DSYM_SYMBOL_OUT_ZIP_NAME}\n            fi\n        else\n            echo \"Failed to upload dSYM. Try to upload the file at path ${DSYM_SYMBOL_OUT_ZIP_NAME} manually.\"\n        fi\n    }\n        \n    # .dSYM文件信息\n    echo \"DSYM FOLDER ${DWARF_DSYM_FOLDER_PATH}\"\n    \n    DSYM_FOLDER=\"${DWARF_DSYM_FOLDER_PATH}\"\n    \n    for i in {1..10};\n    do\n        sleep 1s\n        # 遍历目录查找当前工程名的文件\n        for dsymFile in $(find \"$DSYM_FOLDER\" -name \"${PRODUCT_NAME}.*.dSYM\"); \n        do\n            # 判断压缩文件的源文件是否存在\n            DSYM_SINGLE_FILE_NAME=\"${dsymFile}/Contents/Resources/DWARF/${PRODUCT_NAME}\"\n            if [ ${UPLOADFLAG} -eq 1 -a -s \"${DSYM_SINGLE_FILE_NAME}\" ]; then\n                echo \"Found dSYM file: $dsymFile\"\n                uploadDSYM $dsymFile\n                break 2\n            fi\n        done\n    done\n}\n    \nmain\n";
 		};
+		6FFA672843C425957524A4B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-APMInsight_iOS/Pods-APMInsight_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E61B3DF60EF83A83A66030D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -366,7 +401,9 @@
 				4D93124E255D1BD100402D0B /* main.m in Sources */,
 				4D931278255D415A00402D0B /* APMInsightPerformanceViewController.m in Sources */,
 				4D931274255D414500402D0B /* APMInsightLagViewController.m in Sources */,
+				4D7C1E8A26BBDA6B0010D16B /* APMInsightViewController.m in Sources */,
 				4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */,
+				4D7C1E9526BBEAD00010D16B /* APMInsightALogViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
