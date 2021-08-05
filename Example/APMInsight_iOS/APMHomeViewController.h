@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APMInsightViewController.h"
 
-@interface APMHomeViewController : UIViewController
+@interface APMHomeViewController : APMInsightViewController
 
 @end
 
