@@ -16,6 +16,7 @@
 #import "APMInsightNetworkViewController.h"
 #import "APMInsightEventViewController.h"
 #import "APMInsightALogViewController.h"
+#import "APMInsightProtectorViewController.h"
 
 @implementation APMHomeViewController
 
@@ -53,6 +54,7 @@
     [self.items addObject:[self itemWithTitle:@"页面监控" viewController:[[APMInsightHybridViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"网络优化" viewController:[[APMInsightNetworkViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"日志回捞" viewController:[[APMInsightALogViewController alloc] init]]];
+    [self.items addObject:[self itemWithTitle:@"异常防护 - 崩溃防护" viewController:[[APMInsightProtectorViewController alloc] init]]];
 }
 
 - (APMInsightCellItem *)itemWithTitle:(NSString *)title viewController:(UIViewController *)viewController {

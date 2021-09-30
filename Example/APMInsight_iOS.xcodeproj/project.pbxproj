@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B34523F2705B38100E694DA /* APMInsightProtectorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */; };
+		2B3452402705B38100E694DA /* APMInsightProtectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */; };
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
 		4D50F8AD2578BF3E00BC4247 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D50F8AC2578BF3E00BC4247 /* README.md */; };
@@ -32,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B34523B2705B38100E694DA /* APMInsightProtectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightProtectorViewController.h; sourceTree = "<group>"; };
+		2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorObject.m; sourceTree = "<group>"; };
+		2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorViewController.m; sourceTree = "<group>"; };
+		2B34523E2705B38100E694DA /* APMInsightProtectorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightProtectorObject.h; sourceTree = "<group>"; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
 		4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightEventViewController.m; sourceTree = "<group>"; };
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
@@ -87,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B34523A2705B38100E694DA /* ProtectorAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				2B34523E2705B38100E694DA /* APMInsightProtectorObject.h */,
+				2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */,
+				2B34523B2705B38100E694DA /* APMInsightProtectorViewController.h */,
+				2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */,
+			);
+			path = ProtectorAnalysis;
+			sourceTree = "<group>";
+		};
 		4D1F437B25EB450B004F42D2 /* EventAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +147,7 @@
 		4D93123A255D1BCE00402D0B /* APMInsight_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2B34523A2705B38100E694DA /* ProtectorAnalysis */,
 				4D7C1E9226BBEAD00010D16B /* ALogUpload */,
 				4D1F437B25EB450B004F42D2 /* EventAnalysis */,
 				4D931262255D221500402D0B /* NetworkAnalysis */,
@@ -393,6 +411,7 @@
 				4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */,
 				4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */,
 				4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */,
+				2B34523F2705B38100E694DA /* APMInsightProtectorObject.m in Sources */,
 				4D931284255D418F00402D0B /* APMInsightNetworkViewController.m in Sources */,
 				4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */,
 				4D931270255D413600402D0B /* APMInsightExceptionViewController.m in Sources */,
@@ -404,6 +423,7 @@
 				4D7C1E8A26BBDA6B0010D16B /* APMInsightViewController.m in Sources */,
 				4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */,
 				4D7C1E9526BBEAD00010D16B /* APMInsightALogViewController.m in Sources */,
+				2B3452402705B38100E694DA /* APMInsightProtectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
