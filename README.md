@@ -22,7 +22,23 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
-### 2.3.0 (Recommended)
+### 2.4.6 (Recommended)
+* feature : enable default monitors
+
+### 2.4.3
+* optimization : start analysis
+
+### 2.4.1
+* bugfix : fix compiler error
+
+### 2.4.0
+* feature : custom log and cloudCommand
+* bugfix : OOM log lose
+
+### 2.3.2
+* bugfix : deviceID may be null in some case
+
+### 2.3.0 
 * feature : report launch log
 * bugfix : fix crash in iOS 15 and arm64e device
 
