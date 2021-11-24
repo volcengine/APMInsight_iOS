@@ -23,7 +23,7 @@
 #pragma mark - Test cases
 - (void)USELProblemTrigger {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"Container Problem" message:@"即将触发Urecognized Selector类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
+        UIAlertController *alert = [self alertWithTitle:@"Container Problem" message:@"5秒后触发Urecognized Selector类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 // objc_msgSend
                 SEL aSEL = sel_registerName("TEST_INVALID_SELECTOR");
@@ -40,7 +40,7 @@
 
 - (void)ContainerProblemTrigger {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"Container Problem" message:@"即将触发容器类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
+        UIAlertController *alert = [self alertWithTitle:@"Container Problem" message:@"5秒后触发容器类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 // Array
                 NSMutableArray *array = [@[@"A", @"B", @"C"] mutableCopy];
@@ -65,7 +65,7 @@
 
 - (void)KVCProblemTrigger {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"KVC Problem" message:@"即将触发KVC类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
+        UIAlertController *alert = [self alertWithTitle:@"KVC Problem" message:@"5秒后触发KVC类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 APMInsightProtectorObject *object = [APMInsightProtectorObject new];
                 [object setValue:nil forKey:nil];
@@ -81,7 +81,7 @@
 
 - (void)KVOProblemTrigger {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"KVO Problem" message:@"即将触发KVO类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
+        UIAlertController *alert = [self alertWithTitle:@"KVO Problem" message:@"5秒后触发KVO类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 APMInsightProtectorObject *aObject = [APMInsightProtectorObject new];
                 
@@ -103,7 +103,7 @@
 
 - (void)NSUserDefaultsProblemTrigger {
     dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"NSUserDefaults Problem" message:@"即将触发NSUserDefaults类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
+        UIAlertController *alert = [self alertWithTitle:@"NSUserDefaults Problem" message:@"5秒后触发NSUserDefaults类型问题，若APP闪退，请检测安全气垫开关是否开启" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
                 [ud setBool:nil forKey:[NSObject new]];
