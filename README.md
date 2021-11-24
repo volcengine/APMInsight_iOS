@@ -22,7 +22,12 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
-### 2.4.6 (Recommended)
+### 2.5.2 (Recommended)
+* feature : crash protector
+* feature : extension crash monitor
+* optimization : network monitor refactor
+
+### 2.4.6 
 * feature : enable default monitors
 
 ### 2.4.3
