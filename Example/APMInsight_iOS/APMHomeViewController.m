@@ -17,6 +17,7 @@
 #import "APMInsightEventViewController.h"
 #import "APMInsightALogViewController.h"
 #import "APMInsightProtectorViewController.h"
+#import "APMInsightCPUViewController.h"
 
 @implementation APMHomeViewController
 
@@ -56,6 +57,7 @@
     [self.items addObject:[self itemWithTitle:@"内存优化" viewController:[[APMInsightMemoryViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"日志回捞" viewController:[[APMInsightALogViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"异常防护 - 崩溃防护" viewController:[[APMInsightProtectorViewController alloc] init]]];
+    [self.items addObject:[self itemWithTitle:@"CPU监控" viewController:[[APMInsightCPUViewController alloc] init]]];
 }
 
 - (APMInsightCellItem *)itemWithTitle:(NSString *)title viewController:(UIViewController *)viewController {
