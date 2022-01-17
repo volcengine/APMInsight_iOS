@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '1.5.8'
+    s.version          = '2.6.1'
 
     s.summary          = 'RangersAPM by ByteDance'
 
@@ -15,13 +15,9 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '9.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/1.5.8/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.6.1/RangersAPM.zip" }
 
     s.frameworks = 'UIKit'
-
-    s.dependency 'RangersAppLog/Core', '>=5.6.4'
-
-    s.dependency 'RangersAppLog/Host/CN', '>=5.6.4'
 
     s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES',}
 
@@ -29,29 +25,41 @@ Pod::Spec.new do |s|
 
     s.static_framework = true
 
-    s.subspec 'Public' do |p|
-        p.source_files = 'RangersAPM/Public/**/*.{h,m}'
-        p.public_header_files = 'RangersAPM/Public/**/*.h'
-        p.vendored_libraries = "RangersAPM/Public/**/*.a"
-        p.dependency 'RangersAPM/Core'
+    s.subspec 'Above' do |above|
+        above.vendored_libraries = "RangersAPM/Above/**/*.a"
+    end
+
+    s.subspec 'Zyone' do |zyone|
+        zyone.vendored_libraries = "RangersAPM/Zyone/**/*.a"
+    end
+
+    s.subspec 'Public' do |public|
+        public.vendored_libraries = "RangersAPM/Public/**/*.a"
+        public.source_files = 'RangersAPM/Public/**/*.{h,m}'
+        public.public_header_files = 'RangersAPM/Public/**/*.h'
+        public.dependency 'RangersAPM/Core'
+        public.dependency 'RangersAPM/Above'
+        public.dependency 'RangersAPM/Zyone'
     end
 
     s.subspec 'Core' do |core|
-        core.vendored_libraries = "RangersAPM/Core/**/*.a"
-        core.libraries = 'c++','z','sqlite3'
+    	core.vendored_libraries = "RangersAPM/Core/**/*.a"
+    	core.libraries = 'c++','z','sqlite3'
         core.frameworks = 'SystemConfiguration','CoreTelephony','CoreFoundation'
         core.preserve_paths = 'RangersAPM/*.sh'
+        core.resources = ['RangersAPM/Assets/Core/**/APMInsightCore.bundle']
+        core.dependency 'OneKit/BaseKit', '>=1.1.19'
     end
 
     s.subspec 'Crash' do |crash|
         crash.source_files = 'RangersAPM/Crash/**/*.{h,m}'
         crash.public_header_files = 'RangersAPM/Crash/**/*.h'
-        crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
-        crash.dependency 'RangersAPM/Core'
+    	crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
+    	crash.dependency 'RangersAPM/Core'
         crash.dependency 'RangersAPM/Public'
         crash.dependency 'RangersAPM/HMD'
         crash.resources = ['RangersAPM/Assets/Crash/**/APMInsightCrash.bundle']
-        crash.libraries = 'c++abi'
+    	crash.libraries = 'c++abi'
     end
 
     s.subspec 'WatchDog' do |watchdog|
@@ -73,6 +81,7 @@ Pod::Spec.new do |s|
     s.subspec 'HMD' do |hmd|
         hmd.vendored_libraries = "RangersAPM/HMD/**/*.a"
         hmd.dependency 'RangersAPM/Core'
+        hmd.dependency 'OneKit/Database', '>=1.1.19'
     end
 
     s.subspec 'LAG' do |lag|
@@ -92,7 +101,9 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'UITrackers' do |uitrackers|
+        uitrackers.source_files = 'RangersAPM/UITrackers/**/*.{h,m}'
         uitrackers.vendored_libraries = 'RangersAPM/UITrackers/**/*.a'
+        uitrackers.public_header_files = 'RangersAPM/UITrackers/**/*.h'
         uitrackers.dependency 'RangersAPM/Core'
         uitrackers.dependency 'RangersAPM/HMD'
         uitrackers.dependency 'RangersAPM/Public'
@@ -119,7 +130,7 @@ Pod::Spec.new do |s|
         memorygraph.dependency 'RangersAPM/Core'
         memorygraph.dependency 'RangersAPM/HMD'
         memorygraph.dependency 'RangersAPM/Public'
-        memorygraph.dependency 'RangersAPM/Zip'     
+        memorygraph.dependency 'RangersAPM/Zip' 
     end
 
     s.subspec 'Zip' do |zip|
@@ -127,13 +138,92 @@ Pod::Spec.new do |s|
         zip.libraries = 'z'
     end
 
+    s.subspec 'EventMonitor' do |eventmonitor|
+        eventmonitor.source_files = 'RangersAPM/EventMonitor/**/*.{h,m}'
+        eventmonitor.vendored_libraries = 'RangersAPM/EventMonitor/**/*.a'
+        eventmonitor.public_header_files = 'RangersAPM/EventMonitor/**/*.h'
+        eventmonitor.libraries = 'c++'
+        eventmonitor.dependency 'RangersAPM/Core'
+        eventmonitor.dependency 'RangersAPM/HMD'
+        eventmonitor.dependency 'RangersAPM/Public'
+    end
+
+    s.subspec 'CN' do |cn|
+        cn.vendored_libraries = 'RangersAPM/CN/**/*.a'
+        cn.dependency 'RangersAPM/Core'
+        cn.dependency 'RangersAPM/Public'
+    end
+
+    s.subspec 'Global' do |global|
+        global.vendored_libraries = 'RangersAPM/Global/**/*.a'
+        global.dependency 'RangersAPM/Core'
+        global.dependency 'RangersAPM/Public'
+    end
+    
+    s.subspec 'Flutter' do |flutter|
+        flutter.source_files = 'RangersAPM/Flutter/**/*.{h,m}'
+        flutter.vendored_libraries = 'RangersAPM/Flutter/**/*.a'
+        flutter.public_header_files = 'RangersAPM/Flutter/**/*.h'
+        flutter.dependency 'RangersAPM/EventMonitor'
+    end
+
+    s.subspec 'SessionTracker' do |st|
+        st.vendored_libraries = 'RangersAPM/SessionTracker/**/*.a'
+        st.dependency 'RangersAPM/Core'
+        st.dependency 'RangersAPM/HMD'
+        st.dependency 'RangersAPM/Public'
+    end
+
+    s.subspec 'APMLog' do |alog|
+        alog.source_files = 'RangersAPM/APMLog/**/*.{h,m}'
+        alog.vendored_libraries = 'RangersAPM/APMLog/**/*.a'
+        alog.public_header_files = 'RangersAPM/APMLog/**/*.h'
+        alog.dependency 'RangersAPM/Core'
+        alog.dependency 'RangersAPM/HMD'
+        alog.dependency 'RangersAPM/Zip'
+        alog.dependency 'RangersAPM/Public'
+        alog.libraries = 'c++','z', 'resolv'
+    end
+
+    s.subspec 'NetworkBasic' do |nb|
+        nb.source_files = 'RangersAPM/NetworkBasic/**/*.{h,m}'
+        nb.vendored_libraries = 'RangersAPM/NetworkBasic/**/*.a'
+        nb.public_header_files = 'RangersAPM/NetworkBasic/**/*.h'
+        nb.dependency 'RangersAPM/Core'
+        nb.dependency 'RangersAPM/HMD'
+        nb.dependency 'RangersAPM/Public'
+        nb.libraries = 'c++'
+    end
+
     s.subspec 'Network' do |net|
         net.source_files = 'RangersAPM/Network/**/*.{h,m}'
         net.vendored_libraries = 'RangersAPM/Network/**/*.a'
         net.public_header_files = 'RangersAPM/Network/**/*.h'
-        net.dependency 'RangersAPM/Core'
-        net.dependency 'RangersAPM/HMD'
-        net.dependency 'RangersAPM/Public'
-        net.libraries = 'c++'
+        net.dependency 'RangersAPM/NetworkBasic'
+    end
+
+    s.subspec 'NetworkPro' do |np|
+        # np.source_files = 'RangersAPM/NetworkPro/**/*.{h,m}'
+        np.vendored_libraries = 'RangersAPM/NetworkPro/**/*.a'
+        # np.public_header_files = 'RangersAPM/NetworkPro/**/*.h'
+        np.dependency 'RangersAPM/NetworkBasic'
+    end
+
+    s.subspec 'CrashProtector' do |cp|
+        # cp.source_files = 'RangersAPM/CrashProtector/**/*.{h,m}'
+        cp.vendored_libraries = 'RangersAPM/CrashProtector/**/*.a'
+        # cp.public_header_files = 'RangersAPM/CrashProtector/**/*.h'
+        cp.dependency 'RangersAPM/Core'
+        cp.dependency 'RangersAPM/HMD'
+        cp.dependency 'RangersAPM/Public'
+        cp.dependency 'RangersAPM/Crash'
+        cp.libraries = 'c++'
+    end
+
+    s.subspec 'OKKit' do |ok|
+        ok.vendored_libraries = 'RangersAPM/OKKit/**/*.a'
+        ok.dependency 'OneKit/StartUp'
+        ok.dependency 'OneKit/Service', '>=1.1.39-rc.0'
+        ok.dependency 'RangersAPM/Public'
     end
 end

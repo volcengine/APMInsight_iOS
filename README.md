@@ -1,6 +1,6 @@
 # APMInsight_iOS
 [中文版本](https://github.com/volcengine/APMInsight_iOS/blob/master/说明.md)
-APMInsight SDK. Enter official website to read the introduction of SDK capabilities and access. [APMInsight](https://www.volcengine.com/products/apmplus)
+APMInsight SDK. Enter official website to read the introduction of SDK capabilities and access. [APMPlus](https://www.volcengine.com/products/apmplus)
 
 ## Example 
 ### Download & Installation
@@ -10,7 +10,7 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 4. open APMInsight_iOS.xcworkspace
 
 ### Usage
-1. The demo APP has integrated all capabilities of APMInsight.
+1. The demo APP has integrated all capabilities of APMPlus.
 2. You can make errors and performance data in the demo APP. 
 3. Reset the appID in AppDelegate.m and the performance data will be uploaded to your own console.
 
@@ -22,7 +22,19 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
-### 2.5.6 (Recommended)
+### 2.6.2 (Recommended)
+* bugfix : symbol conflicts
+
+### 2.6.1
+* bugfix : uploading apmlogs may crash
+* feature : add OneKit start task
+* optimization : dsym-uploading script
+* bugfix : network monitoring may cause some callbacks to fail
+
+### 2.5.7
+* optimization : crash protection logic
+
+### 2.5.6
 * bugfix : header lost
 
 ### 2.5.5
