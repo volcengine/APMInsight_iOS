@@ -50,7 +50,7 @@
      Copyable section starts ---
      */
     
-    RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"194767"];
+    RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"233805"];
     config.channel = @"App Store";
     config.deviceIDSource = RAPMDeviceIDSourceFromAPMService;
     

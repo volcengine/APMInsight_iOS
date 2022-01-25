@@ -1,9 +1,11 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
+require 'bd_pod_extentions'
+bd_use_app("thirdParty","public","toutiao")
 
 target 'APMInsight_iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
+#  use_frameworks!
   
   # 可以把这部分代码copy到您的Podfile文件中，执行pod install，安装对应组件
   # You can copy the code as follows to your Podfile, and excute "pod install" in command line to install our SDKs.
@@ -11,11 +13,27 @@ target 'APMInsight_iOS' do
   #  Copyable section starts ---
   source 'https://github.com/volcengine/volcengine-specs.git'
   
-  pod 'RangersAPM', '2.6.2', :subspecs => [
+#  pod 'RangersAPM', '2.6.3', :subspecs => [
+#      'Crash',
+#      'WatchDog',
+#      'OOM',
+#      'LAG',
+#      'UserException',
+#      'Monitors',
+#      'UITrackers',
+#      'Hybrid',
+#      'MemoryGraph',
+#      'NetworkPro',
+#      'EventMonitor',
+#      'APMLog',
+#      'CrashProtector',
+#      'CN'
+#  ]
+  pod 'HeimdallrFinder', '2.7.0-alpha.1', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
-      'LAG',
+      'HMDANR',
       'UserException',
       'Monitors',
       'UITrackers',
@@ -24,9 +42,12 @@ target 'APMInsight_iOS' do
       'NetworkPro',
       'EventMonitor',
       'APMLog',
-      'CrashProtector',
+      'Protect',
       'CN'
   ]
+  
+  pod 'OneKit', '1.1.41', :source => 'https://github.com/volcengine/volcengine-specs.git'
+  
   # ---可复制部分结束
   # --- Copyable section ends
   

@@ -7,6 +7,7 @@
 
 #import "APMInsightCrashViewController.h"
 #import "APMInsightCellItem.h"
+#include <pthread.h>
 
 @interface APMInsightCrashViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -33,15 +34,22 @@
 }
 
 - (void)CPPExceptionTrigger {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIAlertController *alert = [self alertWithTitle:@"CPPException" message:@"即将触发CPP类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                throw 0;   //If compile error occurs, change this file's suffix from "m" to "mm"
-            });
-        }];
-        [self presentViewController:alert animated:YES completion:nil];
-    });
+    throw 0;
+}
 
+static BOOL shouldRaiseException = NO;
+
+- (void)AsyncExceptionTigger {
+    shouldRaiseException = YES;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self tryRaiseException];
+    });
+}
+
+- (void)tryRaiseException {
+    if (shouldRaiseException) {
+        [[NSException exceptionWithName:@"Test_Async_Exception" reason:@"APMInsight is testing AsyncException" userInfo:nil] raise];
+    }
 }
 
 - (void)signalExceptionTrigger {
@@ -78,13 +86,32 @@
             UIAlertController *alert = [self alertWithTitle:@"WatchDog" message:@"即将触发WatchDog，APP将卡住一段时间后闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     dispatch_queue_t testWatchDogQueue = dispatch_queue_create("com.apminsight.testwatchdog", 0);
-                    dispatch_async(testWatchDogQueue, ^{
-                        dispatch_sync(dispatch_get_main_queue(), ^{
-                            dispatch_sync(testWatchDogQueue, ^{
-                                
-                            });
+                    static pthread_mutex_t lock1;
+                    pthread_mutex_init(&lock1, NULL);
+                    static pthread_mutex_t lock2;
+                    pthread_mutex_init(&lock2, NULL);
+                        dispatch_async(testWatchDogQueue, ^{
+                            while (1) {
+                                pthread_mutex_lock(&lock1);
+                                // do something
+                                pthread_mutex_lock(&lock2);
+                                // do something
+                                pthread_mutex_unlock(&lock1);
+                                // do something
+                                pthread_mutex_unlock(&lock2);
+                            }
                         });
-                    });
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            while (1) {
+                                pthread_mutex_lock(&lock2);
+                                // do something
+                                pthread_mutex_lock(&lock1);
+                                // do something
+                                pthread_mutex_unlock(&lock2);
+                                // do something
+                                pthread_mutex_unlock(&lock1);
+                            }
+                        });
                 });
             }];
             [self presentViewController:alert animated:YES completion:nil];
@@ -181,7 +208,7 @@
                 [strongSelf CPPExceptionTrigger];
             }
         };
-        APMInsightCellItem *cppExceptionItem = [APMInsightCellItem itemWithTitle:@"触发CPP类型崩溃" block:cppExceptionBlock];
+        APMInsightCellItem *cppExceptionItem = [APMInsightCellItem itemWithTitle:@"Hightlights -- 触发CPP类型崩溃" block:cppExceptionBlock];
         
         void(^machExceptionBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
@@ -205,7 +232,7 @@
                 [strongSelf watchdogExceptionTrigger];
             }
         };
-        APMInsightCellItem *watchDogItem = [APMInsightCellItem itemWithTitle:@"触发卡死" block:watchDogBlock];
+        APMInsightCellItem *watchDogItem = [APMInsightCellItem itemWithTitle:@"Highlights -- 触发卡死" block:watchDogBlock];
         
         void(^OOMBlock)(void) = ^{
             __strong typeof(self) strongSelf = weakSelf;
@@ -215,12 +242,21 @@
         };
         APMInsightCellItem *OOMItem = [APMInsightCellItem itemWithTitle:@"触发OOM" block:OOMBlock];
         
+        void(^AsyncBlock)(void) = ^{
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [self AsyncExceptionTigger];
+            }
+        };
+        APMInsightCellItem *AsyncItem = [APMInsightCellItem itemWithTitle:@"Highlights -- 触发AsyncException" block:AsyncBlock];
+
         [_items addObject:NSExceptionItem];
         [_items addObject:cppExceptionItem];
         [_items addObject:machExceptionItem];
         [_items addObject:fatalSignalItem];
         [_items addObject:watchDogItem];
         [_items addObject:OOMItem];
+        [_items addObject:AsyncItem];
     }
     
     return _items;

@@ -1,3 +1,4 @@
 source 'https://rubygems.byted.org'
 
 gem 'cocoapods', '1.9.3'
+gem 'bd_pod_extentions', '6.4.0'
