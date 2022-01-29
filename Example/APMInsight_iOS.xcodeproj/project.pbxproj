@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2B34523F2705B38100E694DA /* APMInsightProtectorObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */; };
 		2B3452402705B38100E694DA /* APMInsightProtectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */; };
+		2B35FA2B27A52D460037E7F2 /* APMInsightLargeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2A27A52D460037E7F2 /* APMInsightLargeObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2B35FA2E27A52DE30037E7F2 /* APMInsightLeakedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2C27A52DE30037E7F2 /* APMInsightLeakedObject.m */; };
+		2B35FA3127A52E320037E7F2 /* APMInsightAutoreleaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */; };
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
 		4D50F8AD2578BF3E00BC4247 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D50F8AC2578BF3E00BC4247 /* README.md */; };
@@ -40,6 +43,12 @@
 		2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorObject.m; sourceTree = "<group>"; };
 		2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorViewController.m; sourceTree = "<group>"; };
 		2B34523E2705B38100E694DA /* APMInsightProtectorObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightProtectorObject.h; sourceTree = "<group>"; };
+		2B35FA2927A52D460037E7F2 /* APMInsightLargeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightLargeObject.h; sourceTree = "<group>"; };
+		2B35FA2A27A52D460037E7F2 /* APMInsightLargeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightLargeObject.m; sourceTree = "<group>"; };
+		2B35FA2C27A52DE30037E7F2 /* APMInsightLeakedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightLeakedObject.m; sourceTree = "<group>"; };
+		2B35FA2D27A52DE30037E7F2 /* APMInsightLeakedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightLeakedObject.h; sourceTree = "<group>"; };
+		2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightAutoreleaseObject.m; sourceTree = "<group>"; };
+		2B35FA3027A52E320037E7F2 /* APMInsightAutoreleaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightAutoreleaseObject.h; sourceTree = "<group>"; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
 		4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightEventViewController.m; sourceTree = "<group>"; };
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
@@ -105,6 +114,33 @@
 				2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */,
 			);
 			path = ProtectorAnalysis;
+			sourceTree = "<group>";
+		};
+		2B35FA2627A52CEF0037E7F2 /* APMInsightLargeObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B35FA2927A52D460037E7F2 /* APMInsightLargeObject.h */,
+				2B35FA2A27A52D460037E7F2 /* APMInsightLargeObject.m */,
+			);
+			path = APMInsightLargeObject;
+			sourceTree = "<group>";
+		};
+		2B35FA2727A52CFF0037E7F2 /* APMInsightLeakedObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B35FA2D27A52DE30037E7F2 /* APMInsightLeakedObject.h */,
+				2B35FA2C27A52DE30037E7F2 /* APMInsightLeakedObject.m */,
+			);
+			path = APMInsightLeakedObject;
+			sourceTree = "<group>";
+		};
+		2B35FA2827A52D220037E7F2 /* APMInsightAutoreleaseObject */ = {
+			isa = PBXGroup;
+			children = (
+				2B35FA3027A52E320037E7F2 /* APMInsightAutoreleaseObject.h */,
+				2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */,
+			);
+			path = APMInsightAutoreleaseObject;
 			sourceTree = "<group>";
 		};
 		4D1F437B25EB450B004F42D2 /* EventAnalysis */ = {
@@ -228,6 +264,9 @@
 		4D931261255D21F100402D0B /* MemoryOptimization */ = {
 			isa = PBXGroup;
 			children = (
+				2B35FA2827A52D220037E7F2 /* APMInsightAutoreleaseObject */,
+				2B35FA2727A52CFF0037E7F2 /* APMInsightLeakedObject */,
+				2B35FA2627A52CEF0037E7F2 /* APMInsightLargeObject */,
 				4D93127E255D417900402D0B /* APMInsightMemoryViewController.h */,
 				4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */,
 			);
@@ -403,7 +442,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D93127C255D416A00402D0B /* APMInsightHybridViewController.m in Sources */,
+				2B35FA3127A52E320037E7F2 /* APMInsightAutoreleaseObject.m in Sources */,
 				4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */,
+				2B35FA2B27A52D460037E7F2 /* APMInsightLargeObject.m in Sources */,
 				4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */,
 				4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */,
 				4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */,
@@ -412,6 +453,7 @@
 				4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */,
 				4D9D11EA275E355A00532FC0 /* APMInsightCPUViewController.m in Sources */,
 				4D931270255D413600402D0B /* APMInsightExceptionViewController.m in Sources */,
+				2B35FA2E27A52DE30037E7F2 /* APMInsightLeakedObject.m in Sources */,
 				4D931265255D236F00402D0B /* APMInsightCrashViewController.mm in Sources */,
 				4D93125A255D1D5F00402D0B /* APMInsightCellItem.m in Sources */,
 				4D93124E255D1BD100402D0B /* main.m in Sources */,
