@@ -89,7 +89,7 @@ bool overMemoryThreshold(void)
         __weak typeof(self) weakSelf = self;
         
         void(^memoryTriggerBlock)(void) = ^{
-            __strong typeof(self) strongSelf = weakSelf;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
             if (strongSelf) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存泄漏" message:@"点击确定开始触发内存泄漏，当APP占用内存超过512MB时会触发内存分析，在某些情况下，可能APP内存没有达到512MB就被系统KILL，如果未收到内存分析成功提示（大概5s之后），请重新启动APP触发泄漏。" preferredStyle:UIAlertControllerStyleAlert];
@@ -126,7 +126,7 @@ bool overMemoryThreshold(void)
         
         
         void(^leakedTriggerBlock)(void) = ^{
-            __strong typeof(self) strongSelf = weakSelf;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
             if (strongSelf) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存泄漏" message:@"点击确定开始触发Leaked类型OOM崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" preferredStyle:UIAlertControllerStyleAlert];
@@ -155,7 +155,7 @@ bool overMemoryThreshold(void)
         
         
         void(^autoreleaseTriggerBlock)(void) = ^{
-            __strong typeof(self) strongSelf = weakSelf;
+            __strong typeof(weakSelf) strongSelf = weakSelf;
             if (strongSelf) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"触发内存问题" message:@"点击确定开始触发AutoreleasePool类型OOM崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" preferredStyle:UIAlertControllerStyleAlert];
