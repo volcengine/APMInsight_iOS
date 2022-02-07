@@ -8,6 +8,7 @@
 #import "APMInsightMemoryViewController.h"
 #import "APMInsightCellItem.h"
 #import <mach/mach.h>
+#import "APMInsightCaptureUITestViewController.h"
 #import "APMInsightLeakedObject.h"
 #import "APMInsightAutoreleaseObject.h"
 
@@ -123,6 +124,16 @@ bool overMemoryThreshold(void)
         APMInsightCellItem *memoryTriggerItem = [APMInsightCellItem itemWithTitle:@"测试内存优化（泄漏、大对象、单设备查询）" block:memoryTriggerBlock];
         
         [_items addObject:memoryTriggerItem];
+        
+        void(^captureUITestBlock)(void) = ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (strongSelf) {
+                APMInsightCaptureUITestViewController *captureUITest = [[APMInsightCaptureUITestViewController alloc] initWithNibName:@"APMInsightCaptureUITestViewController" bundle:nil];
+                [strongSelf.navigationController pushViewController:captureUITest animated:YES];
+            }
+        };
+        APMInsightCellItem *captureUITestItem = [APMInsightCellItem itemWithTitle:@"视图层级" block:captureUITestBlock];
+        [_items addObject:captureUITestItem];
         
         
         void(^leakedTriggerBlock)(void) = ^{

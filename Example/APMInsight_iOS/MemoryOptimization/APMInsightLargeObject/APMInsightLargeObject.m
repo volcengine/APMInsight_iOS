@@ -26,12 +26,12 @@
         /**
          * 申请内存块
          */
-        _nums = (long *)malloc(sizeof(long) * 1024 * 1024);
+        _nums = (long *)malloc(sizeof(long) * 1024 * 512);
         /**
          * 苹果对于内存块不设置的情况，认定为clean memory并不会真正的分配内存。
          * 因此，这里对申请的内存块进行设置值，变更为dirty memory。
          */
-        for (int i = 0; i < 1024 * 1024; i++) {
+        for (int i = 0; i < 1024 * 512; i++) {
             _nums[i] = i;
         }
     }
