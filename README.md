@@ -22,7 +22,15 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
-### 2.6.2 (Recommended)
+
+### 2.6.5 (Recommended)
+* optimization : destruction process
+* optimization : hook scheme
+
+### 2.6.3
+* bugfix : missing fields
+
+### 2.6.2
 * bugfix : symbol conflicts
 
 ### 2.6.1

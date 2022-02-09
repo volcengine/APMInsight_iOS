@@ -36,11 +36,10 @@
 		4D9D11EA275E355A00532FC0 /* APMInsightCPUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D11E9275E355A00532FC0 /* APMInsightCPUViewController.m */; };
 		4DBB9FFB26AEB28500C90856 /* 说明.md in Resources */ = {isa = PBXBuildFile; fileRef = 4DBB9FFA26AEB28500C90856 /* 说明.md */; };
 		4DEAD4882564FA68005FA553 /* APMInsightWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAD4872564FA68005FA553 /* APMInsightWebViewController.m */; };
-		E33EEF5CA6BA73AF1701EE7D /* libPods-APMInsight_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 082181A74790E168CD18B90D /* libPods-APMInsight_iOS.a */; };
+		CF5E75F96143C8B901D291C6 /* Pods_APMInsight_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		082181A74790E168CD18B90D /* libPods-APMInsight_iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-APMInsight_iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B34523B2705B38100E694DA /* APMInsightProtectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightProtectorViewController.h; sourceTree = "<group>"; };
 		2B34523C2705B38100E694DA /* APMInsightProtectorObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorObject.m; sourceTree = "<group>"; };
 		2B34523D2705B38100E694DA /* APMInsightProtectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightProtectorViewController.m; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		2B71ED4227A5AB5200953665 /* APMInsightCaptureUITestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCaptureUITestViewController.h; sourceTree = "<group>"; };
 		2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCaptureUITestViewController.m; sourceTree = "<group>"; };
 		2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APMInsightCaptureUITestViewController.xib; sourceTree = "<group>"; };
+		43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
 		4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightEventViewController.m; sourceTree = "<group>"; };
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E33EEF5CA6BA73AF1701EE7D /* libPods-APMInsight_iOS.a in Frameworks */,
+				CF5E75F96143C8B901D291C6 /* Pods_APMInsight_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +311,7 @@
 		8D19577A75FB6119A020E382 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				082181A74790E168CD18B90D /* libPods-APMInsight_iOS.a */,
+				43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
