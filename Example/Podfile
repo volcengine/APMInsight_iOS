@@ -11,7 +11,7 @@ target 'APMInsight_iOS' do
   #  Copyable section starts ---
   source 'https://github.com/volcengine/volcengine-specs.git'
   
-  pod 'RangersAPM', '2.6.5', :subspecs => [
+  pod 'RangersAPM', '2.7.3', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
@@ -25,6 +25,7 @@ target 'APMInsight_iOS' do
       'EventMonitor',
       'APMLog',
       'CrashProtector',
+      'CPUException',
       'CN'
   ]
   

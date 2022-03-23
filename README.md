@@ -22,8 +22,16 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
 
 ## Change Log
+### 2.7.3 (Recommended)
+* feature : CPU Monitor
 
-### 2.6.5 (Recommended)
+### 2.7.2
+* optimization : compliance requirements
+* feature : watchdog monitor supports component perspective
+* optimization : split device registration module 
+* bugfix : network monitor may lead to OOM in some cases 
+
+### 2.6.5 
 * optimization : destruction process
 * optimization : hook scheme
 
