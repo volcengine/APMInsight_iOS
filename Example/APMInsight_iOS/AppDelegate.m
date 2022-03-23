@@ -34,6 +34,7 @@
             ③请修改config对应的属性值
                 appID：平台为APP分配的ID
                 channel：APP的发布渠道
+                groupID：需要和扩展程序一致，以便读取共享空间
      
      You can copy the initialization code as follows to the same part in your project.
      And I suggest the code be excuted as early as possible. Otherwise, the crash that occurs during App Launching may not be detected and there may be error in the data of launch analysis.
@@ -42,6 +43,7 @@
              ③ Set the propertys of the variable named "config" with your own values.
                 appID: the ID of your App on APMInsight
                 channel: the channel you App will publish to
+                groupID: should be consistent with the extension in order to read the shared space
      */
     /**
      必要部分 ！！！
@@ -53,6 +55,7 @@
     RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"233805"];
     config.channel = @"App Store";
     config.deviceIDSource = RAPMDeviceIDSourceFromAPMService;
+    config.groupID = @"group.apminsight.APMInsight-iOS";  //如果不需要监控扩展程序，则不需要此行代码
     
     /**
      输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h

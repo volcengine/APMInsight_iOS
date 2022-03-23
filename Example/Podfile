@@ -35,3 +35,19 @@ target 'APMInsight_iOS' do
   # Pods for APMInsight_iOS
 
 end
+
+target 'APMInsight_iOS_extension' do
+  use_frameworks!
+  
+  # 可以把这部分代码copy到您的Podfile文件中，执行pod install，安装对应组件
+  # You can copy the code as follows to your Podfile, and excute "pod install" in command line to install our SDKs.
+  # 可复制部分开始---
+  #  Copyable section starts ---
+  source 'https://github.com/volcengine/volcengine-specs.git'
+  
+  pod 'RangersAPMForExtension', '1.0.1'
+  
+  # ---可复制部分结束
+  # --- Copyable section ends
+
+end
