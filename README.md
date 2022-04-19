@@ -1,12 +1,12 @@
 # APMInsight_iOS
 [中文版本](https://github.com/volcengine/APMInsight_iOS/blob/master/说明.md)
-APMInsight SDK. Enter official website to read the introduction of SDK capabilities and access. [APMPlus](https://www.volcengine.com/products/apmplus)
+APMPlus SDK. Enter official website to read the introduction of SDK capabilities and access. [APMPlus](https://www.volcengine.com/products/apmplus)
 
 ## Example 
 ### Download & Installation
 1. git clone https://github.com/volcengine/APMInsight_iOS.git --branch master
 2. cd APMInsight_iOS/Example
-3. pod install
+3. bundle exec pod install
 4. open APMInsight_iOS.xcworkspace
 
 ### Usage
@@ -19,10 +19,22 @@ APMInsight SDK. Enter official website to read the introduction of SDK capabilit
 * Xcode 9.0+
 
 ## License
-APMInsight_iOS is available under the MIT license. See the LICENSE file for more info.
+APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 2.7.3 (Recommended)
+### 2.8.1 (Recommended)
+bugfix : fix crash when working with Firebase Performance
+
+### 2.8.0
+feature : zombie object detection online
+feature : userException interface supports passing in NSException
+optimization : change the domain for Saas
+
+### 2.7.4
+* bugfix : performance data reporting is not timely
+* feature : add debug log for CPU Monitor
+ 
+### 2.7.3
 * feature : CPU Monitor
 
 ### 2.7.2
