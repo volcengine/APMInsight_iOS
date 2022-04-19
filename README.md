@@ -23,12 +23,12 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 
 ## Change Log
 ### 2.8.1 (Recommended)
-bugfix : fix crash when working with Firebase Performance
+* bugfix : fix crash when working with Firebase Performance
 
 ### 2.8.0
-feature : zombie object detection online
-feature : userException interface supports passing in NSException
-optimization : change the domain for Saas
+* feature : zombie object detection online
+* feature : userException interface supports passing in NSException
+* optimization : change the domain for Saas
 
 ### 2.7.4
 * bugfix : performance data reporting is not timely

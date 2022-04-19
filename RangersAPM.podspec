@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '2.6.1'
+    s.version          = '2.8.1'
 
-    s.summary          = 'RangersAPM by ByteDance'
+    s.summary          = 'RangersAPM by Volcengine'
 
     s.description      = 'APMInsight iOS SDK, a tool to monitor APP performance.'
 
@@ -11,15 +11,18 @@ Pod::Spec.new do |s|
 
     s.license          = { :type => 'MIT', :file => 'RangersAPM/LICENSE' }
 
-    s.authors          = 'ByteDance'
+    s.authors          = 'Volcengine'
 
     s.ios.deployment_target = '9.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.6.1/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.8.1/RangersAPM.zip" }
 
     s.frameworks = 'UIKit'
 
-    s.pod_target_xcconfig = {'DEFINES_MODULE' => 'YES',}
+    s.pod_target_xcconfig = {
+        'OTHER_CPLUSPLUSFLAGS' => '-fno-c++-static-destructors', 
+        'DEFINES_MODULE' => 'YES',
+    }
 
     s.user_target_xcconfig = {'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES',}
 
@@ -40,11 +43,12 @@ Pod::Spec.new do |s|
         public.dependency 'RangersAPM/Core'
         public.dependency 'RangersAPM/Above'
         public.dependency 'RangersAPM/Zyone'
+        public.dependency 'RARegisterKit/Core'
     end
 
     s.subspec 'Core' do |core|
-    	core.vendored_libraries = "RangersAPM/Core/**/*.a"
-    	core.libraries = 'c++','z','sqlite3'
+        core.vendored_libraries = "RangersAPM/Core/**/*.a"
+        core.libraries = 'c++','z','sqlite3'
         core.frameworks = 'SystemConfiguration','CoreTelephony','CoreFoundation'
         core.preserve_paths = 'RangersAPM/*.sh'
         core.resources = ['RangersAPM/Assets/Core/**/APMInsightCore.bundle']
@@ -54,12 +58,12 @@ Pod::Spec.new do |s|
     s.subspec 'Crash' do |crash|
         crash.source_files = 'RangersAPM/Crash/**/*.{h,m}'
         crash.public_header_files = 'RangersAPM/Crash/**/*.h'
-    	crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
-    	crash.dependency 'RangersAPM/Core'
+        crash.vendored_libraries = "RangersAPM/Crash/**/*.a"
+        crash.dependency 'RangersAPM/Core'
         crash.dependency 'RangersAPM/Public'
         crash.dependency 'RangersAPM/HMD'
         crash.resources = ['RangersAPM/Assets/Crash/**/APMInsightCrash.bundle']
-    	crash.libraries = 'c++abi'
+        crash.libraries = 'c++abi'
     end
 
     s.subspec 'WatchDog' do |watchdog|
@@ -226,4 +230,22 @@ Pod::Spec.new do |s|
         ok.dependency 'OneKit/Service', '>=1.1.39-rc.0'
         ok.dependency 'RangersAPM/Public'
     end
+
+    s.subspec 'CPUException' do |cpu_exception|
+        cpu_exception.vendored_libraries = 'RangersAPM/CPUException/**/*.a'
+        cpu_exception.dependency 'RangersAPM/Core'
+        cpu_exception.dependency 'RangersAPM/HMD'
+    end
+
+    s.subspec 'Zombie' do |zombie|
+        zombie.vendored_libraries = 'RangersAPM/Zombie/**/*.a'
+        zombie.dependency 'RangersAPM/Core'
+        zombie.dependency 'RangersAPM/HMD'
+        zombie.dependency 'RangersAPM/Public'
+        zombie.dependency 'RangersAPM/Crash'
+        zombie.pod_target_xcconfig = {
+          'GCC_PREPROCESSOR_DEFINITIONS[config=Release]' => '$(inherited) NS_BLOCK_ASSERTIONS'
+      }
+    end
+
 end
