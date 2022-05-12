@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '2.8.1'
+    s.version          = '2.9.0'
 
     s.summary          = 'RangersAPM by Volcengine'
 
