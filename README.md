@@ -23,6 +23,11 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 
 ## Change Log
 ### 2.9.0 (Recommended)
+* optimization : optimize custom log reporting time disorder
+* optimization : optimize the problem that log retrieval using user_id cannot be delivered normally
+* optimization : optimize console log to reduce duplicate messages
+
+### 2.9.0 
 * bugfix : fix crash when use class object as network delegate
 * feature : deadlock detector
 
