@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 2.9.2 (Recommended)
+### 2.9.3 (Recommended)
+* bugfix : fix the problem that the device may fail to report the custom log when using the 12-hour clock
+
+### 2.9.2
 * optimization : compatible with custom log reporting protocol
 
 ### 2.9.1 
