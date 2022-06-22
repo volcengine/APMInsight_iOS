@@ -58,6 +58,18 @@
     config.groupID = @"group.apminsight.APMInsight-iOS";  //如果不需要监控扩展程序，则不需要此行代码
     
     /**
+     首次启动由于没有获取到配置，无法确定需要开启哪些功能模块。可以配置此属性，来决定首次启动默认需要开启的功能模块，仅对首次启动生效，一旦拉取到配置，下次启动就会先读取本地缓存的配置来决定。
+     ⚠️注意:
+     ①建议默认开启崩溃分析（RangersAPMCrashMonitorSwitch）、启动分析（RangersAPMLaunchMonitorSwitch）、网络分析（RangersAPMNetworkMonitorSwitch），避免一些和首次启动强相关的数据丢失
+     ②配置默认开启模块后，新设备首次启动会默认打开这些模块，可能会出现平台上关闭了这些模块，但是依然有数据上报的情况，可能会给您的事件量造成意外的消耗；请根据您的应用情况灵活配置。
+     
+     Since the configuration is not obtained during the first startup, it is impossible to determine which function modules need to be enabled. This property can be configured to determine the function modules that need to be enabled by default for the first startup. It only takes effect for the first startup. Once the configuration is pulled, the next startup will read the configuration of the local cache to determine.
+     ⚠️Tips:
+     ① It is recommended to enable crash analysis (RangersAPMCrashMonitorSwitch), startup analysis (RangersAPMLaunchMonitorSwitch), and network analysis (RangersAPMNetworkMonitorSwitch) by default to avoid data loss that is strongly related to the first startup.
+     ② After configuring the default enabled modules, these modules will be enabled by default when the new device is started for the first time. It may happen that these modules are closed on the platform, but there are still data reports, which may cause unexpected consumption of your event volume; please refer to Flexible configuration for your application.
+     */
+    config.defaultMonitors = RangersAPMCrashMonitorSwitch;
+    /**
      输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h
      Print console log, import RangersAPM+DebugLog.h first
      */
