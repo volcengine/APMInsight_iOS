@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     s.name             = 'RangersAPM'
 
-    s.version          = '2.9.7'
+    s.version          = '2.10.0'
 
     s.summary          = 'RangersAPM by Volcengine'
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '9.0'
 
-    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.9.7/RangersAPM.zip" }
+    s.source = { :http => "https://lf1-ttcdn-tos.pstatp.com/obj/heimdallr/RangersAPM/2.10.0/RangersAPM.zip" }
 
     s.frameworks = 'UIKit'
 
@@ -248,4 +248,17 @@ Pod::Spec.new do |s|
       }
     end
 
+    s.subspec 'BootingProtectLite' do |bpl|
+        bpl.vendored_libraries = 'RangersAPM/BootingProtectLite/**/*.a'
+        bpl.source_files = 'RangersAPM/BootingProtectLite/**/*.{h,m}'
+        bpl.public_header_files = 'RangersAPM/BootingProtectLite/**/*.h'
+        bpl.dependency 'RangersAPM/Crash'
+        bpl.dependency 'RangersAPM/WatchDog'
+    end
+
+    s.subspec 'BootingProtect' do |bp|
+        bp.vendored_libraries = 'RangersAPM/BootingProtect/**/*.a'
+        bp.dependency 'RangersAPM/BootingProtectLite'
+        bp.dependency 'RangersAPM/OOM'
+    end
 end

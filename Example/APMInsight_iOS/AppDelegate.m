@@ -13,6 +13,9 @@
  */
 #import <RangersAPM.h>
 #import <RangersAPM+DebugLog.h>
+#if __has_include(<RangersAPM+BootingProtect.h>)
+#import <RangersAPM+BootingProtect.h>
+#endif
 /**
  ---可复制部分结束
  --- Copyable section ends
@@ -80,6 +83,36 @@
 #endif
     
     [RangersAPM startWithConfig:config];
+    
+#if __has_include(<RangersAPM+BootingProtect.h>)
+    [RangersAPM startProtectWithBootingThreshold:10 bootingCrashHandler:^(RangersAPMBootingInfo * _Nonnull info) {
+        /**
+         对连续异常的场景进行防护策略，这里的demo只输出了一些log，您可以在自己的应用中做一些本地缓存清理或其他策略。可以针对不同的异常发生次数制定不同的策略。
+         
+         Implement protection strategies for consecutive exceptions. The demo here only outputs some logs. You can do some local cache cleaning or other strategies in your own application. Different strategies can be formulated for different exception occurrence times.
+         */
+        if (info.consecutiveExceptionTimes >= 1) {
+            NSLog(@"⚠️Consecutive exception 1 time");
+        } else if (info.consecutiveExceptionTimes >= 3) {
+            NSAssert(NO, @"⚠️Consecutive exception 3 times !!!");
+        }
+        
+        /**
+         除了对连续异常进行防护，您也可以针对不同的异常类型执行不同的防护策略。
+         
+         In addition to protecting against consecutive exceptions, you can also implement different protection strategies for different exception types.
+         */
+        if (info.crashTimes >= 1) {
+            NSLog(@"⚠️Consecutive crash 1 time");
+        }
+        if (info.watchdogTimes >= 1) {
+            NSLog(@"⚠️Consecutive watchdog 1 time");
+        }
+        if (info.OOMTimes >= 1) {
+            NSLog(@"⚠️Consecutive oom 1 time");
+        }
+    }];
+#endif
         
     [RangersAPM setUserID:@"MYUSERID194767"];
     
