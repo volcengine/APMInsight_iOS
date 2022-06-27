@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 2.9.7 (Recommended)
+### 2.10.0 (Recommended)
+* feature : add BootingProtect subspec
+
+### 2.9.7 
 * bugfix : fix memory leak in network monitor
 * optimization : time-consuming of network monitor during initialization
 * bugfix : fix the compatibility issue of network monitor in swift
