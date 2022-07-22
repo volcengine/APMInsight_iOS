@@ -16,6 +16,9 @@
 #if __has_include(<RangersAPM+BootingProtect.h>)
 #import <RangersAPM+BootingProtect.h>
 #endif
+#if __has_include(<RangersAPM+PerformanceAPI.h>)
+#import <RangersAPM+PerformanceAPI.h>
+#endif
 /**
  ---可复制部分结束
  --- Copyable section ends
@@ -26,6 +29,11 @@
 @end
 
 @implementation AppDelegate
+
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [RangersAPM prewarmCheckEnd];
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

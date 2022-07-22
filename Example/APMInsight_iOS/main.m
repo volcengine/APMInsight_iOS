@@ -7,8 +7,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import <RangersAPM+PerformanceAPI.h>
 
 int main(int argc, char * argv[]) {
+    [RangersAPM prewarmCheckStart];
     NSString * appDelegateClassName;
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
