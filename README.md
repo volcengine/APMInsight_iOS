@@ -22,7 +22,14 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 2.12.1 (Recommended)
+### 2.12.3 (※推荐※)
+* bugfix : fix crash when network unavailable for SDK monitor
+* feature : custom configuration support Prewarm threshold
+
+### 2.12.2 
+* bugfix : fix Flutter configuration not taking effect
+
+### 2.12.1
 * feature : add MetricKit subspec
 
 ### 2.12.0
