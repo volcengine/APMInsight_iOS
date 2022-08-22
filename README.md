@@ -22,7 +22,11 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 2.12.3 (※推荐※)
+### 2.12.4 (※Recommended※)
+* bugfix : Fix network decision crash on iOS 15
+* bugfix : Fix the misjudgment problem of OOM
+
+### 2.12.3
 * bugfix : fix crash when network unavailable for SDK monitor
 * feature : custom configuration support Prewarm threshold
 
