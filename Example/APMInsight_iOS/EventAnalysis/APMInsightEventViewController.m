@@ -104,15 +104,15 @@ static NSString *const kDimensionValuePlaceholder = @"DimensionValue, Default:Di
                         NSString *placeholder = textField.placeholder;
                         NSString *text = textField.text;
                         if ([placeholder isEqualToString:kEventNamePlaceholder]) {
-                            eventName = text ? text : eventName;
+                            eventName = text.length > 0 ? text : eventName;
                         } else if ([placeholder isEqualToString:kMetricKeyPlaceholder]) {
-                            metricKey = text ? text : metricKey;
+                            metricKey = text.length > 0 ? text : metricKey;
                         } else if ([placeholder isEqualToString:kMetricValuePlaceholder]) {
-                            metricValue = text ? @([text integerValue]) : metricValue;
+                            metricValue = text.length > 0 ? @([text integerValue]) : metricValue;
                         } else if ([placeholder isEqualToString:kDimensionKeyPlaceholder]) {
-                            dimensionKey = text ? text : dimensionKey;
+                            dimensionKey = text.length > 0 ? text : dimensionKey;
                         } else if ([placeholder isEqualToString:kDimensionValuePlaceholder]) {
-                            dimensionValue = text ? text : dimensionValue;
+                            dimensionValue = text.length > 0 ? text : dimensionValue;
                         }
                     }
                     [EventRecordManager recordEvent:eventName metrics:@{metricKey:metricValue} dimension:@{dimensionKey:dimensionValue} extraValue:nil];
