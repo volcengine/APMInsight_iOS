@@ -761,20 +761,21 @@
 				CODE_SIGN_ENTITLEMENTS = APMInsight_iOS/APMInsight_iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				DEVELOPMENT_TEAM = 8DYD9WJWT4;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 9.9.9;
+				MARKETING_VERSION = 2.13.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.xmh.APMInsight-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -788,21 +789,22 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = APMInsight_iOS/APMInsight_iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				DEVELOPMENT_TEAM = 8DYD9WJWT4;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 9.9.9;
+				MARKETING_VERSION = 2.13.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.xmh.APMInsight-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -816,19 +818,19 @@
 				CODE_SIGN_ENTITLEMENTS = APMInsight_iOS_extension/APMInsight_iOS_extension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				DEVELOPMENT_TEAM = 8DYD9WJWT4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APMInsight_iOS_extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APMInsight_iOS_extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.xmh.APMInsight-iOS.APMInsight-iOS-extension";
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -844,20 +846,20 @@
 				CODE_SIGN_ENTITLEMENTS = APMInsight_iOS_extension/APMInsight_iOS_extension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7B24H3AVG9;
+				DEVELOPMENT_TEAM = 8DYD9WJWT4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APMInsight_iOS_extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APMInsight_iOS_extension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.apminsight.xmh.APMInsight-iOS.APMInsight-iOS-extension";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

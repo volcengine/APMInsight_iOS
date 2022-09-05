@@ -66,7 +66,7 @@
     RangersAPMConfig *config = [RangersAPMConfig configWithAppID:@"233805"];
     config.channel = @"App Store";
     config.deviceIDSource = RAPMDeviceIDSourceFromAPMService;
-    config.groupID = @"group.apminsight.APMInsight-iOS";  //如果不需要监控扩展程序，则不需要此行代码
+    config.groupID = @"group.volcengine.apmplus";  //如果不需要监控扩展程序，则不需要此行代码
     
     /**
      首次启动由于没有获取到配置，无法确定需要开启哪些功能模块。可以配置此属性，来决定首次启动默认需要开启的功能模块，仅对首次启动生效，一旦拉取到配置，下次启动就会先读取本地缓存的配置来决定。
