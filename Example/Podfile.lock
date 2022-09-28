@@ -1,101 +1,101 @@
 PODS:
-  - OneKit/BaseKit (1.3.15):
+  - OneKit/BaseKit (1.3.19):
     - OneKit/Service
-  - OneKit/Database (1.3.15):
+  - OneKit/Database (1.3.19):
     - OneKit/Service
-  - OneKit/Reachability (1.3.15):
+  - OneKit/Reachability (1.3.19):
     - OneKit/Service
-  - OneKit/Service (1.3.15)
-  - RangersAPM/Above (2.13.1)
-  - RangersAPM/APMLog (2.13.1):
+  - OneKit/Service (1.3.19)
+  - RangersAPM/Above (2.13.2)
+  - RangersAPM/APMLog (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/Zip
-  - RangersAPM/BootingProtect (2.13.1):
+  - RangersAPM/BootingProtect (2.13.2):
     - RangersAPM/BootingProtectLite
     - RangersAPM/OOM
-  - RangersAPM/BootingProtectLite (2.13.1):
+  - RangersAPM/BootingProtectLite (2.13.2):
     - RangersAPM/Crash
     - RangersAPM/WatchDog
-  - RangersAPM/CN (2.13.1):
+  - RangersAPM/CN (2.13.2):
     - RangersAPM/Core
     - RangersAPM/Public
-  - RangersAPM/Core (2.13.1):
+  - RangersAPM/Core (2.13.2):
     - OneKit/BaseKit (>= 1.1.19)
-  - RangersAPM/CPUException (2.13.1):
+  - RangersAPM/CPUException (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
-  - RangersAPM/Crash (2.13.1):
+  - RangersAPM/Crash (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/CrashProtector (2.13.1):
+  - RangersAPM/CrashProtector (2.13.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/EventMonitor (2.13.1):
+  - RangersAPM/EventMonitor (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/HMD (2.13.1):
+  - RangersAPM/HMD (2.13.2):
     - OneKit/Database (>= 1.1.19)
     - RangersAPM/Core
-  - RangersAPM/Hybrid (2.13.1):
+  - RangersAPM/Hybrid (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/LAG (2.13.1):
+  - RangersAPM/LAG (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/MemoryGraph (2.13.1):
+  - RangersAPM/MemoryGraph (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/Zip
-  - RangersAPM/MetricKit (2.13.1):
+  - RangersAPM/MetricKit (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
-  - RangersAPM/Monitors (2.13.1):
+  - RangersAPM/Monitors (2.13.2):
     - RangersAPM/UITrackers
-  - RangersAPM/NetworkBasic (2.13.1):
+  - RangersAPM/NetworkBasic (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/NetworkPro (2.13.1):
+  - RangersAPM/NetworkPro (2.13.2):
     - RangersAPM/NetworkBasic
-  - RangersAPM/OOM (2.13.1):
+  - RangersAPM/OOM (2.13.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/WatchDog
-  - RangersAPM/Public (2.13.1):
+  - RangersAPM/Public (2.13.2):
     - RangersAPM/Above
     - RangersAPM/Core
     - RangersAPM/Zyone
     - RARegisterKit/Core
-  - RangersAPM/UITrackers (2.13.1):
+  - RangersAPM/UITrackers (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/UserException (2.13.1):
+  - RangersAPM/UserException (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/WatchDog (2.13.1):
+  - RangersAPM/WatchDog (2.13.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/Zip (2.13.1)
-  - RangersAPM/Zombie (2.13.1):
+  - RangersAPM/Zip (2.13.2)
+  - RangersAPM/Zombie (2.13.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/Zyone (2.13.1)
+  - RangersAPM/Zyone (2.13.2)
   - RangersAPMForExtension (1.0.1):
     - RangersAPMForExtension/Crash (= 1.0.1)
   - RangersAPMForExtension/Core (1.0.1)
@@ -108,24 +108,24 @@ PODS:
     - OneKit/Reachability
 
 DEPENDENCIES:
-  - RangersAPM/APMLog (= 2.13.1)
-  - RangersAPM/BootingProtect (= 2.13.1)
-  - RangersAPM/CN (= 2.13.1)
-  - RangersAPM/CPUException (= 2.13.1)
-  - RangersAPM/Crash (= 2.13.1)
-  - RangersAPM/CrashProtector (= 2.13.1)
-  - RangersAPM/EventMonitor (= 2.13.1)
-  - RangersAPM/Hybrid (= 2.13.1)
-  - RangersAPM/LAG (= 2.13.1)
-  - RangersAPM/MemoryGraph (= 2.13.1)
-  - RangersAPM/MetricKit (= 2.13.1)
-  - RangersAPM/Monitors (= 2.13.1)
-  - RangersAPM/NetworkPro (= 2.13.1)
-  - RangersAPM/OOM (= 2.13.1)
-  - RangersAPM/UITrackers (= 2.13.1)
-  - RangersAPM/UserException (= 2.13.1)
-  - RangersAPM/WatchDog (= 2.13.1)
-  - RangersAPM/Zombie (= 2.13.1)
+  - RangersAPM/APMLog (= 2.13.2)
+  - RangersAPM/BootingProtect (= 2.13.2)
+  - RangersAPM/CN (= 2.13.2)
+  - RangersAPM/CPUException (= 2.13.2)
+  - RangersAPM/Crash (= 2.13.2)
+  - RangersAPM/CrashProtector (= 2.13.2)
+  - RangersAPM/EventMonitor (= 2.13.2)
+  - RangersAPM/Hybrid (= 2.13.2)
+  - RangersAPM/LAG (= 2.13.2)
+  - RangersAPM/MemoryGraph (= 2.13.2)
+  - RangersAPM/MetricKit (= 2.13.2)
+  - RangersAPM/Monitors (= 2.13.2)
+  - RangersAPM/NetworkPro (= 2.13.2)
+  - RangersAPM/OOM (= 2.13.2)
+  - RangersAPM/UITrackers (= 2.13.2)
+  - RangersAPM/UserException (= 2.13.2)
+  - RangersAPM/WatchDog (= 2.13.2)
+  - RangersAPM/Zombie (= 2.13.2)
   - RangersAPMForExtension (= 1.0.1)
 
 SPEC REPOS:
@@ -136,11 +136,11 @@ SPEC REPOS:
     - RARegisterKit
 
 SPEC CHECKSUMS:
-  OneKit: a40b01d77a25b912cb5002aad88a8d3957f21b70
-  RangersAPM: 58aefbac58455e07f2c0e4e0bfd0a4acd83a5cd6
+  OneKit: 603638cb52106859a781e473dd9108b17efa94b4
+  RangersAPM: e23b623a5a82e226ccb483e0c7e78ff45cd20544
   RangersAPMForExtension: 32270d97c9040e95e64ade199f8e6c236f1304e4
   RARegisterKit: 63bb5e7a57a6479496bcfe155d149c18bdbcd3ab
 
-PODFILE CHECKSUM: 2e866e819d71bb893080b3125b4e883833670ebd
+PODFILE CHECKSUM: 4d688bd499c8fb19eb811624e9a69f6c9cbf03eb
 
 COCOAPODS: 1.9.3
