@@ -14,6 +14,7 @@
 		2B35FA3127A52E320037E7F2 /* APMInsightAutoreleaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */; };
 		2B71ED4527A5AB5200953665 /* APMInsightCaptureUITestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */; };
 		2B71ED4627A5AB5200953665 /* APMInsightCaptureUITestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */; };
+		2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */; };
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
 		4D50F8AD2578BF3E00BC4247 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D50F8AC2578BF3E00BC4247 /* README.md */; };
@@ -82,6 +83,8 @@
 		2B71ED4227A5AB5200953665 /* APMInsightCaptureUITestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCaptureUITestViewController.h; sourceTree = "<group>"; };
 		2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCaptureUITestViewController.m; sourceTree = "<group>"; };
 		2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APMInsightCaptureUITestViewController.xib; sourceTree = "<group>"; };
+		2B791BE428F7C16A0071845C /* APMInsightDiskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightDiskViewController.h; sourceTree = "<group>"; };
+		2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightDiskViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		347E5B3B69EAA189BAADC2FD /* Pods_APMInsight_iOS_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
@@ -194,6 +197,15 @@
 			path = APMInsightAutoreleaseObject;
 			sourceTree = "<group>";
 		};
+		2B791BE328F7C10C0071845C /* DiskAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				2B791BE428F7C16A0071845C /* APMInsightDiskViewController.h */,
+				2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */,
+			);
+			path = DiskAnalysis;
+			sourceTree = "<group>";
+		};
 		4D1F437B25EB450B004F42D2 /* EventAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +263,7 @@
 				4D93125E255D219D00402D0B /* LaggingAnalysis */,
 				4D93125D255D219100402D0B /* ErrorAnalysis */,
 				4D93125C255D218000402D0B /* CrashAnalysis */,
+				2B791BE328F7C10C0071845C /* DiskAnalysis */,
 				4D93123B255D1BCE00402D0B /* AppDelegate.h */,
 				4D93123C255D1BCE00402D0B /* AppDelegate.m */,
 				4D931241255D1BCE00402D0B /* APMHomeViewController.h */,
@@ -591,6 +604,7 @@
 				4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */,
 				4D7C1E9526BBEAD00010D16B /* APMInsightALogViewController.m in Sources */,
 				2B3452402705B38100E694DA /* APMInsightProtectorViewController.m in Sources */,
+				2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
