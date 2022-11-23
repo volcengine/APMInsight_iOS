@@ -22,7 +22,11 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.0.1 (※Recommended※) 
+### 3.0.2 (※Recommended※)
+bugfix : fix some stability issues
+bugfix : Improve compatibility with dynamic libraries
+
+### 3.0.1
 * bugfix : fix NSURLSession.sharedSession becoming unavailable in some cases
 * bugfix : fix MemoryGraph stuck in some cases
 * optimization : optimize the log reporting logic when the event balance is insufficient
