@@ -23,12 +23,12 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 
 ## Change Log
 ### 3.0.3 (※Recommended※)
-bugfix : custom dimension for PV logs
-bugfix : optimize the trigger timing of some requests
+* bugfix : custom dimension for PV logs
+* bugfix : optimize the trigger timing of some requests
 
 ### 3.0.2
-bugfix : fix some stability issues
-bugfix : Improve compatibility with dynamic libraries
+* bugfix : fix some stability issues
+* bugfix : Improve compatibility with dynamic libraries
 
 ### 3.0.1
 * bugfix : fix NSURLSession.sharedSession becoming unavailable in some cases
