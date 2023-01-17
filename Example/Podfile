@@ -30,7 +30,8 @@ target 'APMInsight_iOS' do
       'Zombie',
       'BootingProtect',
       'MetricKit',
-      'Disk'
+      'Disk',
+      'SessionTracker'
   ]
   
   # ---可复制部分结束

@@ -79,6 +79,10 @@ PODS:
     - RangersAPM/Core
     - RangersAPM/Zyone
     - RARegisterKit/Core (>= 0.0.8)
+  - RangersAPM/SessionTracker (3.0.5):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
   - RangersAPM/UITrackers (3.0.5):
     - RangersAPM/Core
     - RangersAPM/HMD
@@ -125,6 +129,7 @@ DEPENDENCIES:
   - RangersAPM/Monitors (= 3.0.5)
   - RangersAPM/NetworkPro (= 3.0.5)
   - RangersAPM/OOM (= 3.0.5)
+  - RangersAPM/SessionTracker (= 3.0.5)
   - RangersAPM/UITrackers (= 3.0.5)
   - RangersAPM/UserException (= 3.0.5)
   - RangersAPM/WatchDog (= 3.0.5)
@@ -144,6 +149,6 @@ SPEC CHECKSUMS:
   RangersAPMForExtension: 35b4c5b740f50b84d13c1782039241b33cf0aba4
   RARegisterKit: 3efb1a2a60262bbf780675d87d8e6527acc3f31b
 
-PODFILE CHECKSUM: 487227f4e7d36ac47927bda67ce9f710b4fb9aeb
+PODFILE CHECKSUM: 3797f1894e9a90edd1f20bfe937af4aaabf88968
 
 COCOAPODS: 1.9.3
