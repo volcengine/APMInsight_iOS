@@ -8,6 +8,7 @@
 #import "APMInsightCrashViewController.h"
 #import "APMInsightCellItem.h"
 #include <pthread.h>
+#import "APMInsightGWPASanViewController.h"
 
 @interface APMInsightCrashViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -147,6 +148,11 @@ static BOOL shouldRaiseException = NO;
     });
 }
 
+- (void)GWPASanPageTrigger {
+    APMInsightGWPASanViewController *GWPASanVC = [[APMInsightGWPASanViewController alloc] init];
+    [self.navigationController pushViewController:GWPASanVC animated:YES];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -249,6 +255,14 @@ static BOOL shouldRaiseException = NO;
             }
         };
         APMInsightCellItem *AsyncItem = [APMInsightCellItem itemWithTitle:@"Highlights -- 触发AsyncException" block:AsyncBlock];
+        
+        void(^GWPASanPageBlock)(void) = ^{
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf GWPASanPageTrigger];
+            }
+        };
+        APMInsightCellItem *GWPASanPageItem = [APMInsightCellItem itemWithTitle:@"GWPASan相关功能测试" block:GWPASanPageBlock];
 
         [_items addObject:NSExceptionItem];
         [_items addObject:cppExceptionItem];
@@ -257,6 +271,7 @@ static BOOL shouldRaiseException = NO;
         [_items addObject:watchDogItem];
         [_items addObject:OOMItem];
         [_items addObject:AsyncItem];
+        [_items addObject:GWPASanPageItem];
     }
     
     return _items;
