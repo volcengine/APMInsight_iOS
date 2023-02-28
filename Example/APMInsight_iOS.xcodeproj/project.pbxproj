@@ -12,6 +12,7 @@
 		2B35FA2B27A52D460037E7F2 /* APMInsightLargeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2A27A52D460037E7F2 /* APMInsightLargeObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2B35FA2E27A52DE30037E7F2 /* APMInsightLeakedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2C27A52DE30037E7F2 /* APMInsightLeakedObject.m */; };
 		2B35FA3127A52E320037E7F2 /* APMInsightAutoreleaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */; };
+		2B578B0729AA0220005DE4F7 /* APMInsightCoredumpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B578B0629AA0220005DE4F7 /* APMInsightCoredumpViewController.m */; };
 		2B71ED4527A5AB5200953665 /* APMInsightCaptureUITestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */; };
 		2B71ED4627A5AB5200953665 /* APMInsightCaptureUITestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */; };
 		2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */; };
@@ -81,6 +82,8 @@
 		2B35FA2D27A52DE30037E7F2 /* APMInsightLeakedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightLeakedObject.h; sourceTree = "<group>"; };
 		2B35FA2F27A52E320037E7F2 /* APMInsightAutoreleaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMInsightAutoreleaseObject.m; sourceTree = "<group>"; };
 		2B35FA3027A52E320037E7F2 /* APMInsightAutoreleaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMInsightAutoreleaseObject.h; sourceTree = "<group>"; };
+		2B578B0529AA0220005DE4F7 /* APMInsightCoredumpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCoredumpViewController.h; sourceTree = "<group>"; };
+		2B578B0629AA0220005DE4F7 /* APMInsightCoredumpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCoredumpViewController.m; sourceTree = "<group>"; };
 		2B71ED4227A5AB5200953665 /* APMInsightCaptureUITestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCaptureUITestViewController.h; sourceTree = "<group>"; };
 		2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCaptureUITestViewController.m; sourceTree = "<group>"; };
 		2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APMInsightCaptureUITestViewController.xib; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				4D931264255D236F00402D0B /* APMInsightCrashViewController.mm */,
 				2BFDB4B429A6392300B4B8FA /* APMInsightGWPASanViewController.h */,
 				2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */,
+				2B578B0529AA0220005DE4F7 /* APMInsightCoredumpViewController.h */,
+				2B578B0629AA0220005DE4F7 /* APMInsightCoredumpViewController.m */,
 			);
 			path = CrashAnalysis;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				4D7C1E8A26BBDA6B0010D16B /* APMInsightViewController.m in Sources */,
 				4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */,
 				4D7C1E9526BBEAD00010D16B /* APMInsightALogViewController.m in Sources */,
+				2B578B0729AA0220005DE4F7 /* APMInsightCoredumpViewController.m in Sources */,
 				2B3452402705B38100E694DA /* APMInsightProtectorViewController.m in Sources */,
 				2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */,
 			);

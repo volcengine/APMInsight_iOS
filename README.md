@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.1.1 (※Recommended※)
+### 3.2.0 (※Recommended※)
+* feature : Coredump
+
+### 3.1.1
 * feature : support using custom network library to report data
 * optimization : limit the frequency of network status interface calls
 

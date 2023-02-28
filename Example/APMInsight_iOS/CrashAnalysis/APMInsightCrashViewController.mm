@@ -9,6 +9,7 @@
 #import "APMInsightCellItem.h"
 #include <pthread.h>
 #import "APMInsightGWPASanViewController.h"
+#import "APMInsightCoredumpViewController.h"
 
 @interface APMInsightCrashViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -153,6 +154,11 @@ static BOOL shouldRaiseException = NO;
     [self.navigationController pushViewController:GWPASanVC animated:YES];
 }
 
+- (void)coredumpPageTrigger {
+    APMInsightCoredumpViewController *coredumpVC = [[APMInsightCoredumpViewController alloc] init];
+    [self.navigationController pushViewController:coredumpVC animated:YES];
+}
+
 #pragma mark - UIViewController
 
 - (void)viewDidLoad {
@@ -263,6 +269,14 @@ static BOOL shouldRaiseException = NO;
             }
         };
         APMInsightCellItem *GWPASanPageItem = [APMInsightCellItem itemWithTitle:@"GWPASan相关功能测试" block:GWPASanPageBlock];
+        
+        void(^coredumpPageBlock)(void) = ^{
+            __strong typeof(self) strongSelf = weakSelf;
+            if (strongSelf) {
+                [strongSelf coredumpPageTrigger];
+            }
+        };
+        APMInsightCellItem *coredumpPageItem = [APMInsightCellItem itemWithTitle:@"Coredump相关功能测试" block:coredumpPageBlock];
 
         [_items addObject:NSExceptionItem];
         [_items addObject:cppExceptionItem];
@@ -272,6 +286,7 @@ static BOOL shouldRaiseException = NO;
         [_items addObject:OOMItem];
         [_items addObject:AsyncItem];
         [_items addObject:GWPASanPageItem];
+        [_items addObject:coredumpPageItem];
     }
     
     return _items;
