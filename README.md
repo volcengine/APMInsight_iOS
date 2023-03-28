@@ -24,7 +24,7 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 ## Change Log
 ### 3.3.0 (※Recommended※)
 * bugfix : fixed the problem of circular call in Hybrid
-# optimization : change the SessionTracker to the default dependency. If the SessionTracker module has not been integrated before, the event volume consumption may increase after the upgrade
+* optimization : change the SessionTracker to the default dependency. If the SessionTracker module has not been integrated before, the event volume consumption may increase after the upgrade
 
 ### 3.2.3
 * feature : support ignoring the crash when the application exits
