@@ -22,7 +22,11 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.2.3 (※Recommended※)
+### 3.3.0 (※Recommended※)
+* bugfix : fixed the problem of circular call in Hybrid
+# optimization : change the SessionTracker to the default dependency. If the SessionTracker module has not been integrated before, the event volume consumption may increase after the upgrade
+
+### 3.2.3
 * feature : support ignoring the crash when the application exits
 
 ### 3.2.1 
