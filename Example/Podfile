@@ -32,7 +32,7 @@ target 'APMInsight_iOS' do
       'MetricKit',
       'Disk',
       'SessionTracker',
-      'GWPASan‘,
+      'GWPASan',
       'Coredump'
   ]
   
