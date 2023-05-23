@@ -12,7 +12,7 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 ### Usage
 1. The demo APP has integrated all capabilities of APMPlus.
 2. You can make errors and performance data in the demo APP. 
-3. Reset the appID in AppDelegate.m and the performance data will be uploaded to your own console.
+3. Reset the appID and appToken in APMInitialViewController.m, then the performance data will be uploaded to your own console.
 
 ## Environment
 * iOS 9.0+

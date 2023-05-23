@@ -37,6 +37,7 @@
 		4D931280255D417900402D0B /* APMInsightMemoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D93127F255D417900402D0B /* APMInsightMemoryViewController.m */; };
 		4D931284255D418F00402D0B /* APMInsightNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */; };
 		4D9D11EA275E355A00532FC0 /* APMInsightCPUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D11E9275E355A00532FC0 /* APMInsightCPUViewController.m */; };
+		4D9E9F0D2A1B3B0100DC6B07 /* APMInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E9F0C2A1B3B0100DC6B07 /* APMInitialViewController.m */; };
 		4DA5086F27EACA2400C8BF15 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA5086E27EACA2400C8BF15 /* ShareViewController.m */; };
 		4DA5087227EACA2400C8BF15 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA5087027EACA2400C8BF15 /* MainInterface.storyboard */; };
 		4DA5087627EACA2400C8BF15 /* APMInsight_iOS_extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4DA5086B27EACA2400C8BF15 /* APMInsight_iOS_extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -89,10 +90,10 @@
 		2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APMInsightCaptureUITestViewController.xib; sourceTree = "<group>"; };
 		2B791BE428F7C16A0071845C /* APMInsightDiskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightDiskViewController.h; sourceTree = "<group>"; };
 		2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightDiskViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
-		347E5B3B69EAA189BAADC2FD /* Pods_APMInsight_iOS_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFDB4B429A6392300B4B8FA /* APMInsightGWPASanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightGWPASanViewController.h; sourceTree = "<group>"; };
 		2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightGWPASanViewController.m; sourceTree = "<group>"; };
+		347E5B3B69EAA189BAADC2FD /* Pods_APMInsight_iOS_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
 		4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightEventViewController.m; sourceTree = "<group>"; };
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
@@ -130,6 +131,8 @@
 		4D931283255D418F00402D0B /* APMInsightNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightNetworkViewController.m; sourceTree = "<group>"; };
 		4D9D11E8275E355A00532FC0 /* APMInsightCPUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightCPUViewController.h; sourceTree = "<group>"; };
 		4D9D11E9275E355A00532FC0 /* APMInsightCPUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightCPUViewController.m; sourceTree = "<group>"; };
+		4D9E9F0B2A1B3B0100DC6B07 /* APMInitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInitialViewController.h; sourceTree = "<group>"; };
+		4D9E9F0C2A1B3B0100DC6B07 /* APMInitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInitialViewController.m; sourceTree = "<group>"; };
 		4DA5086B27EACA2400C8BF15 /* APMInsight_iOS_extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = APMInsight_iOS_extension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA5086D27EACA2400C8BF15 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		4DA5086E27EACA2400C8BF15 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				4D931259255D1D5F00402D0B /* APMInsightCellItem.m */,
 				4D7C1E8826BBDA6B0010D16B /* APMInsightViewController.h */,
 				4D7C1E8926BBDA6B0010D16B /* APMInsightViewController.m */,
+				4D9E9F0B2A1B3B0100DC6B07 /* APMInitialViewController.h */,
+				4D9E9F0C2A1B3B0100DC6B07 /* APMInitialViewController.m */,
 			);
 			path = APMInsight_iOS;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				4D931270255D413600402D0B /* APMInsightExceptionViewController.m in Sources */,
 				2B35FA2E27A52DE30037E7F2 /* APMInsightLeakedObject.m in Sources */,
 				4D931265255D236F00402D0B /* APMInsightCrashViewController.mm in Sources */,
+				4D9E9F0D2A1B3B0100DC6B07 /* APMInitialViewController.m in Sources */,
 				4D93125A255D1D5F00402D0B /* APMInsightCellItem.m in Sources */,
 				4D93124E255D1BD100402D0B /* main.m in Sources */,
 				4D931278255D415A00402D0B /* APMInsightPerformanceViewController.m in Sources */,
@@ -788,7 +794,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8DYD9WJWT4;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = NO;
@@ -796,12 +803,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.13.0;
+				MARKETING_VERSION = 3.3.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.522;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -816,7 +823,8 @@
 				CODE_SIGN_ENTITLEMENTS = APMInsight_iOS/APMInsight_iOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DYD9WJWT4;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = APMInsight_iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_GENERATE_MAP_FILE = YES;
@@ -824,13 +832,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.13.0;
+				MARKETING_VERSION = 3.3.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.522;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -845,6 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8DYD9WJWT4;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APMInsight_iOS_extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APMInsight_iOS_extension;
@@ -855,8 +864,8 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.extension;
+				MARKETING_VERSION = 1.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.522.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -873,6 +882,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8DYD9WJWT4;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = APMInsight_iOS_extension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = APMInsight_iOS_extension;
@@ -883,9 +893,9 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.volcengine.apmplus.522.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
