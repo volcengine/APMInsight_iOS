@@ -50,7 +50,8 @@
             NSLog(@"APMInsight Debug Log : %@", log);
         }];
 #endif
-        [RangersAPMForAPPExtension startWithGroupID:@"group.apminsight.APMInsight-iOS" forAppID:@"233805"];
+        RangersAPMForAPPExtensionConfig *extensionConfig = [RangersAPMForAPPExtensionConfig configWithAppID:@"233805" groupID:@"xxx"]; // 请先在 Capability 中添加 App Groups，然后修改 groupID
+        [RangersAPMForAPPExtension startWithConfig:extensionConfig];
     });
     /**
      ---可复制部分结束

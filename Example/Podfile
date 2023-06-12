@@ -52,7 +52,7 @@ target 'APMInsight_iOS_extension' do
   #  Copyable section starts ---
   source 'https://github.com/volcengine/volcengine-specs.git'
   
-  pod 'RangersAPMForExtension', '1.0.2'
+  pod 'RangersAPMForExtension', '1.0.3'
   
   # ---可复制部分结束
   # --- Copyable section ends

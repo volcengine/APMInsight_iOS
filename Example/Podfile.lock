@@ -119,13 +119,13 @@ PODS:
     - RangersAPM/HMD
     - RangersAPM/Public
   - RangersAPM/Zyone (3.3.2)
-  - RangersAPMForExtension (1.0.2):
-    - RangersAPMForExtension/Crash (= 1.0.2)
-  - RangersAPMForExtension/Core (1.0.2)
-  - RangersAPMForExtension/Crash (1.0.2):
+  - RangersAPMForExtension (1.0.3):
+    - RangersAPMForExtension/Crash (= 1.0.3)
+  - RangersAPMForExtension/Core (1.0.3)
+  - RangersAPMForExtension/Crash (1.0.3):
     - RangersAPMForExtension/Core
     - RangersAPMForExtension/Public
-  - RangersAPMForExtension/Public (1.0.2)
+  - RangersAPMForExtension/Public (1.0.3)
   - RARegisterKit/Core (0.0.10):
     - OneKit/BaseKit
 
@@ -152,7 +152,7 @@ DEPENDENCIES:
   - RangersAPM/UserException (= 3.3.2)
   - RangersAPM/WatchDog (= 3.3.2)
   - RangersAPM/Zombie (= 3.3.2)
-  - RangersAPMForExtension (= 1.0.2)
+  - RangersAPMForExtension (= 1.0.3)
 
 SPEC REPOS:
   https://github.com/volcengine/volcengine-specs.git:
@@ -164,9 +164,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   OneKit: 05d59eb122e247640c35ceb28b300ae27e89cb88
   RangersAPM: cafbcb734812f64a810f891062ef806bdcd9b58f
-  RangersAPMForExtension: 35b4c5b740f50b84d13c1782039241b33cf0aba4
+  RangersAPMForExtension: 1019bc535f69913ace78eb39f796949b785d2653
   RARegisterKit: 77fcecfaf9bb74f7b89ee2a9df4b75b02af03635
 
-PODFILE CHECKSUM: ab844bd910fd2703bb582931ca4f3ac56a280365
+PODFILE CHECKSUM: ad5b400b499e4842c3a992d9990ef76c5d3109dc
 
 COCOAPODS: 1.9.3
