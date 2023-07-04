@@ -22,7 +22,12 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.3.2 (※Recommended※)
+### 3.4.2 (※Recommended※)
+* bugfix : fix repeated reporting of CPU exception logs in some cases
+* bugfix : fix the problem that some crash logs in iOS 16 could not obtain valid stacks
+* bugfix : fix the crash after triggered a memory problem at debugging environment 
+
+### 3.3.2
 * feature : add CDN information
 * bugfix : fix symbol conflict
 

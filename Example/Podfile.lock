@@ -4,121 +4,119 @@ PODS:
   - OneKit/Database (1.4.2):
     - OneKit/Service
   - OneKit/Service (1.4.2)
-  - RangersAPM/Above (3.3.2)
-  - RangersAPM/APMLog (3.3.2):
+  - RangersAPM/Above (3.4.2)
+  - RangersAPM/APMLog (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
-    - RangersAPM/Public
     - RangersAPM/Zip
-  - RangersAPM/BootingProtect (3.3.2):
+  - RangersAPM/BootingProtect (3.4.2):
     - RangersAPM/BootingProtectLite
     - RangersAPM/OOM
-  - RangersAPM/BootingProtectLite (3.3.2):
+  - RangersAPM/BootingProtectLite (3.4.2):
     - RangersAPM/Crash
     - RangersAPM/WatchDog
-  - RangersAPM/CN (3.3.2):
+  - RangersAPM/CN (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Public
-  - RangersAPM/Core (3.3.2):
+  - RangersAPM/Core (3.4.2):
     - OneKit/BaseKit (>= 1.1.19)
-  - RangersAPM/Coredump (3.3.2):
+  - RangersAPM/Coredump (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Zip
-  - RangersAPM/CPUException (3.3.2):
+  - RangersAPM/CPUException (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/SessionTracker
-  - RangersAPM/Crash (3.3.2):
+  - RangersAPM/Crash (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
     - RangersAPM/Zip
-  - RangersAPM/CrashProtector (3.3.2):
+  - RangersAPM/CrashProtector (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Crash
-    - RangersAPM/HMD
-    - RangersAPM/Public
     - RangersAPM/SessionTracker
-  - RangersAPM/Disk (3.3.2):
+  - RangersAPM/Disk (3.4.2):
     - RangersAPM/Monitors
     - RangersAPM/SessionTracker
-  - RangersAPM/EventMonitor (3.3.2):
+  - RangersAPM/EventMonitor (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/GWPASan (3.3.2):
+  - RangersAPM/GWPASan (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
-  - RangersAPM/HMD (3.3.2):
+  - RangersAPM/HMD (3.4.2):
     - OneKit/Database (>= 1.1.19)
     - RangersAPM/Core
-  - RangersAPM/Hybrid (3.3.2):
+    - RangersAPM/Public
+  - RangersAPM/Hybrid (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/LAG (3.3.2):
+  - RangersAPM/LAG (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
-  - RangersAPM/MemoryGraph (3.3.2):
+  - RangersAPM/MemoryGraph (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/Zip
-  - RangersAPM/MetricKit (3.3.2):
+  - RangersAPM/MetricKit (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/SessionTracker
-  - RangersAPM/Monitors (3.3.2):
+  - RangersAPM/Monitors (3.4.2):
+    - RangersAPM/Core
+    - RangersAPM/HMD
     - RangersAPM/UITrackers
-  - RangersAPM/NetworkBasic (3.3.2):
+  - RangersAPM/NetworkBasic (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/NetworkPro (3.3.2):
+  - RangersAPM/NetworkPro (3.4.2):
     - RangersAPM/NetworkBasic
-  - RangersAPM/OOM (3.3.2):
+  - RangersAPM/OOM (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
     - RangersAPM/WatchDog
-  - RangersAPM/Public (3.3.2):
+  - RangersAPM/Public (3.4.2):
     - RangersAPM/Above
     - RangersAPM/Core
     - RangersAPM/Zyone
-    - RARegisterKit/Core (>= 0.0.8)
-  - RangersAPM/SessionTracker (3.3.2):
+    - RARegisterKit/Core (>= 0.0.10)
+  - RangersAPM/SessionTracker (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/UITrackers (3.3.2):
+  - RangersAPM/UITrackers (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/UserException (3.3.2):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAPM/SessionTracker
-  - RangersAPM/WatchDog (3.3.2):
+  - RangersAPM/UserException (3.4.2):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
-  - RangersAPM/Zip (3.3.2)
-  - RangersAPM/Zombie (3.3.2):
+  - RangersAPM/WatchDog (3.4.2):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAPM/SessionTracker
+  - RangersAPM/Zip (3.4.2)
+  - RangersAPM/Zombie (3.4.2):
     - RangersAPM/Core
     - RangersAPM/Crash
-    - RangersAPM/HMD
-    - RangersAPM/Public
-  - RangersAPM/Zyone (3.3.2)
+  - RangersAPM/Zyone (3.4.2)
   - RangersAPMForExtension (1.0.3):
     - RangersAPMForExtension/Crash (= 1.0.3)
   - RangersAPMForExtension/Core (1.0.3)
@@ -130,28 +128,28 @@ PODS:
     - OneKit/BaseKit
 
 DEPENDENCIES:
-  - RangersAPM/APMLog (= 3.3.2)
-  - RangersAPM/BootingProtect (= 3.3.2)
-  - RangersAPM/CN (= 3.3.2)
-  - RangersAPM/Coredump (= 3.3.2)
-  - RangersAPM/CPUException (= 3.3.2)
-  - RangersAPM/Crash (= 3.3.2)
-  - RangersAPM/CrashProtector (= 3.3.2)
-  - RangersAPM/Disk (= 3.3.2)
-  - RangersAPM/EventMonitor (= 3.3.2)
-  - RangersAPM/GWPASan (= 3.3.2)
-  - RangersAPM/Hybrid (= 3.3.2)
-  - RangersAPM/LAG (= 3.3.2)
-  - RangersAPM/MemoryGraph (= 3.3.2)
-  - RangersAPM/MetricKit (= 3.3.2)
-  - RangersAPM/Monitors (= 3.3.2)
-  - RangersAPM/NetworkPro (= 3.3.2)
-  - RangersAPM/OOM (= 3.3.2)
-  - RangersAPM/SessionTracker (= 3.3.2)
-  - RangersAPM/UITrackers (= 3.3.2)
-  - RangersAPM/UserException (= 3.3.2)
-  - RangersAPM/WatchDog (= 3.3.2)
-  - RangersAPM/Zombie (= 3.3.2)
+  - RangersAPM/APMLog (= 3.4.2)
+  - RangersAPM/BootingProtect (= 3.4.2)
+  - RangersAPM/CN (= 3.4.2)
+  - RangersAPM/Coredump (= 3.4.2)
+  - RangersAPM/CPUException (= 3.4.2)
+  - RangersAPM/Crash (= 3.4.2)
+  - RangersAPM/CrashProtector (= 3.4.2)
+  - RangersAPM/Disk (= 3.4.2)
+  - RangersAPM/EventMonitor (= 3.4.2)
+  - RangersAPM/GWPASan (= 3.4.2)
+  - RangersAPM/Hybrid (= 3.4.2)
+  - RangersAPM/LAG (= 3.4.2)
+  - RangersAPM/MemoryGraph (= 3.4.2)
+  - RangersAPM/MetricKit (= 3.4.2)
+  - RangersAPM/Monitors (= 3.4.2)
+  - RangersAPM/NetworkPro (= 3.4.2)
+  - RangersAPM/OOM (= 3.4.2)
+  - RangersAPM/SessionTracker (= 3.4.2)
+  - RangersAPM/UITrackers (= 3.4.2)
+  - RangersAPM/UserException (= 3.4.2)
+  - RangersAPM/WatchDog (= 3.4.2)
+  - RangersAPM/Zombie (= 3.4.2)
   - RangersAPMForExtension (= 1.0.3)
 
 SPEC REPOS:
@@ -163,10 +161,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   OneKit: 05d59eb122e247640c35ceb28b300ae27e89cb88
-  RangersAPM: cafbcb734812f64a810f891062ef806bdcd9b58f
+  RangersAPM: d6b2d6228b4446fba67c09c897a4395819d12b6b
   RangersAPMForExtension: 1019bc535f69913ace78eb39f796949b785d2653
   RARegisterKit: 77fcecfaf9bb74f7b89ee2a9df4b75b02af03635
 
-PODFILE CHECKSUM: ad5b400b499e4842c3a992d9990ef76c5d3109dc
+PODFILE CHECKSUM: 00035ab65e54d80341e03d7c720695a7c10c4421
 
 COCOAPODS: 1.9.3
