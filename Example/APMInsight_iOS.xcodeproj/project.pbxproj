@@ -16,6 +16,7 @@
 		2B71ED4527A5AB5200953665 /* APMInsightCaptureUITestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B71ED4327A5AB5200953665 /* APMInsightCaptureUITestViewController.m */; };
 		2B71ED4627A5AB5200953665 /* APMInsightCaptureUITestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */; };
 		2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */; };
+		2BEE51172A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE51162A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.m */; };
 		2BFDB4B629A6392300B4B8FA /* APMInsightGWPASanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */; };
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
@@ -90,6 +91,8 @@
 		2B71ED4427A5AB5200953665 /* APMInsightCaptureUITestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APMInsightCaptureUITestViewController.xib; sourceTree = "<group>"; };
 		2B791BE428F7C16A0071845C /* APMInsightDiskViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightDiskViewController.h; sourceTree = "<group>"; };
 		2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightDiskViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
+		2BEE51152A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RangersAPMCustomCloudHandler.h; sourceTree = "<group>"; };
+		2BEE51162A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RangersAPMCustomCloudHandler.m; sourceTree = "<group>"; };
 		2BFDB4B429A6392300B4B8FA /* APMInsightGWPASanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightGWPASanViewController.h; sourceTree = "<group>"; };
 		2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightGWPASanViewController.m; sourceTree = "<group>"; };
 		347E5B3B69EAA189BAADC2FD /* Pods_APMInsight_iOS_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +218,15 @@
 			path = DiskAnalysis;
 			sourceTree = "<group>";
 		};
+		2BEE51142A728598002FB0F3 /* CloudCommand */ = {
+			isa = PBXGroup;
+			children = (
+				2BEE51152A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.h */,
+				2BEE51162A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.m */,
+			);
+			path = CloudCommand;
+			sourceTree = "<group>";
+		};
 		4D1F437B25EB450B004F42D2 /* EventAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA5087B27EACBD100C8BF15 /* APMInsight_iOS.entitlements */,
+				2BEE51142A728598002FB0F3 /* CloudCommand */,
 				4D9D11E7275E354800532FC0 /* CPUMonitor */,
 				2B34523A2705B38100E694DA /* ProtectorAnalysis */,
 				4D7C1E9226BBEAD00010D16B /* ALogUpload */,
@@ -601,6 +614,7 @@
 				2B35FA3127A52E320037E7F2 /* APMInsightAutoreleaseObject.m in Sources */,
 				4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */,
 				2B35FA2B27A52D460037E7F2 /* APMInsightLargeObject.m in Sources */,
+				2BEE51172A7285AD002FB0F3 /* RangersAPMCustomCloudHandler.m in Sources */,
 				4D931243255D1BCE00402D0B /* APMHomeViewController.m in Sources */,
 				4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */,
 				4D93123D255D1BCE00402D0B /* AppDelegate.m in Sources */,

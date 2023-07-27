@@ -17,6 +17,10 @@
 #if __has_include(<RangersAPM+BootingProtect.h>)
 #import <RangersAPM+BootingProtect.h>
 #endif
+#if __has_include(<RangersAPM+CloudCommand.h>)
+#import <RangersAPM+CloudCommand.h>
+#import "RangersAPMCustomCloudHandler.h"
+#endif
 /**
  ---可复制部分结束
  --- Copyable section ends
@@ -220,6 +224,10 @@
                 NSLog(@"⚠️Consecutive oom 1 time");
             }
         }];
+    #endif
+        
+    #if __has_include(<RangersAPM+CloudCommand.h>)
+        [RangersAPM addCustomCommandHandlerCls:[RangersAPMCustomCloudHandler class]];
     #endif
             
         [RangersAPM setUserID:@"MYUSERID194767"];
