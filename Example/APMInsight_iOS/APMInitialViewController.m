@@ -19,7 +19,7 @@
 #endif
 #if __has_include(<RangersAPM+CloudCommand.h>)
 #import <RangersAPM+CloudCommand.h>
-#import "RangersAPMCustomCloudHandler.h"
+#import "APMInsightCustomCloudHandler.h"
 #endif
 /**
  ---可复制部分结束
@@ -227,7 +227,7 @@
     #endif
         
     #if __has_include(<RangersAPM+CloudCommand.h>)
-        [RangersAPM addCustomCommandHandlerCls:[RangersAPMCustomCloudHandler class]];
+        [RangersAPM addCustomCommandHandlerCls:[APMInsightCustomCloudHandler class]];
     #endif
             
         [RangersAPM setUserID:@"MYUSERID194767"];

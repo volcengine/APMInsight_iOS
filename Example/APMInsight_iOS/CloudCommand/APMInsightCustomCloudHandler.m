@@ -1,16 +1,15 @@
 //
-//  RangersAPMCustomCloudHandler.m
-//  RangersAPM
+//  APMInsightCustomCloudHandler.m
+//  APMInsight_iOS
 //
-//  Created by ByteDance on 2023/5/8.
-//  Copyright © 2023 ghlsb@hotmail.com. All rights reserved.
+//  Created by ByteDance on 2023/7/18.
 //
 
 #if __has_include(<RangersAPM+CloudCommand.h>)
 
-#import "RangersAPMCustomCloudHandler.h"
+#import "APMInsightCustomCloudHandler.h"
 
-@implementation RangersAPMCustomCloudHandler
+@implementation APMInsightCustomCloudHandler
 
 + (NSString *)cloudCommandIdentifier {
     return @"pull_file";
@@ -18,10 +17,10 @@
 
 /// 创建用于执行指令的实例变量
 + (instancetype)createInstance {
-    static RangersAPMCustomCloudHandler *handler = nil;
+    static APMInsightCustomCloudHandler *handler = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        handler = [[RangersAPMCustomCloudHandler alloc] init];
+        handler = [[APMInsightCustomCloudHandler alloc] init];
     });
     return handler;
 }
