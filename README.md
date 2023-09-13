@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.6.3 (※Recommended※) 
+### 3.6.4 (※Recommended※) 
+* bugfix : fix incompatibility issues with historical data
+
+### 3.6.3 (Deprecated) 
 * bugfix : fix missing data on page load
 * bugfix : fix symbol conflict
 * optimization : optimize console log output text
@@ -32,11 +35,11 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 * optimization : optimize library dependencies
 * feature : add compatibility APIs for page loading
 
-### 3.5.4
+### 3.5.4 (Deprecated) 
 * bugfix: fix the crash of network monitoring in some scenarios
 * optimization : optimize the console log output logic
 
-### 3.5.3
+### 3.5.3 (Deprecated) 
 * feature : add custom cloudCommand
 * feature : add battery metrics from MetricKit
 * feature : support custom log for component
