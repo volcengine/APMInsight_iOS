@@ -52,10 +52,39 @@ static char *g_default_char = "Volcengine Volcengine Volcengine Volcengine Volce
 
 @implementation APMInsightGWPASanViewController
 
+- (BOOL)isSupportGWPASAn {
+    BOOL isSupport = NO;
+    
+    // iOS10以上
+    if (@available(iOS 10, *)) {
+        isSupport = YES;
+    }
+    else {
+        return isSupport;
+    }
+    
+    // arm64 真机
+#if (defined(__arm64__) && defined(TARGET_OS_IPHONE))
+    isSupport = YES;
+#else
+    isSupport = NO;
+#endif
+    
+    if (!isSupport) {
+        UIAlertController *alertVC = [self alertWithTitle:@"不支持的设备" message:@"GWPASan无法在模拟器触发，请使用真机（iOS 10+）进行测试"];
+        [self presentViewController:alertVC animated:YES completion:nil];
+    }
+    
+    return isSupport;
+}
+
+
 #pragma mark - Test cases
 char *g_heap_buffer_overflow_str = NULL;
 
 - (void)prepareHeapBufferOverflow {
+    if (![self isSupportGWPASAn]) return;
+    
     for (int i = 0; i < 1000000; i++) {
         char *heap_buffer_overflow_str = (char *)malloc(kMallocSize);
         memset(heap_buffer_overflow_str, '\0', kMallocSize);
@@ -74,6 +103,8 @@ char *g_heap_buffer_overflow_str = NULL;
 }
 
 - (void)heapBufferOverflowTrigger {
+    if (![self isSupportGWPASAn]) return;
+    
     if (g_heap_buffer_overflow_str == NULL) {
         UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"请先执行\"准备Heap Buffer Overflow类型崩溃环境\""];
         [self presentViewController:alertVC animated:YES completion:nil];
@@ -93,6 +124,8 @@ char *g_heap_buffer_overflow_str = NULL;
 
 char *g_heap_buffer_underflow_str = NULL;
 - (void)prepareHeapBufferUnderflow {
+    if (![self isSupportGWPASAn]) return;
+    
     for (int i = 0; i < 1000000; i++) {
         char *heap_buffer_underflow_str = (char *)malloc(kMallocSize);
         memset(heap_buffer_underflow_str, '\0', kMallocSize);
@@ -109,6 +142,8 @@ char *g_heap_buffer_underflow_str = NULL;
 }
 
 - (void)heapBufferUnderflowTrigger {
+    if (![self isSupportGWPASAn]) return;
+    
     if (g_heap_buffer_underflow_str == NULL) {
         UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"请先执行\"准备Heap Buffer Underflow类型崩溃环境\""];
         [self presentViewController:alertVC animated:YES completion:nil];
@@ -130,6 +165,8 @@ char *g_heap_buffer_underflow_str = NULL;
 
 char *g_double_free_str = NULL;
 - (void)prepareDoubleFree {
+    if (![self isSupportGWPASAn]) return;
+    
     for (int i = 0; i < 1000000; i++) {
         char *double_free_str = (char *)malloc(kMallocSize);
         memset(double_free_str, '\0', kMallocSize);
@@ -147,6 +184,8 @@ char *g_double_free_str = NULL;
 }
 
 - (void)doubleFreeTrigger {
+    if (![self isSupportGWPASAn]) return;
+    
     if (g_double_free_str == NULL) {
         UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"请先执行\"准备Double Free类型崩溃环境\""];
         [self presentViewController:alertVC animated:YES completion:nil];
@@ -164,6 +203,8 @@ char *g_double_free_str = NULL;
 
 char *g_use_after_free_str = NULL;
 - (void)prepareUseAfterFree {
+    if (![self isSupportGWPASAn]) return;
+    
     for (int i = 0; i < 1000000; i++) {
         char *use_after_free_str = (char *)malloc(kMallocSize);
         memset(use_after_free_str, '\0', kMallocSize);
@@ -181,6 +222,8 @@ char *g_use_after_free_str = NULL;
 }
 
 - (void)useAfterFreeTrigger {
+    if (![self isSupportGWPASAn]) return;
+    
     if (g_use_after_free_str == NULL) {
         UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"请先执行\"准备Use After Free类型崩溃环境\""];
         [self presentViewController:alertVC animated:YES completion:nil];
