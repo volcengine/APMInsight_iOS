@@ -8,11 +8,36 @@
 #import "APMInsightGWPASanViewController.h"
 #import "APMInsightCellItem.h"
 
+static BOOL hasCalledPointerInGWPASan__Sinf__ = NO;
+static BOOL hasCalledPointerInGWPASan = NO;
+
 bool __attribute__((noinline)) __attribute__((weak)) pointerInGWPASan__Sinf__(const void *Ptr) {
-    assert(false && "Please add GWPASan subspec in Podfile.");
+    hasCalledPointerInGWPASan__Sinf__ = YES;
     
     return YES;
 }
+
+bool __attribute__((noinline)) __attribute__((weak)) pointerInGWPASan(const void *Ptr) {
+    hasCalledPointerInGWPASan = YES;
+    
+    return YES;
+}
+
+
+bool pointerInGWPASan_Temp(const void *Ptr) {
+    bool result = pointerInGWPASan(Ptr);
+    bool sinfResult = pointerInGWPASan__Sinf__(Ptr);
+    if (!hasCalledPointerInGWPASan) {
+        return result;
+    } else if (!hasCalledPointerInGWPASan__Sinf__) {
+        return sinfResult;
+    } else {
+        assert(false && "Please add GWPASan subspec in Podfile.");
+    }
+    
+    return YES;
+}
+
 
 #define kMallocSize (13)
 static char *g_default_char = "Volcengine Volcengine Volcengine Volcengine Volcengine Volcengine Volcengine";
@@ -35,7 +60,7 @@ char *g_heap_buffer_overflow_str = NULL;
         char *heap_buffer_overflow_str = (char *)malloc(kMallocSize);
         memset(heap_buffer_overflow_str, '\0', kMallocSize);
         
-        if (pointerInGWPASan__Sinf__(heap_buffer_overflow_str)) {
+        if (pointerInGWPASan_Temp(heap_buffer_overflow_str)) {
             g_heap_buffer_overflow_str = heap_buffer_overflow_str;
             
             UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"Heap Buffer Overflow环境已经准备好了，可以开始测试"];
@@ -71,7 +96,7 @@ char *g_heap_buffer_underflow_str = NULL;
     for (int i = 0; i < 1000000; i++) {
         char *heap_buffer_underflow_str = (char *)malloc(kMallocSize);
         memset(heap_buffer_underflow_str, '\0', kMallocSize);
-        if (pointerInGWPASan__Sinf__(heap_buffer_underflow_str)) {
+        if (pointerInGWPASan_Temp(heap_buffer_underflow_str)) {
             g_heap_buffer_underflow_str = heap_buffer_underflow_str;
 
             UIAlertController *alertVC = [self alertWithTitle:@"提示" message:@"Heap Buffer Underflow环境已经准备好了，可以开始测试"];
@@ -108,7 +133,7 @@ char *g_double_free_str = NULL;
     for (int i = 0; i < 1000000; i++) {
         char *double_free_str = (char *)malloc(kMallocSize);
         memset(double_free_str, '\0', kMallocSize);
-        if (pointerInGWPASan__Sinf__(double_free_str)) {
+        if (pointerInGWPASan_Temp(double_free_str)) {
             g_double_free_str = double_free_str;
             free(double_free_str);
 
@@ -142,7 +167,7 @@ char *g_use_after_free_str = NULL;
     for (int i = 0; i < 1000000; i++) {
         char *use_after_free_str = (char *)malloc(kMallocSize);
         memset(use_after_free_str, '\0', kMallocSize);
-        if (pointerInGWPASan__Sinf__(use_after_free_str)) {
+        if (pointerInGWPASan_Temp(use_after_free_str)) {
             g_use_after_free_str = use_after_free_str;
             free(use_after_free_str);
             
