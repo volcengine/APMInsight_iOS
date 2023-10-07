@@ -168,7 +168,7 @@
          */
     #if DEBUG
         [RangersAPM allowDebugLogUsingLogger:^(NSString * _Nonnull log) {
-            NSLog(@"APMInsight Debug Log : %@", log);
+            NSLog(@"APMInsight_iOS Debug Log : %@", log);
         }];
     #endif
         /**

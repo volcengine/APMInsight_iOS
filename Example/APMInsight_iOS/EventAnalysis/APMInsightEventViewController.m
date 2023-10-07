@@ -93,7 +93,7 @@ static NSString *const kDimensionValuePlaceholder = @"DimensionValue, Default:Di
             __strong typeof(self) strongSelf = weakSelf;
             if (strongSelf) {
                 
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义事件" message:@"⚠️只有在APMInsight配置开启的事件才能成功记录" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"自定义事件" message:@"⚠️只有在平台事件管理配置开启的事件才能成功记录" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:@"记录事件" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSString *eventName = @"eventNameDemoTest";
                     NSString *metricKey = @"metricKeyDemoTest";

@@ -59,7 +59,7 @@ typedef void (^manualUserExceptionAlertHandler)(NSString *exceptionType, NSStrin
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if (success) {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误记录上报成功" message:@"请到APMInsight平台查看上报的自定义错误日志" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"错误记录上报成功" message:@"请到应用性能监控全链路版控制台查看上报的自定义错误日志" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:action];
             [self presentViewController:alert animated:YES completion:nil];

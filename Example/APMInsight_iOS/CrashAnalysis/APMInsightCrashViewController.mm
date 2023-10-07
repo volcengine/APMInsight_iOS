@@ -27,7 +27,7 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         UIAlertController *alert = [self alertWithTitle:@"NSException" message:@"即将触发NSException类型崩溃，APP将闪退，稍后重新启动APP即可在平台上看到崩溃日志" okHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                NSException *exception = [NSException exceptionWithName:@"TEST_EXCEPTION" reason:@"APMInsight is testing NSException" userInfo:nil];
+                NSException *exception = [NSException exceptionWithName:@"TEST_EXCEPTION" reason:@"APMInsight_iOS is testing NSException" userInfo:nil];
                 [exception raise];
             });
         }];
