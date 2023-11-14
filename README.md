@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.7.0 (※Recommended※)
+### 3.7.1 (※Recommended※)
+* bugfix : fix priority inversion 
+
+### 3.7.0
 * feature : virtual memory monitoring
 * optimization : improve disk monitoring logs
 * bugfix : fix watchdog in MemoryGraph
