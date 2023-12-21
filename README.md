@@ -22,7 +22,12 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.8.0 (※Recommended※)
+### 3.8.4 (※Recommended※)
+* bugfix : fix the OOM misjudgment problem in some scenarios
+* bugfix : fix alog crash
+* bugfix : fix UITracker crash
+
+### 3.8.0
 * bugfix : fix occasional crash
 * feature : support injecting custom network monitoring records
 
