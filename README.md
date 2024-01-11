@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.8.4 (※Recommended※)
+### 3.9.0 (※Recommended※)
+* feature : add Apple Privacy manifest
+
+### 3.8.4
 * bugfix : fix the OOM misjudgment problem in some scenarios
 * bugfix : fix alog crash
 * bugfix : fix UITracker crash
