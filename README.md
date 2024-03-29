@@ -28,8 +28,12 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 * bugfix : fix the issue of missing nodes in MemoryGraph
 * optimization : optimize the reporting strategy of some logs to reduce the risk of ANR
 
-### 3.9.2 (※Recommended※)
+### 3.9.2
 * optimization: support filtering of test scenarios in OOM crash determination
+
+### 3.9.1
+* bugfix : fix function issue when calling in C++ files
+* optimication : optimize the reporting strategy of startup time to ignore abnormal data
 
 ### 3.9.0
 * feature : add Apple Privacy manifest
