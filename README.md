@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.10.0 (※Recommended※)
+### 3.10.1 (※Recommended※)
+* bugfix : fix alog crash
+
+### 3.10.0
 * feature : add APMPlus log, and support cloud command or actively reporting
 * feature : new version of Hybrid monitoring
 * bugfix : fix the issue of missing nodes in MemoryGraph
