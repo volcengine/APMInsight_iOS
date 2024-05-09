@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.10.3 (※Recommended※)
+### 3.10.4 (※Recommended※)
+* bugfix : fix custom log report error
+
+### 3.10.3
 * bugfix : fix data migration crash
 * bugfix : fix BootingProtect occasionally failing to return OOM data
 
