@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 3.10.5 (※Recommended※)
+### 3.10.6 (※Recommended※)
+* bugfix : fix symbol duplicate
+
+### 3.10.5
 * bugfix : fix the OOM misjudgment problem when using UIWindowSceneDelegate
 
 ### 3.10.4
