@@ -26,13 +26,13 @@
  --- Copyable section ends
  */
 
+#import <RangersAPM+Doctor.h>
+
 @interface APMInitialViewController ()
 
 @property (nonatomic, strong) UIButton *initializeAPM;
 
 @property (nonatomic, strong) UIButton *initializeAPMAndStart;
-
-@property (nonatomic, strong) RangersAPMConfig *config;
 
 @end
 
@@ -54,6 +54,15 @@
     // Do any additional setup after loading the view.
 }
 
+static RangersAPMConfig *_config;
+
++ (RangersAPMConfig *)config {
+    return _config;
+}
+
++ (void)setConfig:(RangersAPMConfig *)config {
+    _config = config;
+}
 
 #pragma mark View
 
@@ -177,7 +186,7 @@
          */
         
         
-        self.config = config;
+        APMInitialViewController.config = config;
         
         [button setTitle:@"APM已初始化" forState:UIControlStateNormal];
     });
@@ -194,7 +203,7 @@
          Copyable section starts ---
          */
         
-        [RangersAPM startWithConfig:self.config];
+        [RangersAPM startWithConfig:APMInitialViewController.config];
         
     #if __has_include(<RangersAPM+BootingProtect.h>)
         [RangersAPM startProtectWithBootingThreshold:10 bootingCrashHandler:^(RangersAPMBootingInfo * _Nonnull info) {
@@ -238,6 +247,7 @@
          */
         
         [button setTitle:@"APM已启动，进入测试页面" forState:UIControlStateNormal];
+        [RangersAPM setupWindowWithAppID:APMInitialViewController.config.appID windowScene:nil];
     });
     
     [self.navigationController pushViewController:[[APMHomeViewController alloc] init] animated:YES];

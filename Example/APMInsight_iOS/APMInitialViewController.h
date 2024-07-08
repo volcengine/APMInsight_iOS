@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RangersAPM.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface APMInitialViewController : UIViewController
+
+@property (nonatomic, strong, class) RangersAPMConfig *config;
 
 @end
 

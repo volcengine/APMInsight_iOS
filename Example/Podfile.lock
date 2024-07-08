@@ -116,6 +116,9 @@ PODS:
     - RangersAPM/Core
     - RangersAPM/Crash
   - RangersAPM/Zyone (4.1.0)
+  - RangersAPMDoctor (1.0.0):
+    - RangersAPM/HMD (>= 4.1.0)
+    - RangersAPM/Public (>= 4.1.0)
   - RangersAPMForExtension (1.0.5):
     - RangersAPMForExtension/Crash (= 1.0.5)
   - RangersAPMForExtension/Core (1.0.5)
@@ -148,17 +151,20 @@ DEPENDENCIES:
   - RangersAPM/UserException (= 4.1.0)
   - RangersAPM/WatchDog (= 4.1.0)
   - RangersAPM/Zombie (= 4.1.0)
+  - RangersAPMDoctor (= 1.0.0)
   - RangersAPMForExtension (= 1.0.5)
 
 SPEC REPOS:
   https://github.com/volcengine/volcengine-specs.git:
     - RangersAPM
+    - RangersAPMDoctor
     - RangersAPMForExtension
 
 SPEC CHECKSUMS:
   RangersAPM: 9e9a87d31039d9015ae4e4d90e9b05bc5046a2c9
+  RangersAPMDoctor: 3c2708e810b3486b94d138a5e4f97d5425e969cb
   RangersAPMForExtension: 3c0f2dcf30ac0c52280561a5f7f9e90327c0a9a2
 
-PODFILE CHECKSUM: a80dbe4fa11b760011a7b3882bb3a25b304b3e0d
+PODFILE CHECKSUM: 6fc903500e73d88f6e332e59a67fe0c79a22bc8d
 
 COCOAPODS: 1.9.3

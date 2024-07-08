@@ -19,6 +19,7 @@
 #import "APMInsightProtectorViewController.h"
 #import "APMInsightCPUViewController.h"
 #import "APMInsightDiskViewController.h"
+#import "APMInsightDoctorViewController.h"
 
 @implementation APMHomeViewController
 
@@ -60,6 +61,8 @@
     [self.items addObject:[self itemWithTitle:@"异常防护 - 崩溃防护" viewController:[[APMInsightProtectorViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"CPU监控" viewController:[[APMInsightCPUViewController alloc] init]]];
     [self.items addObject:[self itemWithTitle:@"磁盘监控" viewController:[[APMInsightDiskViewController alloc] init]]];
+    
+    [self.items addObject:[self itemWithTitle:@"接入验证" viewController:[[APMInsightDoctorViewController alloc] init]]];
 }
 
 - (APMInsightCellItem *)itemWithTitle:(NSString *)title viewController:(UIViewController *)viewController {

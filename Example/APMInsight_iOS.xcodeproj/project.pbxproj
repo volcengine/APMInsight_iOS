@@ -18,6 +18,7 @@
 		2B791BE628F7C16A0071845C /* APMInsightDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B791BE528F7C16A0071845C /* APMInsightDiskViewController.m */; };
 		2BEE511A2A729AC6002FB0F3 /* APMInsightCustomCloudHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEE51192A729AC5002FB0F3 /* APMInsightCustomCloudHandler.m */; };
 		2BFDB4B629A6392300B4B8FA /* APMInsightGWPASanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */; };
+		4D1DA2112C3BE9E50063AD0D /* APMInsightDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1DA2102C3BE9E50063AD0D /* APMInsightDoctorViewController.m */; };
 		4D1F438825EB45EB004F42D2 /* APMInsightEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */; };
 		4D1F4FC825EB6B42004F42D2 /* EventRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D1F4FC725EB6B42004F42D2 /* EventRecordManager.m */; };
 		4D50F8AD2578BF3E00BC4247 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D50F8AC2578BF3E00BC4247 /* README.md */; };
@@ -97,6 +98,8 @@
 		2BFDB4B529A6392300B4B8FA /* APMInsightGWPASanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightGWPASanViewController.m; sourceTree = "<group>"; };
 		347E5B3B69EAA189BAADC2FD /* Pods_APMInsight_iOS_extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS_extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43716EB55E84F85B59490341 /* Pods_APMInsight_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APMInsight_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D1DA20F2C3BE9E50063AD0D /* APMInsightDoctorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightDoctorViewController.h; sourceTree = "<group>"; };
+		4D1DA2102C3BE9E50063AD0D /* APMInsightDoctorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightDoctorViewController.m; sourceTree = "<group>"; };
 		4D1F438625EB45EB004F42D2 /* APMInsightEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APMInsightEventViewController.h; sourceTree = "<group>"; };
 		4D1F438725EB45EB004F42D2 /* APMInsightEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APMInsightEventViewController.m; sourceTree = "<group>"; };
 		4D1F4FC625EB6B42004F42D2 /* EventRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventRecordManager.h; sourceTree = "<group>"; };
@@ -227,6 +230,15 @@
 			path = CloudCommand;
 			sourceTree = "<group>";
 		};
+		4D1DA20E2C3BE9B80063AD0D /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				4D1DA20F2C3BE9E50063AD0D /* APMInsightDoctorViewController.h */,
+				4D1DA2102C3BE9E50063AD0D /* APMInsightDoctorViewController.m */,
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
 		4D1F437B25EB450B004F42D2 /* EventAnalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +284,7 @@
 		4D93123A255D1BCE00402D0B /* APMInsight_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4D1DA20E2C3BE9B80063AD0D /* Doctor */,
 				4DA5087B27EACBD100C8BF15 /* APMInsight_iOS.entitlements */,
 				2BEE51142A728598002FB0F3 /* CloudCommand */,
 				4D9D11E7275E354800532FC0 /* CPUMonitor */,
@@ -628,6 +641,7 @@
 				4D93125A255D1D5F00402D0B /* APMInsightCellItem.m in Sources */,
 				4D93124E255D1BD100402D0B /* main.m in Sources */,
 				4D931278255D415A00402D0B /* APMInsightPerformanceViewController.m in Sources */,
+				4D1DA2112C3BE9E50063AD0D /* APMInsightDoctorViewController.m in Sources */,
 				2BEE511A2A729AC6002FB0F3 /* APMInsightCustomCloudHandler.m in Sources */,
 				4D931274255D414500402D0B /* APMInsightLagViewController.m in Sources */,
 				2B71ED4527A5AB5200953665 /* APMInsightCaptureUITestViewController.m in Sources */,
