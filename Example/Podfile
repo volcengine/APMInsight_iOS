@@ -37,7 +37,7 @@ target 'APMInsight_iOS' do
       'CloudCommand'
   ]
   
-  pod 'RangersAPMDoctor', '1.0.0'
+  pod 'RangersAPMDoctor', '1.0.1'
   
   # ---可复制部分结束
   # --- Copyable section ends

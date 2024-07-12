@@ -116,7 +116,7 @@ PODS:
     - RangersAPM/Core
     - RangersAPM/Crash
   - RangersAPM/Zyone (4.1.0)
-  - RangersAPMDoctor (1.0.0):
+  - RangersAPMDoctor (1.0.1):
     - RangersAPM/HMD (>= 4.1.0)
     - RangersAPM/Public (>= 4.1.0)
   - RangersAPMForExtension (1.0.5):
@@ -151,7 +151,7 @@ DEPENDENCIES:
   - RangersAPM/UserException (= 4.1.0)
   - RangersAPM/WatchDog (= 4.1.0)
   - RangersAPM/Zombie (= 4.1.0)
-  - RangersAPMDoctor (= 1.0.0)
+  - RangersAPMDoctor (= 1.0.1)
   - RangersAPMForExtension (= 1.0.5)
 
 SPEC REPOS:
@@ -162,9 +162,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   RangersAPM: 9e9a87d31039d9015ae4e4d90e9b05bc5046a2c9
-  RangersAPMDoctor: 3c2708e810b3486b94d138a5e4f97d5425e969cb
+  RangersAPMDoctor: ef052568ffbc3ca32640811ebd7c31ea3ab46504
   RangersAPMForExtension: 3c0f2dcf30ac0c52280561a5f7f9e90327c0a9a2
 
-PODFILE CHECKSUM: 6fc903500e73d88f6e332e59a67fe0c79a22bc8d
+PODFILE CHECKSUM: 46980643e7f19708566ef46085f9766ac5940a06
 
 COCOAPODS: 1.9.3
