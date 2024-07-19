@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'APMInsight_iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -11,7 +11,7 @@ target 'APMInsight_iOS' do
   #  Copyable section starts ---
   source 'https://github.com/volcengine/volcengine-specs.git'
   
-  pod 'RangersAPM', '4.1.0', :subspecs => [
+  pod 'RangersAPM', '5.0.0', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
@@ -37,7 +37,7 @@ target 'APMInsight_iOS' do
       'CloudCommand'
   ]
   
-  pod 'RangersAPMDoctor', '1.0.1'
+  pod 'RangersAPMDoctor', '1.0.2'
   
   # ---可复制部分结束
   # --- Copyable section ends
