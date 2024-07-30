@@ -10,8 +10,10 @@
 #if __has_include(<RangersAPM+PerformanceAPI.h>)
 #import <RangersAPM+PerformanceAPI.h>
 #endif
+#import <RangersAPM+Doctor.h>
 
 int main(int argc, char * argv[]) {
+    [RangersAPM setDoctorEnabled:YES];
 #if __has_include(<RangersAPM+PerformanceAPI.h>)
     [RangersAPM prewarmCheckStart];
 #endif
