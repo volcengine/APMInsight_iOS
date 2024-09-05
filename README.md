@@ -22,7 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 5.0.0  (※Recommended※)
+### 5.1.0 (※Recommended※)
+* feature: support data reporting overseas
+
+### 5.0.0
 * bugfix: fix the problem of OOM when reporting data if the network is abnormal
 * optimization(**Incompatible**): the minimum system version supported by the SDK is changed to iOS 10
 * optimization: optimize the processing logic when the disk space is insufficient, and throw exceptions in advance
