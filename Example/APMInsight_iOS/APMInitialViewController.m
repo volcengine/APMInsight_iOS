@@ -21,6 +21,9 @@
 #import <RangersAPM+CloudCommand.h>
 #import "APMInsightCustomCloudHandler.h"
 #endif
+#if __has_include(<RangersAPM+ALog.h>)
+#import <RangersAPM+ALog.h>
+#endif
 /**
  ---可复制部分结束
  --- Copyable section ends
@@ -171,6 +174,16 @@ static RangersAPMConfig *_config;
          ② After configuring the default enabled modules, these modules will be enabled by default when the new device is started for the first time. It may happen that these modules are closed on the platform, but there are still data reports, which may cause unexpected consumption of your event volume; please refer to Flexible configuration for your application.
          */
         config.defaultMonitors = RangersAPMCrashMonitorSwitch;
+        
+#if __has_include(<RangersAPM+ALog.h>)
+        /**
+         自定义日志相关配置
+         */
+        RangersAPMALogParams *alogParams = [[RangersAPMALogParams alloc] init];
+        alogParams.maxDiskUsage = 50 * 1024 * 1024;
+        alogParams.validityPeriod = 7 * 24 * 60 * 60;
+        config.alogParams = alogParams;
+#endif
         /**
          输出控制台日志，需要导入头文件 RangersAPM+DebugLog.h
          Print console log, import RangersAPM+DebugLog.h first
