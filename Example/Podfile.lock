@@ -1,121 +1,121 @@
 PODS:
-  - RangersAPM/Above (5.1.6)
-  - RangersAPM/APMLog (5.1.6):
+  - RangersAPM/Above (5.1.7)
+  - RangersAPM/APMLog (5.1.7):
     - RangersAPM/CloudCommand
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Zip
-  - RangersAPM/BootingProtect (5.1.6):
+  - RangersAPM/BootingProtect (5.1.7):
     - RangersAPM/BootingProtectLite
     - RangersAPM/OOM
-  - RangersAPM/BootingProtectLite (5.1.6):
+  - RangersAPM/BootingProtectLite (5.1.7):
     - RangersAPM/Crash
     - RangersAPM/WatchDog
-  - RangersAPM/CloudCommand (5.1.6):
+  - RangersAPM/CloudCommand (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
-  - RangersAPM/CN (5.1.6):
+  - RangersAPM/CN (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Public
-  - RangersAPM/Core (5.1.6):
+  - RangersAPM/Core (5.1.7):
     - RangersAPM/HMDLite
-  - RangersAPM/Coredump (5.1.6):
+  - RangersAPM/Coredump (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Zip
-  - RangersAPM/CPUException (5.1.6):
+  - RangersAPM/CPUException (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/SessionTracker
-  - RangersAPM/Crash (5.1.6):
+  - RangersAPM/Crash (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
     - RangersAPM/Zip
-  - RangersAPM/CrashProtector (5.1.6):
+  - RangersAPM/CrashProtector (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/SessionTracker
-  - RangersAPM/Disk (5.1.6):
+  - RangersAPM/Disk (5.1.7):
     - RangersAPM/Monitors
     - RangersAPM/SessionTracker
-  - RangersAPM/EventMonitor (5.1.6):
+  - RangersAPM/EventMonitor (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/GWPASan (5.1.6):
+  - RangersAPM/GWPASan (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
-  - RangersAPM/HMD (5.1.6):
+  - RangersAPM/HMD (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Public
-  - RangersAPM/HMDLite (5.1.6)
-  - RangersAPM/HybridPro (5.1.6):
+  - RangersAPM/HMDLite (5.1.7)
+  - RangersAPM/HybridPro (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/LAG (5.1.6):
+  - RangersAPM/LAG (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
-  - RangersAPM/MemoryGraph (5.1.6):
+  - RangersAPM/MemoryGraph (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/Zip
-  - RangersAPM/MetricKit (5.1.6):
+  - RangersAPM/MetricKit (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/SessionTracker
-  - RangersAPM/Monitors (5.1.6):
+  - RangersAPM/Monitors (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/UITrackers
-  - RangersAPM/NetworkBasic (5.1.6):
+  - RangersAPM/NetworkBasic (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/NetworkPro (5.1.6):
+  - RangersAPM/NetworkPro (5.1.7):
     - RangersAPM/NetworkBasic
-  - RangersAPM/OOM (5.1.6):
+  - RangersAPM/OOM (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Crash
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
     - RangersAPM/WatchDog
-  - RangersAPM/Public (5.1.6):
+  - RangersAPM/Public (5.1.7):
     - RangersAPM/Above
     - RangersAPM/Core
     - RangersAPM/HMDLite
     - RangersAPM/Zyone
-  - RangersAPM/SessionTracker (5.1.6):
+  - RangersAPM/SessionTracker (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/UITrackers (5.1.6):
+  - RangersAPM/UITrackers (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
-  - RangersAPM/UserException (5.1.6):
-    - RangersAPM/Core
-    - RangersAPM/HMD
-    - RangersAPM/Public
-    - RangersAPM/SessionTracker
-  - RangersAPM/WatchDog (5.1.6):
+  - RangersAPM/UserException (5.1.7):
     - RangersAPM/Core
     - RangersAPM/HMD
     - RangersAPM/Public
     - RangersAPM/SessionTracker
-  - RangersAPM/Zip (5.1.6)
-  - RangersAPM/Zombie (5.1.6):
+  - RangersAPM/WatchDog (5.1.7):
+    - RangersAPM/Core
+    - RangersAPM/HMD
+    - RangersAPM/Public
+    - RangersAPM/SessionTracker
+  - RangersAPM/Zip (5.1.7)
+  - RangersAPM/Zombie (5.1.7):
     - RangersAPM/Core
     - RangersAPM/Crash
-  - RangersAPM/Zyone (5.1.6)
+  - RangersAPM/Zyone (5.1.7)
   - RangersAPMDoctor (2.0.0):
     - RangersAPM/HMD (>= 4.1.0)
     - RangersAPM/Public (>= 4.1.0)
@@ -128,29 +128,29 @@ PODS:
   - RangersAPMForExtension/Public (1.0.5)
 
 DEPENDENCIES:
-  - RangersAPM/APMLog (= 5.1.6)
-  - RangersAPM/BootingProtect (= 5.1.6)
-  - RangersAPM/CloudCommand (= 5.1.6)
-  - RangersAPM/CN (= 5.1.6)
-  - RangersAPM/Coredump (= 5.1.6)
-  - RangersAPM/CPUException (= 5.1.6)
-  - RangersAPM/Crash (= 5.1.6)
-  - RangersAPM/CrashProtector (= 5.1.6)
-  - RangersAPM/Disk (= 5.1.6)
-  - RangersAPM/EventMonitor (= 5.1.6)
-  - RangersAPM/GWPASan (= 5.1.6)
-  - RangersAPM/HybridPro (= 5.1.6)
-  - RangersAPM/LAG (= 5.1.6)
-  - RangersAPM/MemoryGraph (= 5.1.6)
-  - RangersAPM/MetricKit (= 5.1.6)
-  - RangersAPM/Monitors (= 5.1.6)
-  - RangersAPM/NetworkPro (= 5.1.6)
-  - RangersAPM/OOM (= 5.1.6)
-  - RangersAPM/SessionTracker (= 5.1.6)
-  - RangersAPM/UITrackers (= 5.1.6)
-  - RangersAPM/UserException (= 5.1.6)
-  - RangersAPM/WatchDog (= 5.1.6)
-  - RangersAPM/Zombie (= 5.1.6)
+  - RangersAPM/APMLog (= 5.1.7)
+  - RangersAPM/BootingProtect (= 5.1.7)
+  - RangersAPM/CloudCommand (= 5.1.7)
+  - RangersAPM/CN (= 5.1.7)
+  - RangersAPM/Coredump (= 5.1.7)
+  - RangersAPM/CPUException (= 5.1.7)
+  - RangersAPM/Crash (= 5.1.7)
+  - RangersAPM/CrashProtector (= 5.1.7)
+  - RangersAPM/Disk (= 5.1.7)
+  - RangersAPM/EventMonitor (= 5.1.7)
+  - RangersAPM/GWPASan (= 5.1.7)
+  - RangersAPM/HybridPro (= 5.1.7)
+  - RangersAPM/LAG (= 5.1.7)
+  - RangersAPM/MemoryGraph (= 5.1.7)
+  - RangersAPM/MetricKit (= 5.1.7)
+  - RangersAPM/Monitors (= 5.1.7)
+  - RangersAPM/NetworkPro (= 5.1.7)
+  - RangersAPM/OOM (= 5.1.7)
+  - RangersAPM/SessionTracker (= 5.1.7)
+  - RangersAPM/UITrackers (= 5.1.7)
+  - RangersAPM/UserException (= 5.1.7)
+  - RangersAPM/WatchDog (= 5.1.7)
+  - RangersAPM/Zombie (= 5.1.7)
   - RangersAPMDoctor (= 2.0.0)
   - RangersAPMForExtension (= 1.0.5)
 
@@ -161,10 +161,10 @@ SPEC REPOS:
     - RangersAPMForExtension
 
 SPEC CHECKSUMS:
-  RangersAPM: eb5b9cfe5e454d6a433b2b5a4cc56a5289c15c43
+  RangersAPM: 4f79008d618bab45bcbc437c9dae3755195d389a
   RangersAPMDoctor: ee8bcbff62c36b52a43e322cfd819669412aea5c
   RangersAPMForExtension: 3c0f2dcf30ac0c52280561a5f7f9e90327c0a9a2
 
-PODFILE CHECKSUM: 83b5c9560f1f2be0d5a7e2ce562c5258798ae059
+PODFILE CHECKSUM: 2aed77988f939ba0c416460962dca64647dbcf33
 
 COCOAPODS: 1.9.3

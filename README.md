@@ -22,8 +22,11 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 5.1.6 (※Recommended※)
-* feature: support ignoring crash log of abnormal devices
+### 5.1.7 (※Recommended※)
+* feature: support ignoring logs of abnormal devices 
+
+### 5.1.6
+~~* feature: support ignoring crash log of abnormal devices
 * feature: support more flexible reporting domain name configuration
 * bugfix: fix the issue of failure to start tracing in some scenarios
 * bugfix: fix the problem of uploading dsym
