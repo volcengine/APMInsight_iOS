@@ -26,7 +26,7 @@ APMInsight_iOS is available under the MIT license. See the [LICENSE](https://git
 * feature: support ignoring logs of abnormal devices 
 
 ### 5.1.6
-~~* feature: support ignoring crash log of abnormal devices
+* ~~feature: support ignoring crash log of abnormal devices~~
 * feature: support more flexible reporting domain name configuration
 * bugfix: fix the issue of failure to start tracing in some scenarios
 * bugfix: fix the problem of uploading dsym
