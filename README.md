@@ -22,7 +22,12 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 5.1.8 (※Recommended※)
+### 5.2.0 (※Recommended※)
+* feature: update full-link monitoring protocol
+* feature: support BytePlus
+* feature: support configurating the limit of custom error
+
+### 5.1.8
 * bugfix: fix the failure to manually report alog 
 * optimization: compatible with Xcode 16.3
 
