@@ -11,7 +11,7 @@ target 'APMInsight_iOS' do
   #  Copyable section starts ---
   source 'https://github.com/volcengine/volcengine-specs.git'
   
-  pod 'RangersAPM', '5.2.4', :subspecs => [
+  pod 'RangersAPM', '5.2.6', :subspecs => [
       'Crash',
       'WatchDog',
       'OOM',
