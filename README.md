@@ -22,7 +22,14 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
-### 5.2.9 (※Recommended※)
+### 5.2.12 (※Recommended※)
+* feature: added subtypes for OOM and supports ignoring suspected OOM events
+* feature: metricKit supports configuring the maximum number of events per report and optimized the default number
+* bugfix: optimized a hang issue of crash log capturing
+* bugfix: fixed a network monitoring hook hang issue
+* optimization: removed useless UI monitoring hooks
+
+### 5.2.9
 * bugfix: stability issues
 * optimization: optimize background status judgment of network monitor
 
