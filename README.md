@@ -22,6 +22,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
 ## Change Log
+### 5.2.14 (※Recommended※)
+* feature: support for custom stack traces in custom error
+* optimization: optimized dsym upload script
+
 ### 5.2.12 (※Recommended※)
 * feature: added subtypes for OOM and supports ignoring suspected OOM events
 * feature: metricKit supports configuring the maximum number of events per report and optimized the default number
