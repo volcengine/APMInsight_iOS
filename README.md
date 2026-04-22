@@ -21,6 +21,10 @@ APMPlus SDK. Enter official website to read the introduction of SDK capabilities
 ## License
 APMInsight_iOS is available under the MIT license. See the [LICENSE](https://github.com/volcengine/APMInsight_iOS/blob/master/LICENSE) for more info.
 
+## Security and privacy
+This project takes security seriously. 
+For vulnerability reporting and supported versions, see [SECURITY.md](https://github.com/volcengine/APMInsight_iOS/blob/master/SECURITY.md)
+
 ## Change Log
 ### 5.2.14 (※Recommended※)
 * feature: support for custom stack traces in custom error
