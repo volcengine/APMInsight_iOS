@@ -26,11 +26,17 @@ This project takes security seriously.
 For vulnerability reporting and supported versions, see [SECURITY.md](https://github.com/volcengine/APMInsight_iOS/blob/master/SECURITY.md)
 
 ## Change Log
-### 5.2.14 (※Recommended※)
+### 5.2.16 (※Recommended※)
+* optimization: optimized the IDFV API call strategy
+
+### 5.2.15
+* bugfix: fixed an issue where custom error reporting failed
+
+### 5.2.14 
 * feature: support for custom stack traces in custom error
 * optimization: optimized dsym upload script
 
-### 5.2.12 (※Recommended※)
+### 5.2.12
 * feature: added subtypes for OOM and supports ignoring suspected OOM events
 * feature: metricKit supports configuring the maximum number of events per report and optimized the default number
 * bugfix: optimized a hang issue of crash log capturing
